@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/vissssa_favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/vissssa_favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/vissssa_favicon.ico">
-  <link rel="mask-icon" href="/images/vissssa_favicon.ico" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/vissssa_favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/vissssa_favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/vissssa_favicon.ico">
+  <link rel="mask-icon" href="/blog/images/vissssa_favicon.ico" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://vissssa.club').hostname,
-    root: '/',
+    hostname: new URL('https://vissssa.github.io/blog').hostname,
+    root: '/blog/',
     scheme: 'Gemini',
     version: '7.5.0',
     exturl: false,
@@ -51,17 +51,17 @@
   <meta name="description" content="Flask浅析系列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flask浅析-信号和Hook">
-<meta property="og:url" content="http://vissssa.club/posts/a287ede/index.html">
+<meta property="og:url" content="https://vissssa.github.io/blog/posts/a287ede/index.html">
 <meta property="og:site_name" content="vissssa">
 <meta property="og:description" content="Flask浅析系列">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-11-28T03:06:00.000Z">
-<meta property="article:modified_time" content="2020-02-28T03:49:47.287Z">
+<meta property="article:modified_time" content="2020-02-28T06:24:12.767Z">
 <meta property="article:author" content="vissssa">
 <meta property="article:tag" content="Flask">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://vissssa.club/posts/a287ede/">
+<link rel="canonical" href="https://vissssa.github.io/blog/posts/a287ede/">
 
 
 <script id="page-configurations">
@@ -126,7 +126,7 @@
   <div class="site-meta">
 
     <div>
-      <a href="/" class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">vissssa</span>
         <span class="logo-line-after"><i></i></span>
@@ -151,27 +151,27 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -226,7 +226,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://vissssa.club/posts/a287ede/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/a287ede/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -256,7 +256,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 11:49:47" itemprop="dateModified" datetime="2020-02-28T11:49:47+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +264,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Flask/" itemprop="url" rel="index">
+                  <a href="/blog/categories/Flask/" itemprop="url" rel="index">
                     <span itemprop="name">Flask</span>
                   </a>
                 </span>
@@ -303,8 +303,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h5 id="Flask浅析系列"><a href="#Flask浅析系列" class="headerlink" title="Flask浅析系列"></a>Flask浅析系列</h5><a href="/posts/2662e6b2/" title="Flask浅析-request上下文">Flask浅析-request上下文</a><br>
-<a href="/posts/a287ede/" title="Flask浅析-信号和Hook">Flask浅析-信号和Hook</a><br>
+        <h5 id="Flask浅析系列"><a href="#Flask浅析系列" class="headerlink" title="Flask浅析系列"></a>Flask浅析系列</h5><a href="/blog/posts/2662e6b2/" title="Flask浅析-request上下文">Flask浅析-request上下文</a><br>
+<a href="/blog/posts/a287ede/" title="Flask浅析-信号和Hook">Flask浅析-信号和Hook</a><br>
 <hr>
 <p>由于翻看源码时看到flask根目录下有个<code>signals.py</code>文件，且部分代码如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> blinker <span class="keyword">import</span> Namespace</span><br><span class="line"></span><br><span class="line"><span class="comment"># The namespace for code signals.  If you are not Flask code, do</span></span><br><span class="line"><span class="comment"># not put signals in here.  Create your own namespace instead.</span></span><br><span class="line">_signals = Namespace()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Core signals.  For usage examples grep the source code or consult</span></span><br><span class="line"><span class="comment"># the API documentation in docs/api.rst as well as docs/signals.rst</span></span><br><span class="line">request_started = _signals.signal(<span class="string">"request-started"</span>)</span><br><span class="line">request_finished = _signals.signal(<span class="string">"request-finished"</span>)</span><br><span class="line">request_tearing_down = _signals.signal(<span class="string">"request-tearing-down"</span>)</span><br></pre></td></tr></table></figure>
@@ -337,19 +337,19 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/2662e6b2/" rel="bookmark">Flask浅析-request上下文</a></div>
+      <div class="popular-posts-title"><a href="/blog/posts/2662e6b2/" rel="bookmark">Flask浅析-request上下文</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/d445bba0/" rel="bookmark">GIL</a></div>
+      <div class="popular-posts-title"><a href="/blog/posts/d445bba0/" rel="bookmark">GIL</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/887a2def/" rel="bookmark">Note-Of-Python3-CookBook</a></div>
+      <div class="popular-posts-title"><a href="/blog/posts/887a2def/" rel="bookmark">Note-Of-Python3-CookBook</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/5e430375/" rel="bookmark">Protecting-Python-Sources-With-Cython</a></div>
+      <div class="popular-posts-title"><a href="/blog/posts/5e430375/" rel="bookmark">Protecting-Python-Sources-With-Cython</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/dea34e62/" rel="bookmark">Storm集群与Python项目的实践</a></div>
+      <div class="popular-posts-title"><a href="/blog/posts/dea34e62/" rel="bookmark">Storm集群与Python项目的实践</a></div>
     </li>
   </ul>
 
@@ -361,12 +361,12 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="vissssa 微信支付">
+        <img src="/blog/images/wechatpay.jpg" alt="vissssa 微信支付">
         <p>微信支付</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="vissssa 支付宝">
+        <img src="/blog/images/alipay.jpg" alt="vissssa 支付宝">
         <p>支付宝</p>
       </div>
 
@@ -382,7 +382,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://vissssa.club/posts/a287ede/" title="Flask浅析-信号和Hook">http://vissssa.club/posts/a287ede/</a>
+    <a href="https://vissssa.github.io/blog/posts/a287ede/" title="Flask浅析-信号和Hook">https://vissssa.github.io/blog/posts/a287ede/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -393,9 +393,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/python/" rel="tag"># python</a>
-              <a href="/tags/deep/" rel="tag"># deep</a>
-              <a href="/tags/Flask/" rel="tag"># Flask</a>
+              <a href="/blog/tags/python/" rel="tag"># python</a>
+              <a href="/blog/tags/deep/" rel="tag"># deep</a>
+              <a href="/blog/tags/Flask/" rel="tag"># Flask</a>
           </div>
 
         
@@ -404,11 +404,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/b8ccf74b/" rel="prev" title="python复习笔记">
+    <a href="/blog/posts/b8ccf74b/" rel="prev" title="python复习笔记">
       <i class="fa fa-chevron-left"></i> python复习笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/ce9335e0/" rel="next" title="google和github的搜索技巧">
+    <a href="/blog/posts/ce9335e0/" rel="next" title="google和github的搜索技巧">
       google和github的搜索技巧 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -464,20 +464,20 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/categories/">
+            <a href="/blog/categories/">
           
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
+            <a href="/blog/tags/">
           
         <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">标签</span></a>
@@ -496,7 +496,7 @@
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" class="cc-opacity" rel="external nofollow noopener noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" class="cc-opacity" rel="external nofollow noopener noreferrer" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -598,22 +598,22 @@ setInterval("createtime()",250);
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/blog/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
+<script src="/blog/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
 
   <script>
 var pjax = new Pjax({
@@ -690,7 +690,7 @@ window.addEventListener('pjax:success', () => {
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="/blog/js/local-search.js"></script>
 
 
 
@@ -720,7 +720,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'vissssa',
       owner: 'vissssa',
       admin: ['vissssa'],
-      id: 'daeefb3edc56fe10581d0d2dd34f205f',
+      id: 'c43fa7e660c38c623f0fbdbf06cd4bd1',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });
