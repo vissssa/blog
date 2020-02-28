@@ -425,7 +425,7 @@ font:
   enable: true
 
   # 外链字体库地址，例如 //fonts.googleapis.com (默认值)
-  host: //fonts.useso.com
+  host: //fonts.proxy.ustclug.org
 
   # 全局字体，应用在 body 元素上
   global:
