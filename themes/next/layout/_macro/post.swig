@@ -2,7 +2,7 @@
   {### POST BLOCK ###}
   {##################}
   <article itemscope itemtype="http://schema.org/Article" class="post-block {% if is_index %}home{% endif %}" lang="{{ post.lang or post.language or config.language }}">
-    <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
+    <link itemprop="mainEntityOfPage" href="{{ post.permalink }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="{{ url_for(theme.avatar.url or theme.images + '/avatar.gif') }}">
@@ -85,9 +85,7 @@
               <span class="post-meta-item-text">{{ __('post.in') }}</span>
               {%- for cat in post.categories.toArray() %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
-                    <span itemprop="name">{{ cat.name }}</span>
-                  </a>
+                  <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a>
                 </span>
 
                 {%- set cat_length = post.categories.length %}
@@ -172,21 +170,15 @@
       {# Gallery support #}
       {%- if post.photos and post.photos.length %}
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          {%- set COLUMN_NUMBER = 3 %}
-          {%- for photo in post.photos.toArray() %}
-            {%- if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{%- endif %}
-              <img src="{{ url_for(photo) }}" itemprop="contentUrl">
-            {%- if loop.index0 % COLUMN_NUMBER === 2 %}</div>{%- endif %}
+          {%- for photo in post.photos %}
+            <img src="{{ url_for(photo) }}" itemprop="contentUrl">
           {%- endfor %}
-
-          {# Append end tag for `post-gallery-row` when (photos size mod COLUMN_NUMBER) is less than COLUMN_NUMBER #}
-          {%- if post.photos.length % COLUMN_NUMBER > 0 %}</div>{%- endif %}
         </div>
       {%- endif %}
 
       {%- if is_index %}
         {%- if post.description and theme.excerpt_description %}
-          {{ post.description }}
+          <p>{{ post.description }}</p>
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
@@ -232,6 +224,10 @@
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
         {{ partial('_partials/post/post-copyright.swig') }}
+      {%- endif %}
+
+      {%- if theme.follow_me %}
+        {{ partial('_partials/post/post-followme.swig', {}, {cache: theme.cache.enable}) }}
       {%- endif %}
 
       <footer class="post-footer">

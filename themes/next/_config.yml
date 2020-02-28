@@ -111,6 +111,8 @@ creative_commons:
 #scheme: Mist
 #scheme: Pisces
 scheme: Gemini
+# Dark Mode
+darkmode: false
 
 
 # ---------------------------------------------------------------
@@ -160,6 +162,8 @@ sidebar:
   #  - remove  totally remove sidebar including sidebar toggle.
   display: post
 
+  # Sidebar padding in pixels.
+  padding: 18
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
   # Enable sidebar on narrow view (only for Muse | Mist).
@@ -281,6 +285,13 @@ reward:
   alipay: /images/alipay.jpg
   #bitcoin: /images/bitcoin.png
 
+# Subscribe through Telegram Channel, Twitter, etc.
+# Usage: `Key: permalink || icon` (Font Awesome)
+follow_me:
+  #Twitter: https://twitter.com/username || twitter
+  #Telegram: https://t.me/channel_name || telegram
+  #WeChat: /images/wechat_channel.jpg || wechat
+  #RSS: /atom.xml || rss
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
@@ -364,14 +375,14 @@ codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
-  # highlight_theme: normal
-  # # Add copy button on codeblock
-  # copy_button:
-  #   enable: false
-  #   # Show text copy result.
-  #   show_result: false
-  #   # Available values: default | flat | mac
-  #   style:
+  highlight_theme: normal
+  # Add copy button on codeblock
+  copy_button:
+    enable: false
+    # Show text copy result.
+    show_result: false
+    # Available values: default | flat | mac
+    style:
 
 back2top:
   enable: true
@@ -578,6 +589,8 @@ comments:
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
+  # Lazyload all comment systems.
+  lazyload: false
   # Modify texts or order for any navs, here are some examples.
   nav:
     #disqus:
@@ -975,10 +988,10 @@ vendors:
   gitalk_css:
 
   # Algolia Search
-  # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js
-  # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
-  algolia_instant_js:
-  algolia_instant_css:
+  # algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
+  # instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
+  algolia_search:
+  instant_search:
 
   # PDF
   # pdfobject: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js

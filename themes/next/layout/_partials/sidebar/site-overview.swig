@@ -1,9 +1,7 @@
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   {%- if theme.avatar.url %}
-  <a href="/about/">
     <img class="site-author-image" itemprop="image" alt="{{ author }}"
       src="{{ url_for(theme.avatar.url) }}">
-  </a>
   {%- endif %}
   <p class="site-author-name" itemprop="name">{{ author }}</p>
   <div class="site-description" itemprop="description">{{ description }}</div>
@@ -99,13 +97,6 @@
 
 {%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
   <div class="cc-license motion-element" itemprop="license">
-  {%- set ccLanguage = theme.creative_commons.language %}
-  {%- if theme.creative_commons.license === 'zero' %}
-    {%- set ccType = 'publicdomain/zero/1.0/' + ccLanguage %}
-  {% else %}
-    {%- set ccType = 'licenses/' + theme.creative_commons.license + '/4.0/' + ccLanguage %}
-  {%- endif %}
-  {%- set ccURL = 'https://creativecommons.org/' + ccType %}
   {%- set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons">' %}
     {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
   </div>
