@@ -7,7 +7,7 @@
 <h3 id="如何执行单元测试而不用考验你的耐心"><a href="#如何执行单元测试而不用考验你的耐心" class="headerlink" title="如何执行单元测试而不用考验你的耐心"></a><a href="#如何执行单元测试而不用考验你的耐心"></a>如何执行单元测试而不用考验你的耐心</h3><p>很多时候，我们编写的软件会直接与那些被标记为 “垃圾” 的服务交互。用外行人的话说：服务对我们的应用程序很重要，但是我们想要的是交互，而不是那些不想要的副作用，这里的 “不想要” 是在自动化测试运行的语境中说的。例如：我们正在写一个社交 app，并且想要测试一下 “发布到 Facebook” 的新功能，但是不想每次运行测试集的时候真的发布到 Facebook。</p>
 <a id="more"></a>
 <p>Python 的 <code>unittest</code> 库包含了一个名为 <code>unittest.mock</code> 或者可以称之为依赖的子包，简称为 <code>mock</code> —— 其提供了极其强大和有用的方法，通过它们可以模拟（mock）并去除那些我们不希望的副作用。</p>
-<p><a href="https://camo.githubusercontent.com/facb31f7bfe115c5e687d6c27e996ac0a9ff19b9/68747470733a2f2f6173736574732e746f7074616c2e696f2f75706c6f6164732f626c6f672f696d6167652f3235322f746f7074616c2d626c6f672d696d6167652d313338393039303334363431352e706e67" target="_blank" rel="external nofollow noopener noreferrer"><img alt data-src="https://p0.ssl.qhimg.com/t01a8f8f4eb02c51190.png"></a></p>
+<p><a href="https://camo.githubusercontent.com/facb31f7bfe115c5e687d6c27e996ac0a9ff19b9/68747470733a2f2f6173736574732e746f7074616c2e696f2f75706c6f6164732f626c6f672f696d6167652f3235322f746f7074616c2d626c6f672d696d6167652d313338393039303334363431352e706e67" target="_blank" rel="external nofollow noopener noreferrer"><img data-src="https://p0.ssl.qhimg.com/t01a8f8f4eb02c51190.png" alt></a></p>
 <p><em>注意：<code>mock</code> <a href="http://www.python.org/dev/peps/pep-0417/" target="_blank" rel="external nofollow noopener noreferrer">最近被收录</a>到了 Python 3.3 的标准库中；先前发布的版本必须通过 <a href="https://pypi.python.org/pypi/mock" target="_blank" rel="external nofollow noopener noreferrer">PyPI</a> 下载 Mock 库。</em></p>
 <h3 id="恐惧系统调用"><a href="#恐惧系统调用" class="headerlink" title="恐惧系统调用"></a><a href="#恐惧系统调用"></a>恐惧系统调用</h3><p>再举另一个例子，我们在接下来的部分都会用到它，这是就是<strong>系统调用</strong>。不难发现，这些系统调用都是主要的模拟对象：无论你是正在写一个可以弹出 CD 驱动器的脚本，还是一个用来删除 /tmp 下过期的缓存文件的 Web 服务，或者一个绑定到 TCP 端口的 socket 服务器，这些调用都是在你的单元测试上下文中不希望产生的副作用。</p>
 <p>作为一个开发者，你需要更关心你的库是否成功地调用了一个可以弹出 CD 的系统函数（使用了正确的参数等等），而不是切身经历 CD 托盘每次在测试执行的时候都打开了。（或者更糟糕的是，弹出了很多次，在一个单元测试运行期间多个测试都引用了弹出代码！）</p>
@@ -249,7 +249,7 @@
 </tr>
 <tr>
 <td>path:<em>PATH/TO/DIRECTORY</em></td>
-<td><a href="https://github.com/search?q=console+path%3A" target="_blank" rel="external nofollow noopener noreferrer" app%2fpublic"+language%3ajavascript&type="Code" "><strong>console path:app/public</strong></a>匹配目录中的代码</td>
+<td><a href="https://github.com/search?q=console+path%3A" target="_blank" rel="external nofollow noopener noreferrer" app%2fpublic"+language%3ajavascript&type="Code""><strong>console path:app/public</strong></a>匹配目录中的代码</td>
 </tr>
 <tr>
 <td>language:<em>LANGUAGE</em></td>
@@ -365,15 +365,15 @@
 <li>DCL，Data Control Language，数据控制语言，定义访问权限和安全级别</li>
 <li>DQL，Data Query Language，数据查询语言，顾名思义</li>
 </ul>
-<h3 id="SQL执行过程"><a href="#SQL执行过程" class="headerlink" title="SQL执行过程"></a>SQL执行过程</h3><h4 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h4><p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/oracle01.png"></p>
+<h3 id="SQL执行过程"><a href="#SQL执行过程" class="headerlink" title="SQL执行过程"></a>SQL执行过程</h3><h4 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h4><p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/oracle01.png" alt></p>
 <p>语法就是SQL的拼写，语义则是分析操作对象是否存在</p>
 <p><strong>共享池检查</strong>就是维护一个内存池，缓存SQL语句和执行计划，每次通过计算SQL语句的Hash值去缓存池查询，若有则<code>软解析</code>，若无则<code>硬解析</code></p>
 <p>硬解析就是重新建立解析树和执行计划，软解析就是使用已有的解析树和执行计划，所以效率方面不可同日而语</p>
 <p><strong>ps</strong>: 上述缓存的内容被称为库缓存，可以决定是硬解析和软解析，它还存在一个数据字典缓冲区，存储对象定义，如表、视图、索引，当解析SQL语句时会从中提取数据。</p>
-<h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/mysql01.jpg"></p>
+<h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/mysql01.jpg" alt></p>
 <p>基本与Oracle相同，除了没有共享池，多了个缓存查询(8.0版本后去除了)。</p>
 <p>非常不同的是MySQL使用的是C/S架构，分层设计</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/mysql02.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/mysql02.png" alt></p>
 <p>上述流程属于SQL层，存储层可以以插件的形式选择引擎，常用的是<code>InnoDB</code>和<code>MyISAM</code>，区别就是前者支持事务、行级锁、外键等，后者查询快、功能少，所以一般后者用来查询，前者用来操作。</p>
 <h3 id="MySQL调试"><a href="#MySQL调试" class="headerlink" title="MySQL调试"></a>MySQL调试</h3><p>通过开启<code>profiling</code>收集信息</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 查询是否开启，为1则开启，为0则关闭</span><br><span class="line">SELECT @@profiling;</span><br><span class="line"></span><br><span class="line"># 开启</span><br><span class="line">SET profiling;</span><br><span class="line"></span><br><span class="line">SELECT * FROM user;</span><br><span class="line"></span><br><span class="line"># 展示所有profiles</span><br><span class="line">SHOW profiles;</span><br><span class="line"># 展示上一条</span><br><span class="line">SHOW profile;</span><br></pre></td></tr></table></figure>
@@ -787,7 +787,7 @@
 <h4 id="9-交叉链表求交点"><a href="#9-交叉链表求交点" class="headerlink" title="9 交叉链表求交点"></a>9 交叉链表求交点</h4><blockquote>
 <p>其实思想可以按照从尾开始比较两个链表，如果相交，则从尾开始必然一致，只要从尾开始比较，直至不一致的地方即为交叉点，如图所示</p>
 </blockquote>
-<p><img alt data-src="http://ww1.sinaimg.cn/large/006DGX4tly1ftstyh1ye6j30l9076aaf.jpg"></p>
+<p><img data-src="http://ww1.sinaimg.cn/large/006DGX4tly1ftstyh1ye6j30l9076aaf.jpg" alt></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class ListNode:</span><br><span class="line">def __init__(self, x):</span><br><span class="line">self.val &#x3D; x</span><br><span class="line">self.next &#x3D; None</span><br><span class="line">def node(l1, l2):</span><br><span class="line">length1, lenth2 &#x3D; 0, 0</span><br><span class="line"># 求两个链表长度</span><br><span class="line">while l1.next:</span><br><span class="line">l1 &#x3D; l1.next</span><br><span class="line">length1 +&#x3D; 1</span><br><span class="line">while l2.next:</span><br><span class="line">l2 &#x3D; l2.next</span><br><span class="line">length2 +&#x3D; 1</span><br><span class="line"># 长的链表先走</span><br><span class="line">if length1 &gt; lenth2:</span><br><span class="line">for _ in range(length1 - length2):</span><br><span class="line">l1 &#x3D; l1.next</span><br><span class="line">else:</span><br><span class="line">for _ in range(length2 - length1):</span><br><span class="line">l2 &#x3D; l2.next</span><br><span class="line">while l1 and l2:</span><br><span class="line">if l1.next &#x3D;&#x3D; l2.next:</span><br><span class="line">return l1.next</span><br><span class="line">else:</span><br><span class="line">l1 &#x3D; l1.next</span><br><span class="line">l2 &#x3D; l2.next</span><br></pre></td></tr></table></figure>
 <p>修改了一下:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">class ListNode:</span><br><span class="line">def __init__(self, x):</span><br><span class="line">self.val &#x3D; x</span><br><span class="line">self.next &#x3D; None</span><br><span class="line"></span><br><span class="line">def node(l1, l2):</span><br><span class="line">length1, length2 &#x3D; 0, 0</span><br><span class="line"># 求两个链表长度</span><br><span class="line">while l1.next:</span><br><span class="line">l1 &#x3D; l1.next#尾节点</span><br><span class="line">length1 +&#x3D; 1</span><br><span class="line">while l2.next:</span><br><span class="line">l2 &#x3D; l2.next#尾节点</span><br><span class="line">length2 +&#x3D; 1</span><br><span class="line"></span><br><span class="line">#如果相交</span><br><span class="line">if l1.next &#x3D;&#x3D; l2.next:</span><br><span class="line"># 长的链表先走</span><br><span class="line">if length1 &gt; length2:</span><br><span class="line">for _ in range(length1 - length2):</span><br><span class="line">l1 &#x3D; l1.next</span><br><span class="line">return l1#返回交点</span><br><span class="line">else:</span><br><span class="line">for _ in range(length2 - length1):</span><br><span class="line">l2 &#x3D; l2.next</span><br><span class="line">return l2#返回交点</span><br><span class="line"># 如果不相交</span><br><span class="line">else:</span><br><span class="line">return</span><br></pre></td></tr></table></figure>
@@ -956,7 +956,7 @@
 </li>
 </ul>
 <p>request全局变量是对_request_ctx_stack的代理，但仅限于读，修改操作则是直接在_request_ctx_stack上完成，同样的还有_app_ctx_stack</p>
-<h3 id="以g为延伸了解上下文的Local"><a href="#以g为延伸了解上下文的Local" class="headerlink" title="以g为延伸了解上下文的Local"></a>以g为延伸了解上下文的Local</h3><p><img alt="上下文的Local" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/flask%E4%B8%8A%E4%B8%8B%E6%96%87Local%E5%AF%B9%E8%B1%A1.jpg"></p>
+<h3 id="以g为延伸了解上下文的Local"><a href="#以g为延伸了解上下文的Local" class="headerlink" title="以g为延伸了解上下文的Local"></a>以g为延伸了解上下文的Local</h3><p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/flask%E4%B8%8A%E4%B8%8B%E6%96%87Local%E5%AF%B9%E8%B1%A1.jpg" alt="上下文的Local"></p>
 ]]></content>
       <categories>
         <category>Flask</category>
@@ -1005,11 +1005,11 @@
 <li>URL（Uniform Resource Locator，统一资源定位符）</li>
 <li>URN（Uniform Resource Name，统一资源名称）</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/urlnuri.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/urlnuri.jpg" width="600"> </div><br>
 
-<h2 id="请求和响应报文"><a href="#请求和响应报文" class="headerlink" title="请求和响应报文"></a>请求和响应报文</h2><h3 id="1-请求报文"><a href="#1-请求报文" class="headerlink" title="1. 请求报文"></a>1. 请求报文</h3><div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_RequestMessageExample.png"> </div><br>
+<h2 id="请求和响应报文"><a href="#请求和响应报文" class="headerlink" title="请求和响应报文"></a>请求和响应报文</h2><h3 id="1-请求报文"><a href="#1-请求报文" class="headerlink" title="1. 请求报文"></a>1. 请求报文</h3><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_RequestMessageExample.png" width> </div><br>
 
-<h3 id="2-响应报文"><a href="#2-响应报文" class="headerlink" title="2. 响应报文"></a>2. 响应报文</h3><div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_ResponseMessageExample.png"> </div><br>
+<h3 id="2-响应报文"><a href="#2-响应报文" class="headerlink" title="2. 响应报文"></a>2. 响应报文</h3><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_ResponseMessageExample.png" width> </div><br>
 
 <h1 id="二、HTTP-方法"><a href="#二、HTTP-方法" class="headerlink" title="二、HTTP 方法"></a>二、HTTP 方法</h1><p>客户端发送的  <strong>请求报文</strong>  第一行为请求行，包含了方法字段。</p>
 <h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><blockquote>
@@ -1055,7 +1055,7 @@
 <p>使用 SSL（Secure Sockets Layer，安全套接层）和 TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">CONNECT www.example.com:443 HTTP/1.1</span><br></pre></td></tr></table></figure>
 
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" width> </div><br>
 
 <h2 id="TRACE"><a href="#TRACE" class="headerlink" title="TRACE"></a>TRACE</h2><blockquote>
 <p>追踪路径</p>
@@ -1459,7 +1459,7 @@
 
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT</span><br></pre></td></tr></table></figure>
 
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP1_x_Connections.png"> </div><br>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP1_x_Connections.png" width="800"> </div><br>
 
 <h3 id="1-短连接与长连接"><a href="#1-短连接与长连接" class="headerlink" title="1. 短连接与长连接"></a>1. 短连接与长连接</h3><p>当浏览器访问一个包含多张图片的 HTML 页面时，除了请求访问 HTML 页面资源，还会请求图片资源。如果每进行一次 HTTP 通信就要新建一个 TCP 连接，那么开销会很大。</p>
 <p>长连接只需要建立一次 TCP 连接就能进行多次 HTTP 通信。</p>
@@ -1520,12 +1520,12 @@
 <ul>
 <li>用户察觉得到正向代理的存在。</li>
 </ul>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" width> </div><br>
 
 <ul>
 <li>而反向代理一般位于内部网络中，用户察觉不到。</li>
 </ul>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2d09a847-b854-439c-9198-b29c65810944.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2d09a847-b854-439c-9198-b29c65810944.png" width> </div><br>
 
 <h3 id="2-网关"><a href="#2-网关" class="headerlink" title="2. 网关"></a>2. 网关</h3><p>与代理服务器不同的是，网关服务器会将 HTTP 转化为其它协议进行通信，从而请求其它非 HTTP 服务器的服务。</p>
 <h3 id="3-隧道"><a href="#3-隧道" class="headerlink" title="3. 隧道"></a>3. 隧道</h3><p>使用 SSL 等加密手段，在客户端和服务器之间建立一条安全的通信线路。</p>
@@ -1537,14 +1537,14 @@
 </ul>
 <p>HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPs 使用了隧道进行通信。</p>
 <p>通过使用 SSL，HTTPs 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。</p>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ssl-offloading.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ssl-offloading.jpg" width="700"> </div><br>
 
 <h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><h3 id="1-对称密钥加密"><a href="#1-对称密钥加密" class="headerlink" title="1. 对称密钥加密"></a>1. 对称密钥加密</h3><p>对称密钥加密（Symmetric-Key Encryption），加密和解密使用同一密钥。</p>
 <ul>
 <li>优点：运算速度快；</li>
 <li>缺点：无法安全地将密钥传输给通信方。</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" width="600"> </div><br>
 
 <h3 id="2-非对称密钥加密"><a href="#2-非对称密钥加密" class="headerlink" title="2.非对称密钥加密"></a>2.非对称密钥加密</h3><p>非对称密钥加密，又称公开密钥加密（Public-Key Encryption），加密和解密使用不同的密钥。</p>
 <p>公开密钥所有人都可以获得，通信发送方获得接收方的公开密钥之后，就可以使用公开密钥进行加密，接收方收到通信内容后使用私有密钥解密。</p>
@@ -1553,17 +1553,17 @@
 <li>优点：可以更安全地将公开密钥传输给通信发送方；</li>
 <li>缺点：运算速度慢。</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" width="600"> </div><br>
 
 <h3 id="3-HTTPs-采用的加密方式"><a href="#3-HTTPs-采用的加密方式" class="headerlink" title="3. HTTPs 采用的加密方式"></a>3. HTTPs 采用的加密方式</h3><p>HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。（下图中的 Session Key 就是对称密钥）</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/How-HTTPS-Works.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/How-HTTPS-Works.png" width="600"> </div><br>
 
 <h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><p>通过使用  <strong>证书</strong>  来对通信方进行认证。</p>
 <p>数字证书认证机构（CA，Certificate Authority）是客户端与服务器双方都可信赖的第三方机构。</p>
 <p>服务器的运营人员向 CA 提出公开密钥的申请，CA 在判明提出申请者的身份之后，会对已申请的公开密钥做数字签名，然后分配这个已签名的公开密钥，并将该公开密钥放入公开密钥证书后绑定在一起。</p>
 <p>进行 HTTPs 通信时，服务器会把证书发送给客户端。客户端取得其中的公开密钥之后，先使用数字签名进行验证，如果验证通过，就可以开始通信了。</p>
 <p>通信开始时，客户端需要使用服务器的公开密钥将自己的私有密钥传输给服务器，之后再进行对称密钥加密。</p>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2017-06-11-ca.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2017-06-11-ca.png" width> </div><br>
 
 <h2 id="完整性保护"><a href="#完整性保护" class="headerlink" title="完整性保护"></a>完整性保护</h2><p>SSL 提供报文摘要功能来进行完整性保护。</p>
 <p>HTTP 也提供了 MD5 报文摘要功能，但不是安全的。例如报文内容被篡改之后，同时重新计算 MD5 的值，通信接收方是无法意识到发生了篡改。</p>
@@ -1580,7 +1580,7 @@
 <li>不支持有效的资源优先级，致使底层 TCP 连接的利用率低下。</li>
 </ul>
 <h2 id="二进制分帧层"><a href="#二进制分帧层" class="headerlink" title="二进制分帧层"></a>二进制分帧层</h2><p>HTTP/2.0 将报文分成 HEADERS 帧和 DATA 帧，它们都是二进制格式的。</p>
-<div align="center"> <img width="400" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" width="400"> </div><br>
 
 <p>在通信过程中，只会有一个 TCP 连接存在，它承载了任意数量的双向数据流（Stream）。</p>
 <ul>
@@ -1588,15 +1588,15 @@
 <li>消息（Message）是与逻辑请求或响应消息对应的完整的一系列帧。</li>
 <li>帧（Fram）是最小的通信单位，来自不同数据流的帧可以交错发送，然后再根据每个帧头的数据流标识符重新组装。</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/af198da1-2480-4043-b07f-a3b91a88b815.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" width="600"> </div><br>
 
 <h2 id="服务端推送"><a href="#服务端推送" class="headerlink" title="服务端推送"></a>服务端推送</h2><p>HTTP/2.0 在客户端请求一个资源时，会把相关的资源一起发送给客户端，客户端就不需要再次发起请求了。例如客户端请求 page.html 页面，服务端就把 script.js 和 style.css 等与之相关的资源一起发给客户端。</p>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" width="800"> </div><br>
 
 <h2 id="首部压缩"><a href="#首部压缩" class="headerlink" title="首部压缩"></a>首部压缩</h2><p>HTTP/1.1 的首部带有大量信息，而且每次都要重复发送。</p>
 <p>HTTP/2.0 要求客户端和服务器同时维护和更新一个包含之前见过的首部字段表，从而避免了重复传输。</p>
 <p>不仅如此，HTTP/2.0 也使用 Huffman 编码对首部字段进行压缩。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/_u4E0B_u8F7D.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/_u4E0B_u8F7D.png" width="600"> </div><br>
 
 <h1 id="八、GET-和-POST-比较"><a href="#八、GET-和-POST-比较" class="headerlink" title="八、GET 和 POST 比较"></a>八、GET 和 POST 比较</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>GET 用于获取资源，而 POST 用于传输实体主体。</p>
 <h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>GET 和 POST 的请求都能使用额外的参数，但是 GET 的参数是以查询字符串出现在 URL 中，而 POST 的参数存储在实体主体中。不能因为 POST 参数存储在实体主体中就认为它的安全性更高，因为照样可以通过一些抓包工具（Fiddler）查看。</p>
@@ -1867,7 +1867,7 @@
 <li>启用pid命名空间，开启init进程。</li>
 </ul>
 <p>在<a href="https://www.ianlewis.org/en/almighty-pause-container" target="_blank" rel="external nofollow noopener noreferrer">The Almighty Pause Container</a>这篇文章中做出了详细的说明，pause容器的作用可以从这个例子中看出，首先见下图：</p>
-<p><img alt="Pause容器" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/pause-container.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/pause-container.png" alt="Pause容器"></p>
 <p>我们首先在节点上运行一个pause容器。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --name pause -p 8880:80 jimmysong/pause-amd64:3.0</span><br></pre></td></tr></table></figure>
 
@@ -1915,7 +1915,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python3 compile.py build_ext --inplace</span><br></pre></td></tr></table></figure>
 
 <p>The above command will generate <code>.so</code> and <code>.c</code> files next to your <code>.py</code> source files:</p>
-<p><img alt="img" data-src="https://cdn-images-1.medium.com/max/1600/1*KQCTp5cE9R84Ku_0oaG1Cw.png"></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*KQCTp5cE9R84Ku_0oaG1Cw.png" alt="img"></p>
 <p>The <code>.c</code> files are intermediate sources used to generate <code>.so</code> files, which are binary modules you want to distribute. When building on Windows these files will probably have the <code>.dll</code> extension (<strong>UPD</strong>: in the comments people suggest that they actually have the <code>.pyd</code> extension on Windows).</p>
 <p>You can delete <code>.c</code> and <code>.py</code> files after a successful build and keep the <code>.so</code>files only.</p>
 <p>Note that <code>.so</code>-files contain the target platform in their names (e.g. <code>darwin</code>on my MacOS). Obviously, the compiled modules are not cross-platform. If you distribute your program to Ubuntu Linux users, you should compile it on Linux. Otherwise you won’t be able to load these binaries. So you’ll have to compile a platform-specific version of your code for each of your targeted platforms.</p>
@@ -1926,11 +1926,11 @@
 <li>Run <code>export VAGRANT_DEFAULT_PROVIDER=virtualbox</code> (you can add it to your Bash startup script at <code>~/.bash_profile</code> for convenience).</li>
 <li>Choose an OS here: <a href="https://app.vagrantup.com/boxes/search" target="_blank" rel="external nofollow noopener noreferrer">https://app.vagrantup.com/boxes/search</a>. Then click the <em>New</em> tab in “How to use” section. You’ll find setup instructions and commands there. Run those commands in your Python project folder:</li>
 </ol>
-<p><img alt="img" data-src="https://cdn-images-1.medium.com/max/1600/1*s4uPRId_oMQAFqSV1j4WjQ.png">)<img alt="img" data-src="https://cdn-images-1.medium.com/max/2000/1*s4uPRId_oMQAFqSV1j4WjQ.png"></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*s4uPRId_oMQAFqSV1j4WjQ.png" alt="img">)<img data-src="https://cdn-images-1.medium.com/max/2000/1*s4uPRId_oMQAFqSV1j4WjQ.png" alt="img"></p>
 <p>Finally, run <code>vagrant ssh</code> to get into a freshly installed Ubuntu console (type <code>exit</code> to exit):</p>
-<p><img alt="img" data-src="https://cdn-images-1.medium.com/max/1600/1*V5nAJ1gFlWbFTxpOPFg8Lw.png"></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*V5nAJ1gFlWbFTxpOPFg8Lw.png" alt="img"></p>
 <p><code>cd</code> to the <code>/vagrant</code> folder to see your project files. Then perform steps 1, 4 from this manual, and you’re done:</p>
-<p><img alt="img" data-src="https://cdn-images-1.medium.com/max/1600/1*peFjOUpkICaIxgvMpXv6VA.png"></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*peFjOUpkICaIxgvMpXv6VA.png" alt="img"></p>
 <p>For projects with a short build/release cycle, multi-plaform builds could be automated using a CI (Continuous Integration) service, like <a href="https://travis-ci.org/" target="_blank" rel="external nofollow noopener noreferrer">TravisCI</a>, but that’s a story for another article.</p>
 <h3 id="About-the-Author"><a href="#About-the-Author" class="headerlink" title="About the Author"></a>About the Author</h3><p>I’m a member of the developer team behind the open-source cross-language <a href="https://github.com/ccxt-dev/ccxt" target="_blank" rel="external nofollow noopener noreferrer">CCXT Library</a> (available for JavaScript, Python or PHP). The library is used to connect and trade with more than 100 cryptocurrency exchanges worldwide.</p>
 ]]></content>
@@ -1964,23 +1964,23 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher</span><br></pre></td></tr></table></figure>
 
 <p>然后打开<code>https://&lt;server_ip&gt;</code>即可看到以下：</p>
-<p><img alt="rancher初始化" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E5%88%9D%E5%A7%8B%E5%8C%96.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt="rancher初始化"></p>
 <p>设置密码后可进入主页，这里大量设置是与云服务有关的，包括没有显示的也可以手动添加，等待云服务商的接入，我们这里主要是本地部署自己的k8s集群。</p>
-<p><img alt="rancher主页" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E4%B8%BB%E9%A1%B5.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E4%B8%BB%E9%A1%B5.png" alt="rancher主页"></p>
 <ol>
 <li>选择CUSTOM（添加主机自建Kubernetes集群）</li>
 <li>K8s-rancher版本选择最新发布版</li>
 </ol>
-<p><img alt="rancher搭建k8s" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E6%90%AD%E5%BB%BAk8s.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E6%90%AD%E5%BB%BAk8s.png" alt="rancher搭建k8s"></p>
 <p> 接下来就根据你的主机准备情况进行k8s和rancher组件的部署，他会根据你的选择自动生成docker命令，我们这里是在master节点部署etcd和control，kubelet和proxy部署在子节点上，我不太确定apiserver和调度器部署在哪，是不是由rancher组件代替了，后续需要查看文档。</p>
-<p><img alt="rancher自动部署" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.png" alt="rancher自动部署"></p>
 <p>需要注意的是为了给每个主机加上名称，因为名称唯一，所以每条命令只能在一台机器上部署，否则同名称主机只能识别一个</p>
 <p>这里就是部署完成的页面，在这里可以查看Kubeconfig文件和进行kubectl命令行操作，可以打开进行一些测试。</p>
-<p><img alt="rancher-k8s仪表盘" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E4%BB%AA%E8%A1%A8%E7%9B%98.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E4%BB%AA%E8%A1%A8%E7%9B%98.png" alt="rancher-k8s仪表盘"></p>
 <p>点击system可以看到kube-system下的一些部署服务，default就是默认的命名空间，这里部署两个简单的服务进行测试</p>
-<p><img alt="rancher-k8s-system" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher-k8s-system.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher-k8s-system.png" alt="rancher-k8s-system"></p>
 <p>registry.cn-shanghai.aliyuncs.com/vissssa/nginx:<code>frontend</code>和<code>zhangyu1</code>，我在frontend中设定nginx重定向到<code>http://zhangyu</code>，那么只要设定另一个服务名称为<code>zhangyu</code>即可，kube-dns已经自动部署了，暴露frontend接口：type=NodePort。</p>
-<p><img alt="rancher部署服务" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E9%83%A8%E7%BD%B2%E4%BB%BB%E5%8A%A11.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/rancher%E9%83%A8%E7%BD%B2%E4%BB%BB%E5%8A%A11.png" alt="rancher部署服务"></p>
 <p>访问<code>http://&lt;work_ip&gt;:30000</code>即可看到结果。结果重定向到了<code>zhangyu</code>的nginx服务上。</p>
 ]]></content>
       <categories>
@@ -2381,17 +2381,17 @@
 <ul>
 <li>第一步，获取github的开发者秘钥，后续我们jenkins中配置需要使用秘钥验证</li>
 </ul>
-<p><img alt="秘钥" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/github_developer_settings.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/github_developer_settings.png" alt="秘钥"></p>
 <p>接着将秘钥配置到jenkins中，使得可以下载github中的代码</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_github.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_github.png" alt></p>
 <p>add中配置</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_add_secret.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_add_secret.png" alt></p>
 <p>这里就是完成了jenkins的配置，接下来在github中配置钩子，当项目发生变化，就调用钩子，打通jenkins</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/github_webhook.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/github_webhook.png" alt></p>
 <p>最后就是在jenkins中新建一个job来自动化我们的项目：</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_gitbook_config.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_gitbook_config.png" alt></p>
 <p>最后一个我们这里填的是项目的地址，因为我这个项目包含大量图片，从github下载慢，所以现在本地已经做好了准备，中间的github需要账号密码，不是秘钥，切记。</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_gitbook_config2.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_gitbook_config2.png" alt></p>
 <p>这里就完成了我们这个Jenkins+Github+Gitbook的自动化版本控制以及部署的过程</p>
 <h2 id="五、需要注意"><a href="#五、需要注意" class="headerlink" title="五、需要注意"></a>五、需要注意</h2><p>因为首先我已经在nginx中配置好了gitbook的路径，所以只需要在项目中编译完成静态网页即可，<del>另外，项目的权限需要开启为所有用户均可rwx，因为jenkins是linux下新建了一个jenkins用户来运行的，对于没有权限的文件，他是无权处理的。</del></p>
 <p>超级坑的jenkins，各种权限以及命令无法找到，经过各种尝试后发现以下可以</p>
@@ -2411,7 +2411,7 @@
 
 <p>发现是jenkins的日志文件高达37G，删除之后，系统正常，<del>查看资料在jenkins配置中配置相关</del>，<del>怀疑是关于dns的报错信息，这里等待一段时日再来观察是否有效</del></p>
 <p>重启消失，所以只能计划任务，每周删除一次</p>
-<p><img alt="jenkins_log_setting" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_log_setting.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/jenkins_log_setting.png" alt="jenkins_log_setting"></p>
 ]]></content>
       <categories>
         <category>env</category>
@@ -2455,7 +2455,7 @@
 <li><p>打开localhost:30001可看到tomcat的页面，/demo的页面以下：</p>
 </li>
 </ol>
-<p><img alt="k8sDemo" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/k8sDemo%E5%AE%8C%E6%88%90%E9%A1%B5%E9%9D%A2.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/k8sDemo%E5%AE%8C%E6%88%90%E9%A1%B5%E9%9D%A2.png" alt="k8sDemo"></p>
 ]]></content>
       <categories>
         <category>cloud</category>
@@ -2562,9 +2562,9 @@
 <p>接下来就是漫长的下载镜像–&gt;部署镜像–&gt;报错–&gt;修复–&gt;重启–&gt;成功</p>
 <p>需要注意的是，排查报错后重启服务时，可能需要删除openpai和k8s生成的本地文件，比较重要的有<code>/var/etcd</code>存储k8s配置和集群内信息(pods、daemonset等)、<code>/etc/kubernetes/</code>存储k8s在各个节点上的配置文件(.yml)、<code>/datastorage</code>某些时候重启容器会出现这里面目录创建不了的问题，可能是权限，删除目录重启服务即可。</p>
 <p>部署完成后即可在dashboard上查看健康情况。</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/k8s_dashboard.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/k8s_dashboard.png" alt></p>
 <h3 id="3、验证"><a href="#3、验证" class="headerlink" title="3、验证"></a>3、验证</h3><p><code>http://master_ip:9286/virtual-clusters.html</code>会打开openpai的dashboard，输入配置文件中的账号密码即可打开本次项目</p>
-<p><img alt data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/pai_dashboard.png"></p>
+<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/pai_dashboard.png" alt></p>
 ]]></content>
       <categories>
         <category>cloud</category>
@@ -2602,7 +2602,7 @@
   <entry>
     <title>py3 in one pic</title>
     <url>/blog/posts/292e4d6e/</url>
-    <content><![CDATA[<p><img alt="py3 in one pic" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/py3%20in%20one%20pic.png"></p>
+    <content><![CDATA[<p><img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/py3%20in%20one%20pic.png" alt="py3 in one pic"></p>
 ]]></content>
       <categories>
         <category>deep</category>
@@ -2687,14 +2687,14 @@
     <title>计算机网络</title>
     <url>/blog/posts/e255a10a/</url>
     <content><![CDATA[<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><p>网络把主机连接起来，而互联网是把多种不同的网络连接起来，因此互联网是网络的网络。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/network-of-networks.gif"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/network-of-networks.gif" width="500"> </div><br>
 
 <h2 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h2><p>互联网服务提供商 ISP 可以从互联网管理机构获得许多 IP 地址，同时拥有通信线路以及路由器等联网设备，个人或机构向 ISP 缴纳一定的费用就可以接入互联网。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/46cec213-3048-4a80-aded-fdd577542801.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/46cec213-3048-4a80-aded-fdd577542801.jpg" width="500"> </div><br>
 
 <p>目前的互联网是一种多层次 ISP 结构，ISP 根据覆盖面积的大小分为第一层 ISP、区域 ISP 和接入 ISP。</p>
 <p>互联网交换点 IXP 允许两个 ISP 直接相连而不用经过第三个 ISP。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/168e893c-e4a0-4ba4-b81f-9d993483abd0.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/168e893c-e4a0-4ba4-b81f-9d993483abd0.jpg" width="500"> </div><br>
 
 <h2 id="主机之间的通信方式"><a href="#主机之间的通信方式" class="headerlink" title="主机之间的通信方式"></a>主机之间的通信方式</h2><ul>
 <li><p>客户-服务器（C/S）：客户是服务的请求方，服务器是服务的提供方。</p>
@@ -2702,13 +2702,13 @@
 <li><p>对等（P2P）：不区分客户和服务器。</p>
 </li>
 </ul>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2ad244f5-939c-49fa-9385-69bc688677ab.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2ad244f5-939c-49fa-9385-69bc688677ab.jpg" width> </div><br>
 
 <h2 id="电路交换与分组交换"><a href="#电路交换与分组交换" class="headerlink" title="电路交换与分组交换"></a>电路交换与分组交换</h2><h3 id="1-电路交换"><a href="#1-电路交换" class="headerlink" title="1. 电路交换"></a>1. 电路交换</h3><p>电路交换用于电话通信系统，两个用户要通信之前需要建立一条专用的物理链路，并且在整个通信过程中始终占用该链路。由于通信的过程中不可能一直在使用传输线路，因此电路交换对线路的利用率很低，往往不到 10%。</p>
 <h3 id="2-分组交换"><a href="#2-分组交换" class="headerlink" title="2. 分组交换"></a>2. 分组交换</h3><p>每个分组都有首部和尾部，包含了源地址和目的地址等控制信息，在同一个传输线路上同时传输多个分组互相不会影响，因此在同一条传输线路上允许同时传输多个分组，也就是说分组交换不需要占用传输线路。</p>
 <p>在一个邮局通信系统中，邮局收到一份邮件之后，先存储下来，然后把相同目的地的邮件一起转发到下一个目的地，这个过程就是存储转发过程，分组交换也使用了存储转发过程。</p>
 <h2 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h2><p>总时延 = 传输时延 + 传播时延 + 处理时延 + 排队时延</p>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/3939369b-3a4a-48a0-b9eb-3efae26dd400.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/3939369b-3a4a-48a0-b9eb-3efae26dd400.png" width="800"> </div><br>
 
 <h3 id="1-传输时延"><a href="#1-传输时延" class="headerlink" title="1. 传输时延"></a>1. 传输时延</h3><p>主机或路由器传输数据帧所需要的时间。</p>
 <div align="center"><img data-src="https://latex.codecogs.com/gif.latex?delay=\frac{l(bit)}{v(bit/s)}"></div> <br>
@@ -2720,7 +2720,7 @@
 <p>其中 l 表示信道长度，v 表示电磁波在信道上的传播速度。</p>
 <h3 id="3-处理时延"><a href="#3-处理时延" class="headerlink" title="3. 处理时延"></a>3. 处理时延</h3><p>主机或路由器收到分组时进行处理所需要的时间，例如分析首部、从分组中提取数据、进行差错检验或查找适当的路由等。</p>
 <h3 id="4-排队时延"><a href="#4-排队时延" class="headerlink" title="4. 排队时延"></a>4. 排队时延</h3><p>分组在路由器的输入队列和输出队列中排队等待的时间，取决于网络当前的通信量。</p>
-<h2 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构*"></a>计算机网络体系结构*</h2><div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/426df589-6f97-4622-b74d-4a81fcb1da8e.png"> </div><br>
+<h2 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构*"></a>计算机网络体系结构*</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/426df589-6f97-4622-b74d-4a81fcb1da8e.png" width="800"> </div><br>
 
 <h3 id="1-五层协议"><a href="#1-五层协议" class="headerlink" title="1. 五层协议"></a>1. 五层协议</h3><ul>
 <li><p><strong>应用层</strong> ：为特定应用程序提供数据传输服务，例如 HTTP、DNS 等。数据单位为报文。</p>
@@ -2744,14 +2744,14 @@
 <p>五层协议没有表示层和会话层，而是将这些功能留给应用程序开发者处理。</p>
 <h3 id="3-TCP-IP"><a href="#3-TCP-IP" class="headerlink" title="3. TCP/IP"></a>3. TCP/IP</h3><p>它只有四层，相当于五层协议中数据链路层和物理层合并为网络接口层。</p>
 <p>TCP/IP 体系结构不严格遵循 OSI 分层概念，应用层可能会直接使用 IP 层或者网络接口层。</p>
-<div align="center"> <img width="400" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/45e0e0bf-386d-4280-a341-a0b9496c7674.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/45e0e0bf-386d-4280-a341-a0b9496c7674.png" width="400"> </div><br>
 
 <p>TCP/IP 协议族是一种沙漏形状，中间小两边大，IP 协议在其中占用举足轻重的地位。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/d4eef1e2-5703-4ca4-82ab-8dda93d6b81f.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/d4eef1e2-5703-4ca4-82ab-8dda93d6b81f.png" width="500"> </div><br>
 
 <h3 id="4-数据在各层之间的传递过程"><a href="#4-数据在各层之间的传递过程" class="headerlink" title="4. 数据在各层之间的传递过程"></a>4. 数据在各层之间的传递过程</h3><p>在向下的过程中，需要添加下层协议所需要的首部或者尾部，而在向上的过程中不断拆开首部和尾部。</p>
 <p>路由器只有下面三层协议，因为路由器位于网络核心中，不需要为进程或者应用程序提供服务，因此也就不需要运输层和应用层。</p>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ac106e7e-489a-4082-abd9-dabebe48394c.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ac106e7e-489a-4082-abd9-dabebe48394c.jpg" width="800"> </div><br>
 
 <h1 id="二、物理层"><a href="#二、物理层" class="headerlink" title="二、物理层"></a>二、物理层</h1><h2 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h2><p>根据信息在传输线上的传送方向，分为以下三种通信方式：</p>
 <ul>
@@ -2763,11 +2763,11 @@
 <div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/f0a31c04-6e26-408c-8395-88f4e2ae928b.jpg"> </div><br>
 
 <h1 id="三、数据链路层"><a href="#三、数据链路层" class="headerlink" title="三、数据链路层"></a>三、数据链路层</h1><h2 id="基本问题"><a href="#基本问题" class="headerlink" title="基本问题"></a>基本问题</h2><h3 id="1-封装成帧"><a href="#1-封装成帧" class="headerlink" title="1. 封装成帧"></a>1. 封装成帧</h3><p>将网络层传下来的分组添加首部和尾部，用于标记帧的开始和结束。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ea5f3efe-d5e6-499b-b278-9e898af61257.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ea5f3efe-d5e6-499b-b278-9e898af61257.jpg" width="500"> </div><br>
 
 <h3 id="2-透明传输"><a href="#2-透明传输" class="headerlink" title="2. 透明传输"></a>2. 透明传输</h3><p>透明表示一个实际存在的事物看起来好像不存在一样。</p>
 <p>帧使用首部和尾部进行定界，如果帧的数据部分含有和首部尾部相同的内容，那么帧的开始和结束位置就会被错误的判定。需要在数据部分出现首部尾部相同的内容前面插入转义字符。如果数据部分出现转义字符，那么就在转义字符前面再加个转义字符。在接收端进行处理之后可以还原出原始数据。这个过程透明传输的内容是转义字符，用户察觉不到转义字符的存在。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/c5022dd3-be22-4250-b9f6-38ae984a04d7.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/c5022dd3-be22-4250-b9f6-38ae984a04d7.jpg" width="600"> </div><br>
 
 <h3 id="3-差错检测"><a href="#3-差错检测" class="headerlink" title="3. 差错检测"></a>3. 差错检测</h3><p>目前数据链路层广泛使用了循环冗余检验（CRC）来检查比特差错。</p>
 <h2 id="信道分类"><a href="#信道分类" class="headerlink" title="信道分类"></a>信道分类</h2><h3 id="1-广播信道"><a href="#1-广播信道" class="headerlink" title="1. 广播信道"></a>1. 广播信道</h3><p>一对多通信，一个节点发送的数据能够被广播信道上所有的节点接收到。</p>
@@ -2783,10 +2783,10 @@
 
 <p>使用频分复用和时分复用进行通信，在通信的过程中主机会一直占用一部分信道资源。但是由于计算机数据的突发性质，通信过程没必要一直占用信道资源而不让出给其它用户使用，因此这两种方式对信道的利用率都不高。</p>
 <h3 id="3-统计时分复用"><a href="#3-统计时分复用" class="headerlink" title="3. 统计时分复用"></a>3. 统计时分复用</h3><p>是对时分复用的一种改进，不固定每个用户在时分复用帧中的位置，只要有数据就集中起来组成统计时分复用帧然后发送。</p>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/5999e5de-7c16-4b52-b3aa-6dc7b58c7894.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/5999e5de-7c16-4b52-b3aa-6dc7b58c7894.png" width="700"> </div><br>
 
 <h3 id="4-波分复用"><a href="#4-波分复用" class="headerlink" title="4. 波分复用"></a>4. 波分复用</h3><p>光的频分复用。由于光的频率很高，因此习惯上用波长而不是频率来表示所使用的光载波。</p>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/21041ec2-babb-483f-bf47-8b8148eec162.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/21041ec2-babb-483f-bf47-8b8148eec162.png" width="700"> </div><br>
 
 <h3 id="5-码分复用"><a href="#5-码分复用" class="headerlink" title="5. 码分复用"></a>5. 码分复用</h3><p>为每个用户分配 m bit 的码片，并且所有的码片正交，对于任意两个码片 <img data-src="https://latex.codecogs.com/gif.latex?\vec{S}"> 和 <img data-src="https://latex.codecogs.com/gif.latex?\vec{T}"> 有</p>
 <div align="center"><img data-src="https://latex.codecogs.com/gif.latex?\frac{1}{m}\vec{S}\cdot\vec{T}=0"></div> <br>
@@ -2800,7 +2800,7 @@
 <p>其中 <img data-src="https://latex.codecogs.com/gif.latex?\vec{S'}"> 为 <img data-src="https://latex.codecogs.com/gif.latex?\vec{S}"> 的反码。</p>
 <p>利用上面的式子我们知道，当接收端使用码片 <img data-src="https://latex.codecogs.com/gif.latex?\vec{S}"> 对接收到的数据进行内积运算时，结果为 0 的是其它用户发送的数据，结果为 1 的是用户发送的比特 1，结果为 -1 的是用户发送的比特 0。</p>
 <p>码分复用需要发送的数据量为原先的 m 倍。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/92ad9bae-7d02-43ba-8115-a9d6f530ca28.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/92ad9bae-7d02-43ba-8115-a9d6f530ca28.png" width="600"> </div><br>
 
 <h2 id="CSMA-CD-协议"><a href="#CSMA-CD-协议" class="headerlink" title="CSMA/CD 协议*"></a>CSMA/CD 协议*</h2><p>CSMA/CD 表示载波监听多点接入 / 碰撞检测。</p>
 <ul>
@@ -2810,10 +2810,10 @@
 </ul>
 <p>记端到端的传播时延为 τ，最先发送的站点最多经过 2τ 就可以知道是否发生了碰撞，称 2τ 为  <strong>争用期</strong> 。只有经过争用期之后还没有检测到碰撞，才能肯定这次发送不会发生碰撞。</p>
 <p>当发生碰撞时，站点要停止发送，等待一段时间再发送。这个时间采用  <strong>截断二进制指数退避算法</strong>  来确定。从离散的整数集合 {0, 1, .., (2<sup>k</sup>-1)} 中随机取出一个数，记作 r，然后取 r 倍的争用期作为重传等待时间。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/5aa82b89-f266-44da-887d-18f31f01d8ef.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/5aa82b89-f266-44da-887d-18f31f01d8ef.png" width="600"> </div><br>
 
 <h2 id="PPP-协议"><a href="#PPP-协议" class="headerlink" title="PPP 协议"></a>PPP 协议</h2><p>互联网用户通常需要连接到某个 ISP 之后才能接入到互联网，PPP 协议是用户计算机和 ISP 进行通信时所使用的数据链路层协议。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ddcf2327-8d84-425d-8535-121a94bcb88d.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ddcf2327-8d84-425d-8535-121a94bcb88d.jpg" width="600"> </div><br>
 
 <p>PPP 的帧格式：</p>
 <ul>
@@ -2822,14 +2822,14 @@
 <li>FCS 字段是使用 CRC 的检验序列</li>
 <li>信息部分的长度不超过 1500</li>
 </ul>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/69f16984-a66f-4288-82e4-79b4aa43e835.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/69f16984-a66f-4288-82e4-79b4aa43e835.jpg" width="500"> </div><br>
 
 <h2 id="MAC-地址"><a href="#MAC-地址" class="headerlink" title="MAC 地址"></a>MAC 地址</h2><p>MAC 地址是链路层地址，长度为 6 字节（48 位），用于唯一标识网络适配器（网卡）。</p>
 <p>一台主机拥有多少个适配器就有多少个 MAC 地址。例如笔记本电脑普遍存在无线网络适配器和有线网络适配器，因此就有两个 MAC 地址。</p>
 <h2 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h2><p>局域网是一种典型的广播信道，主要特点是网络为一个单位所拥有，且地理范围和站点数目均有限。</p>
 <p>主要有以太网、令牌环网、FDDI 和 ATM 等局域网技术，目前以太网占领着有线局域网市场。</p>
 <p>可以按照网络拓扑结构对局域网进行分类：</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a6026bb4-3daf-439f-b1ec-a5a24e19d2fb.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a6026bb4-3daf-439f-b1ec-a5a24e19d2fb.jpg" width="600"> </div><br>
 
 <h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网*"></a>以太网*</h2><p>以太网是一种星型拓扑结构局域网。</p>
 <p>早期使用集线器进行连接，集线器是一种物理层设备，作用于比特而不是帧，当一个比特到达接口时，集线器重新生成这个比特，并将其能量强度放大，从而扩大网络的传输距离，之后再将这个比特发送到其它所有接口。如果集线器同时收到同时从两个不同接口的帧，那么就发生了碰撞。</p>
@@ -2841,21 +2841,21 @@
 <li><strong>FCS</strong> ：帧检验序列，使用的是 CRC 检验方法；</li>
 <li><strong>前同步码</strong> ：只是为了计算 FCS 临时加入的，计算结束之后会丢弃。</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/50d38e84-238f-4081-8876-14ef6d7938b5.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/50d38e84-238f-4081-8876-14ef6d7938b5.jpg" width="600"> </div><br>
 
 <h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机*"></a>交换机*</h2><p>交换机具有自学习能力，学习的是交换表的内容，交换表中存储着 MAC 地址到接口的映射。</p>
 <p>正是由于这种自学习能力，因此交换机是一种即插即用设备，不需要网络管理员手动配置交换表内容。</p>
 <p>下图中，交换机有 4 个接口，主机 A 向主机 B 发送数据帧时，交换机把主机 A 到接口 1 的映射写入交换表中。为了发送数据帧到 B，先查交换表，此时没有主机 B 的表项，那么主机 A 就发送广播帧，主机 C 和主机 D 会丢弃该帧。主机 B 收下之后，查找交换表得到主机 A 映射的接口为 1，就发送数据帧到接口 1，同时交换机添加主机 B 到接口 3 的映射。</p>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/c9cfcd20-c901-435f-9a07-3e46830c359f.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/c9cfcd20-c901-435f-9a07-3e46830c359f.jpg" width="800"> </div><br>
 
 <h2 id="虚拟局域网"><a href="#虚拟局域网" class="headerlink" title="虚拟局域网"></a>虚拟局域网</h2><p>虚拟局域网可以建立与物理位置无关的逻辑组，只有在同一个虚拟局域网中的成员才会收到链路层广播信息。</p>
 <p>例如下图中 (A1, A2, A3, A4) 属于一个虚拟局域网，A1 发送的广播会被 A2、A3、A4 收到，而其它站点收不到。</p>
 <p>使用 VLAN 干线连接来建立虚拟局域网，每台交换机上的一个特殊接口被设置为干线接口，以互连 VLAN 交换机。IEEE 定义了一种扩展的以太网帧格式 802.1Q，它在标准以太网帧上加进了 4 字节首部 VLAN 标签，用于表示该帧属于哪一个虚拟局域网。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a74b70ac-323a-4b31-b4d5-90569b8a944b.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a74b70ac-323a-4b31-b4d5-90569b8a944b.png" width="500"> </div><br>
 
 <h1 id="四、网络层"><a href="#四、网络层" class="headerlink" title="四、网络层*"></a>四、网络层*</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>因为网络层是整个互联网的核心，因此应当让网络层尽可能简单。网络层向上只提供简单灵活的、无连接的、尽最大努力交互的数据报服务。</p>
 <p>使用 IP 协议，可以把异构的物理网络连接起来，使得在网络层看起来好像是一个统一的网络。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7b038838-c75b-4538-ae84-6299386704e5.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7b038838-c75b-4538-ae84-6299386704e5.jpg" width="500"> </div><br>
 
 <p>与 IP 协议配套使用的还有三个协议：</p>
 <ul>
@@ -2863,9 +2863,9 @@
 <li>网际控制报文协议 ICMP（Internet Control Message Protocol）</li>
 <li>网际组管理协议 IGMP（Internet Group Management Protocol）</li>
 </ul>
-<div align="center"> <img width="350" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/0a9f4125-b6ab-4e94-a807-fd7070ae726a.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/0a9f4125-b6ab-4e94-a807-fd7070ae726a.png" width="350"> </div><br>
 
-<h2 id="IP-数据报格式"><a href="#IP-数据报格式" class="headerlink" title="IP 数据报格式"></a>IP 数据报格式</h2><div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg"> </div><br>
+<h2 id="IP-数据报格式"><a href="#IP-数据报格式" class="headerlink" title="IP 数据报格式"></a>IP 数据报格式</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg" width="700"> </div><br>
 
 <ul>
 <li><p><strong>版本</strong>  : 有 4（IPv4）和 6（IPv6）两个值；</p>
@@ -2887,7 +2887,7 @@
 <li><p><strong>片偏移</strong>  : 和标识符一起，用于发生分片的情况。片偏移的单位为 8 字节。</p>
 </li>
 </ul>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/23ba890e-e11c-45e2-a20c-64d217f83430.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/23ba890e-e11c-45e2-a20c-64d217f83430.png" width="700"> </div><br>
 
 <h2 id="IP-地址编址方式"><a href="#IP-地址编址方式" class="headerlink" title="IP 地址编址方式"></a>IP 地址编址方式</h2><p>IP 地址的编址方式经历了三个历史阶段：</p>
 <ul>
@@ -2897,7 +2897,7 @@
 </ul>
 <h3 id="1-分类"><a href="#1-分类" class="headerlink" title="1. 分类"></a>1. 分类</h3><p>由两部分组成，网络号和主机号，其中不同分类具有不同的网络号长度，并且是固定的。</p>
 <p>IP 地址 ::= {&lt; 网络号 &gt;, &lt; 主机号 &gt;}</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/cbf50eb8-22b4-4528-a2e7-d187143d57f7.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/cbf50eb8-22b4-4528-a2e7-d187143d57f7.png" width="500"> </div><br>
 
 <h3 id="2-子网划分"><a href="#2-子网划分" class="headerlink" title="2. 子网划分"></a>2. 子网划分</h3><p>通过在主机号字段中拿一部分作为子网号，把两级 IP 地址划分为三级 IP 地址。</p>
 <p>IP 地址 ::= {&lt; 网络号 &gt;, &lt; 子网号 &gt;, &lt; 主机号 &gt;}</p>
@@ -2910,20 +2910,20 @@
 <p>一个 CIDR 地址块中有很多地址，一个 CIDR 表示的网络就可以表示原来的很多个网络，并且在路由表中只需要一个路由就可以代替原来的多个路由，减少了路由表项的数量。把这种通过使用网络前缀来减少路由表项的方式称为路由聚合，也称为  <strong>构成超网</strong> 。</p>
 <p>在路由表中的项目由“网络前缀”和“下一跳地址”组成，在查找时可能会得到不止一个匹配结果，应当采用最长前缀匹配来确定应该匹配哪一个。</p>
 <h2 id="地址解析协议-ARP"><a href="#地址解析协议-ARP" class="headerlink" title="地址解析协议 ARP"></a>地址解析协议 ARP</h2><p>网络层实现主机之间的通信，而链路层实现具体每段链路之间的通信。因此在通信过程中，IP 数据报的源地址和目的地址始终不变，而 MAC 地址随着链路的改变而改变。</p>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/66192382-558b-4b05-a35d-ac4a2b1a9811.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/66192382-558b-4b05-a35d-ac4a2b1a9811.jpg" width="700"> </div><br>
 
 <p>ARP 实现由 IP 地址得到 MAC 地址。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/b9d79a5a-e7af-499b-b989-f10483e71b8b.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/b9d79a5a-e7af-499b-b989-f10483e71b8b.jpg" width="500"> </div><br>
 
 <p>每个主机都有一个 ARP 高速缓存，里面有本局域网上的各主机和路由器的 IP 地址到 MAC 地址的映射表。</p>
 <p>如果主机 A 知道主机 B 的 IP 地址，但是 ARP 高速缓存中没有该 IP 地址到 MAC 地址的映射，此时主机 A 通过广播的方式发送 ARP 请求分组，主机 B 收到该请求后会发送 ARP 响应分组给主机 A 告知其 MAC 地址，随后主机 A 向其高速缓存中写入主机 B 的 IP 地址到 MAC 地址的映射。</p>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/8006a450-6c2f-498c-a928-c927f758b1d0.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/8006a450-6c2f-498c-a928-c927f758b1d0.png" width="700"> </div><br>
 
 <h2 id="网际控制报文协议-ICMP"><a href="#网际控制报文协议-ICMP" class="headerlink" title="网际控制报文协议 ICMP"></a>网际控制报文协议 ICMP</h2><p>ICMP 是为了更有效地转发 IP 数据报和提高交付成功的机会。它封装在 IP 数据报中，但是不属于高层协议。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e3124763-f75e-46c3-ba82-341e6c98d862.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e3124763-f75e-46c3-ba82-341e6c98d862.jpg" width="500"> </div><br>
 
 <p>ICMP 报文分为差错报告报文和询问报文。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/aa29cc88-7256-4399-8c7f-3cf4a6489559.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/aa29cc88-7256-4399-8c7f-3cf4a6489559.png" width="600"> </div><br>
 
 <h3 id="1-Ping"><a href="#1-Ping" class="headerlink" title="1. Ping"></a>1. Ping</h3><p>Ping 是 ICMP 的一个重要应用，主要用来测试两台主机之间的连通性。</p>
 <p>Ping 的原理是通过向目的主机发送 ICMP Echo 请求报文，目的主机收到之后会发送 Echo 回答报文。Ping 会根据时间和成功响应的次数估算出数据包往返时间以及丢包率。</p>
@@ -2944,15 +2944,15 @@
 </ul>
 <p>VPN 使用公用的互联网作为本机构各专用网之间的通信载体。专用指机构内的主机只与本机构内的其它主机通信；虚拟指“好像是”，而实际上并不是，它有经过公用的互联网。</p>
 <p>下图中，场所 A 和 B 的通信经过互联网，如果场所 A 的主机 X 要和另一个场所 B 的主机 Y 通信，IP 数据报的源地址是 10.1.0.1，目的地址是 10.2.0.3。数据报先发送到与互联网相连的路由器 R1，R1 对内部数据进行加密，然后重新加上数据报的首部，源地址是路由器 R1 的全球地址 125.1.2.3，目的地址是路由器 R2 的全球地址 194.4.5.6。路由器 R2 收到数据报后将数据部分进行解密，恢复原来的数据报，此时目的地址为 10.2.0.3，就交付给 Y。</p>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/1556770b-8c01-4681-af10-46f1df69202c.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/1556770b-8c01-4681-af10-46f1df69202c.jpg" width="800"> </div><br>
 
 <h2 id="网络地址转换-NAT"><a href="#网络地址转换-NAT" class="headerlink" title="网络地址转换 NAT"></a>网络地址转换 NAT</h2><p>专用网内部的主机使用本地 IP 地址又想和互联网上的主机通信时，可以使用 NAT 来将本地 IP 转换为全球 IP。</p>
 <p>在以前，NAT 将本地 IP 和全球 IP 一一对应，这种方式下拥有 n 个全球 IP 地址的专用网内最多只可以同时有 n 台主机接入互联网。为了更有效地利用全球 IP 地址，现在常用的 NAT 转换表把运输层的端口号也用上了，使得多个专用网内部的主机共用一个全球 IP 地址。使用端口号的 NAT 也叫做网络地址与端口转换 NAPT。</p>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2719067e-b299-4639-9065-bed6729dbf0b.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2719067e-b299-4639-9065-bed6729dbf0b.png" width> </div><br>
 
 <h2 id="路由器的结构"><a href="#路由器的结构" class="headerlink" title="路由器的结构"></a>路由器的结构</h2><p>路由器从功能上可以划分为：路由选择和分组转发。</p>
 <p>分组转发结构由三个部分组成：交换结构、一组输入端口和一组输出端口。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/c3369072-c740-43b0-b276-202bd1d3960d.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/c3369072-c740-43b0-b276-202bd1d3960d.jpg" width="600"> </div><br>
 
 <h2 id="路由器分组转发流程"><a href="#路由器分组转发流程" class="headerlink" title="路由器分组转发流程"></a>路由器分组转发流程</h2><ul>
 <li>从数据报的首部提取目的主机的 IP 地址 D，得到目的网络地址 N。</li>
@@ -2962,7 +2962,7 @@
 <li>若路由表中有一个默认路由，则把数据报传送给路由表中所指明的默认路由器；</li>
 <li>报告转发分组出错。</li>
 </ul>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/1ab49e39-012b-4383-8284-26570987e3c4.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/1ab49e39-012b-4383-8284-26570987e3c4.jpg" width="800"> </div><br>
 
 <h2 id="路由选择协议"><a href="#路由选择协议" class="headerlink" title="路由选择协议"></a>路由选择协议</h2><p>路由选择协议都是自适应的，能随着网络通信量和拓扑结构的变化而自适应地进行调整。</p>
 <p>互联网可以划分为许多较小的自治系统 AS，一个 AS 可以使用一种和别的 AS 不同的路由选择协议。</p>
@@ -3002,7 +3002,7 @@
 </ul>
 <p>BGP 只能寻找一条比较好的路由，而不是最佳路由。</p>
 <p>每个 AS 都必须配置 BGP 发言人，通过在两个相邻 BGP 发言人之间建立 TCP 连接来交换路由信息。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/9cd0ae20-4fb5-4017-a000-f7d3a0eb3529.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/9cd0ae20-4fb5-4017-a000-f7d3a0eb3529.png" width="600"> </div><br>
 
 <h1 id="五、运输层"><a href="#五、运输层" class="headerlink" title="五、运输层*"></a>五、运输层*</h1><p>网络层只把分组发送到目的主机，但是真正通信的并不是主机而是主机中的进程。运输层提供了进程间的逻辑通信，运输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个运输层实体之间有一条端到端的逻辑通信信道。</p>
 <h2 id="UDP-和-TCP-的特点"><a href="#UDP-和-TCP-的特点" class="headerlink" title="UDP 和 TCP 的特点"></a>UDP 和 TCP 的特点</h2><ul>
@@ -3011,10 +3011,10 @@
 <li><p>传输控制协议 TCP（Transmission Control Protocol）是面向连接的，提供可靠交付，有流量控制，拥塞控制，提供全双工通信，面向字节流（把应用层传下来的报文看成字节流，把字节流组织成大小不等的数据块），每一条 TCP 连接只能是点对点的（一对一）。</p>
 </li>
 </ul>
-<h2 id="UDP-首部格式"><a href="#UDP-首部格式" class="headerlink" title="UDP 首部格式"></a>UDP 首部格式</h2><div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/d4c3a4a1-0846-46ec-9cc3-eaddfca71254.jpg"> </div><br>
+<h2 id="UDP-首部格式"><a href="#UDP-首部格式" class="headerlink" title="UDP 首部格式"></a>UDP 首部格式</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/d4c3a4a1-0846-46ec-9cc3-eaddfca71254.jpg" width="600"> </div><br>
 
 <p>首部字段只有 8 个字节，包括源端口、目的端口、长度、检验和。12 字节的伪首部是为了计算检验和临时添加的。</p>
-<h2 id="TCP-首部格式"><a href="#TCP-首部格式" class="headerlink" title="TCP 首部格式"></a>TCP 首部格式</h2><div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/55dc4e84-573d-4c13-a765-52ed1dd251f9.png"> </div><br>
+<h2 id="TCP-首部格式"><a href="#TCP-首部格式" class="headerlink" title="TCP 首部格式"></a>TCP 首部格式</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/55dc4e84-573d-4c13-a765-52ed1dd251f9.png" width="700"> </div><br>
 
 <ul>
 <li><p><strong>序号</strong>  ：用于对字节流进行编号，例如序号为 301，表示第一个字节的编号为 301，如果携带的数据长度为 100 字节，那么下一个报文段的序号应为 401。</p>
@@ -3032,7 +3032,7 @@
 <li><p><strong>窗口</strong>  ：窗口值作为接收方让发送方设置其发送窗口的依据。之所以要有这个限制，是因为接收方的数据缓存空间是有限的。</p>
 </li>
 </ul>
-<h2 id="TCP-的三次握手"><a href="#TCP-的三次握手" class="headerlink" title="TCP 的三次握手"></a>TCP 的三次握手</h2><div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e92d0ebc-7d46-413b-aec1-34a39602f787.png"> </div><br>
+<h2 id="TCP-的三次握手"><a href="#TCP-的三次握手" class="headerlink" title="TCP 的三次握手"></a>TCP 的三次握手</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e92d0ebc-7d46-413b-aec1-34a39602f787.png" width="600"> </div><br>
 
 <p>假设 A 为客户端，B 为服务器端。</p>
 <ul>
@@ -3050,7 +3050,7 @@
 <p><strong>三次握手的原因</strong></p>
 <p>第三次握手是为了防止失效的连接请求到达服务器，让服务器错误打开连接。</p>
 <p>客户端发送的连接请求如果在网络中滞留，那么就会隔很长一段时间才能收到服务器端发回的连接确认。客户端等待一个超时重传时间之后，就会重新请求连接。但是这个滞留的连接请求最后还是会到达服务器，如果不进行三次握手，那么服务器就会打开两个连接。如果有第三次握手，客户端会忽略服务器之后发送的对滞留连接请求的连接确认，不进行第三次握手，因此就不会再次打开连接。</p>
-<h2 id="TCP-的四次挥手"><a href="#TCP-的四次挥手" class="headerlink" title="TCP 的四次挥手"></a>TCP 的四次挥手</h2><div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/f87afe72-c2df-4c12-ac03-9b8d581a8af8.jpg"> </div><br>
+<h2 id="TCP-的四次挥手"><a href="#TCP-的四次挥手" class="headerlink" title="TCP 的四次挥手"></a>TCP 的四次挥手</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/f87afe72-c2df-4c12-ac03-9b8d581a8af8.jpg" width="600"> </div><br>
 
 <p>以下描述不讨论序号和确认号，因为序号和确认号的规则比较简单。并且不讨论 ACK，因为 ACK 在连接建立之后都为 1。</p>
 <ul>
@@ -3086,12 +3086,12 @@
 <h2 id="TCP-滑动窗口"><a href="#TCP-滑动窗口" class="headerlink" title="TCP 滑动窗口"></a>TCP 滑动窗口</h2><p>窗口是缓存的一部分，用来暂时存放字节流。发送方和接收方各有一个窗口，接收方通过 TCP 报文段中的窗口字段告诉发送方自己的窗口大小，发送方根据这个值和其它信息设置自己的窗口大小。</p>
 <p>发送窗口内的字节都允许被发送，接收窗口内的字节都允许被接收。如果发送窗口左部的字节已经发送并且收到了确认，那么就将发送窗口向右滑动一定距离，直到左部第一个字节不是已发送并且已确认的状态；接收窗口的滑动类似，接收窗口左部字节已经发送确认并交付主机，就向右滑动接收窗口。</p>
 <p>接收窗口只会对窗口内最后一个按序到达的字节进行确认，例如接收窗口已经收到的字节为 {31, 34, 35}，其中 {31} 按序到达，而 {34, 35} 就不是，因此只对字节 31 进行确认。发送方得到一个字节的确认之后，就知道这个字节之前的所有字节都已经被接收。</p>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a3253deb-8d21-40a1-aae4-7d178e4aa319.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a3253deb-8d21-40a1-aae4-7d178e4aa319.jpg" width="800"> </div><br>
 
 <h2 id="TCP-流量控制"><a href="#TCP-流量控制" class="headerlink" title="TCP 流量控制"></a>TCP 流量控制</h2><p>流量控制是为了控制发送方发送速率，保证接收方来得及接收。</p>
 <p>接收方发送的确认报文中的窗口字段可以用来控制发送方窗口大小，从而影响发送方的发送速率。将窗口字段设置为 0，则发送方不能发送数据。</p>
 <h2 id="TCP-拥塞控制"><a href="#TCP-拥塞控制" class="headerlink" title="TCP 拥塞控制"></a>TCP 拥塞控制</h2><p>如果网络出现拥塞，分组将会丢失，此时发送方会继续重传，从而导致网络拥塞程度更高。因此当出现拥塞时，应当控制发送方的速率。这一点和流量控制很像，但是出发点不同。流量控制是为了让接收方能来得及接收，而拥塞控制是为了降低整个网络的拥塞程度。</p>
-<div align="center"> <img width="500" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/51e2ed95-65b8-4ae9-8af3-65602d452a25.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/51e2ed95-65b8-4ae9-8af3-65602d452a25.jpg" width="500"> </div><br>
 
 <p>TCP 主要通过四种算法来进行拥塞控制：慢开始、拥塞避免、快重传、快恢复。</p>
 <p>发送方需要维护一个叫做拥塞窗口（cwnd）的状态变量，注意拥塞窗口与发送方窗口的区别：拥塞窗口只是一个状态变量，实际决定发送方能发送多少数据的是发送方窗口。</p>
@@ -3100,7 +3100,7 @@
 <li>接收方有足够大的接收缓存，因此不会发生流量控制；</li>
 <li>虽然 TCP 的窗口基于字节，但是这里设窗口的大小单位为报文段。</li>
 </ul>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/910f613f-514f-4534-87dd-9b4699d59d31.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/910f613f-514f-4534-87dd-9b4699d59d31.png" width="800"> </div><br>
 
 <h3 id="1-慢开始与拥塞避免"><a href="#1-慢开始与拥塞避免" class="headerlink" title="1. 慢开始与拥塞避免"></a>1. 慢开始与拥塞避免</h3><p>发送的最初执行慢开始，令 cwnd=1，发送方只能发送 1 个报文段；当收到确认后，将 cwnd 加倍，因此之后发送方能够发送的报文段数量为：2、4、8 …</p>
 <p>注意到慢开始每个轮次都将 cwnd 加倍，这样会让 cwnd 增长速度非常快，从而使得发送方发送的速度增长速度过快，网络拥塞的可能也就更高。设置一个慢开始门限 ssthresh，当 cwnd &gt;= ssthresh 时，进入拥塞避免，每个轮次只将 cwnd 加 1。</p>
@@ -3109,7 +3109,7 @@
 <p>在发送方，如果收到三个重复确认，那么可以知道下一个报文段丢失，此时执行快重传，立即重传下一个报文段。例如收到三个 M<sub>2</sub>，则 M<sub>3</sub> 丢失，立即重传 M<sub>3</sub>。</p>
 <p>在这种情况下，只是丢失个别报文段，而不是网络拥塞。因此执行快恢复，令 ssthresh = cwnd/2 ，cwnd = ssthresh，注意到此时直接进入拥塞避免。</p>
 <p>慢开始和快恢复的快慢指的是 cwnd 的设定值，而不是 cwnd 的增长速率。慢开始 cwnd 设定为 1，而快恢复 cwnd 设定为 ssthresh。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/f61b5419-c94a-4df1-8d4d-aed9ae8cc6d5.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/f61b5419-c94a-4df1-8d4d-aed9ae8cc6d5.png" width="600"> </div><br>
 
 <h1 id="六、应用层"><a href="#六、应用层" class="headerlink" title="六、应用层"></a>六、应用层</h1><h2 id="域名系统"><a href="#域名系统" class="headerlink" title="域名系统"></a>域名系统</h2><p>DNS 是一个分布式数据库，提供了主机名和 IP 地址之间相互转换的服务。这里的分布式数据库是指，每个站点只保留它自己的那部分数据。</p>
 <p>域名具有层次结构，从上到下依次为：根域名、顶级域名、二级域名。</p>
@@ -3152,10 +3152,10 @@
 <p>TELNET 可以适应许多计算机和操作系统的差异，例如不同操作系统系统的换行符定义。</p>
 <h2 id="电子邮件协议"><a href="#电子邮件协议" class="headerlink" title="电子邮件协议"></a>电子邮件协议</h2><p>一个电子邮件系统由三部分组成：用户代理、邮件服务器以及邮件协议。</p>
 <p>邮件协议包含发送协议和读取协议，发送协议常用 SMTP，读取协议常用 POP3 和 IMAP。</p>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7b3efa99-d306-4982-8cfb-e7153c33aab4.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7b3efa99-d306-4982-8cfb-e7153c33aab4.png" width="700"> </div><br>
 
 <h3 id="1-SMTP"><a href="#1-SMTP" class="headerlink" title="1. SMTP"></a>1. SMTP</h3><p>SMTP 只能发送 ASCII 码，而互联网邮件扩充 MIME 可以发送二进制文件。MIME 并没有改动或者取代 SMTP，而是增加邮件主体的结构，定义了非 ASCII 码的编码规则。</p>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ed5522bb-3a60-481c-8654-43e7195a48fe.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ed5522bb-3a60-481c-8654-43e7195a48fe.png" width> </div><br>
 
 <h3 id="2-POP3"><a href="#2-POP3" class="headerlink" title="2. POP3"></a>2. POP3</h3><p>POP3 的特点是只要用户从服务器上读取了邮件，就把该邮件删除。</p>
 <h3 id="3-IMAP"><a href="#3-IMAP" class="headerlink" title="3. IMAP"></a>3. IMAP</h3><p>IMAP 协议中客户端和服务器上的邮件保持同步，如果不去手动删除邮件，那么服务器上的邮件也不会被删除。IMAP 这种做法可以让用户随时随地去访问服务器上的邮件。</p>

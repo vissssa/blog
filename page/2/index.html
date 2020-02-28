@@ -17,36 +17,10 @@
   <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
   <script src="/blog/lib/pace/pace.min.js"></script>
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://vissssa.github.io/blog').hostname,
-    root: '/blog/',
-    scheme: 'Gemini',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":true,"show_result":true,"style":"mac"},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: true,
-    pangu: true,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    sidebarPadding: 40
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vissssa.github.io","root":"/blog/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="python, flask, linux, 架构, 生活, 科技">
 <meta property="og:type" content="website">
@@ -72,9 +46,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
+    isPost: false
   };
 </script>
 
@@ -126,6 +98,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -139,11 +119,9 @@
       
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -191,7 +169,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -229,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/d445bba0/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/d445bba0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -260,7 +238,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,9 +246,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index">
-                    <span itemprop="name">deep</span>
-                  </a>
+                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
                 </span>
             </span>
 
@@ -299,7 +275,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          python的一个热点
+          <p>python的一个热点</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/d445bba0/">
@@ -326,7 +302,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/99a22ef9/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/99a22ef9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -357,7 +333,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -365,9 +341,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/network/" itemprop="url" rel="index">
-                    <span itemprop="name">network</span>
-                  </a>
+                  <a href="/blog/categories/network/" itemprop="url" rel="index"><span itemprop="name">network</span></a>
                 </span>
             </span>
 
@@ -396,7 +370,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          HTTP方面知识，来自一个repo
+          <p>HTTP方面知识，来自一个repo</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/99a22ef9/">
@@ -423,7 +397,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/887a2def/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/887a2def/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -454,7 +428,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -462,9 +436,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index">
-                    <span itemprop="name">deep</span>
-                  </a>
+                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
                 </span>
             </span>
 
@@ -493,7 +465,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          大量python3的精巧使用方法，可以大幅减少开发时间以及运行效率（时间和空间复杂度），大部分的东西包括内建和第三方模块需要记录，所以写这个笔记。
+          <p>大量python3的精巧使用方法，可以大幅减少开发时间以及运行效率（时间和空间复杂度），大部分的东西包括内建和第三方模块需要记录，所以写这个笔记。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/887a2def/">
@@ -520,7 +492,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/523ad239/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/523ad239/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -551,7 +523,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -559,9 +531,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/cloud/" itemprop="url" rel="index">
-                    <span itemprop="name">cloud</span>
-                  </a>
+                  <a href="/blog/categories/cloud/" itemprop="url" rel="index"><span itemprop="name">cloud</span></a>
                 </span>
             </span>
 
@@ -590,7 +560,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          k8s的一些知识，关于pause容器
+          <p>k8s的一些知识，关于pause容器</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/523ad239/">
@@ -617,7 +587,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/5e430375/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/5e430375/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -648,7 +618,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -656,9 +626,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index">
-                    <span itemprop="name">deep</span>
-                  </a>
+                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
                 </span>
             </span>
 
@@ -687,7 +655,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          用来加密代码使用
+          <p>用来加密代码使用</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/5e430375/">
@@ -714,7 +682,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/36f1f294/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/36f1f294/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -745,7 +713,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -753,9 +721,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/cloud/" itemprop="url" rel="index">
-                    <span itemprop="name">cloud</span>
-                  </a>
+                  <a href="/blog/categories/cloud/" itemprop="url" rel="index"><span itemprop="name">cloud</span></a>
                 </span>
             </span>
 
@@ -784,7 +750,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          使用rancher来安装和部署k8s，官方一直在维护，也很好用
+          <p>使用rancher来安装和部署k8s，官方一直在维护，也很好用</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/36f1f294/">
@@ -811,7 +777,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/dea34e62/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/dea34e62/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -842,7 +808,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -850,9 +816,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/env/" itemprop="url" rel="index">
-                    <span itemprop="name">env</span>
-                  </a>
+                  <a href="/blog/categories/env/" itemprop="url" rel="index"><span itemprop="name">env</span></a>
                 </span>
             </span>
 
@@ -881,7 +845,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在给电信局部署深度学习监测安全问题时部署的文档笔记
+          <p>在给电信局部署深度学习监测安全问题时部署的文档笔记</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/dea34e62/">
@@ -908,7 +872,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/48352a80/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/48352a80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -939,7 +903,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -947,9 +911,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/env/" itemprop="url" rel="index">
-                    <span itemprop="name">env</span>
-                  </a>
+                  <a href="/blog/categories/env/" itemprop="url" rel="index"><span itemprop="name">env</span></a>
                 </span>
             </span>
 
@@ -978,7 +940,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在给电信局部署深度学习监测安全问题时部署的文档笔记
+          <p>在给电信局部署深度学习监测安全问题时部署的文档笔记</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/48352a80/">
@@ -1005,7 +967,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/b92a20d6/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/b92a20d6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -1036,7 +998,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1044,9 +1006,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/env/" itemprop="url" rel="index">
-                    <span itemprop="name">env</span>
-                  </a>
+                  <a href="/blog/categories/env/" itemprop="url" rel="index"><span itemprop="name">env</span></a>
                 </span>
             </span>
 
@@ -1075,7 +1035,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          nodejs默认在各个系统都是比较老的（或者说更新太快了），一些安装的经验
+          <p>nodejs默认在各个系统都是比较老的（或者说更新太快了），一些安装的经验</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/b92a20d6/">
@@ -1102,7 +1062,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/eb77891e/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/eb77891e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -1133,7 +1093,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1141,9 +1101,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/env/" itemprop="url" rel="index">
-                    <span itemprop="name">env</span>
-                  </a>
+                  <a href="/blog/categories/env/" itemprop="url" rel="index"><span itemprop="name">env</span></a>
                 </span>
             </span>
 
@@ -1172,7 +1130,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          运维方面经验
+          <p>运维方面经验</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/posts/eb77891e/">
@@ -1207,6 +1165,28 @@
           </div>
           
 
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
         </div>
           
   
@@ -1235,9 +1215,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a href="/about/">
     <img class="site-author-image" itemprop="image" alt="vissssa" src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-  </a>
   <p class="site-author-name" itemprop="name">vissssa</p>
   <div class="site-description" itemprop="description">python, flask, linux, 架构, 生活, 科技</div>
 </div>
@@ -1320,28 +1298,8 @@
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
-
-<div>
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("11/06/2019 00:00:00");
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-    }
-setInterval("createtime()",250);
-</script>
-</div>
 
         
 <div class="busuanzi-count">
@@ -1372,7 +1330,6 @@ setInterval("createtime()",250);
 
 
 
-        
       </div>
     </footer>
   </div>
@@ -1433,7 +1390,7 @@ window.addEventListener('pjax:success', () => {
       script.async = false;
     }
     if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
+      script.setAttribute('pjax', '');
     }
     if (code !== '') {
       script.appendChild(document.createTextNode(code));
@@ -1445,6 +1402,7 @@ window.addEventListener('pjax:success', () => {
   if (CONFIG.motion.enable) {
     NexT.motion.integrator
       .init()
+      .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
@@ -1485,7 +1443,6 @@ window.addEventListener('pjax:success', () => {
 
 
     <div id="pjax">
-
   
 
   

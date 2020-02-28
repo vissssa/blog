@@ -17,36 +17,10 @@
   <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
   <script src="/blog/lib/pace/pace.min.js"></script>
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://vissssa.github.io/blog').hostname,
-    root: '/blog/',
-    scheme: 'Gemini',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":true,"show_result":true,"style":"mac"},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: true,
-    pangu: true,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    sidebarPadding: 40
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vissssa.github.io","root":"/blog/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="HTTP方面知识，来自一个repo">
 <meta property="og:type" content="article">
@@ -72,7 +46,7 @@
 <meta property="og:image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png">
 <meta property="og:image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/_u4E0B_u8F7D.png">
 <meta property="article:published_time" content="2019-05-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-28T06:24:12.767Z">
+<meta property="article:modified_time" content="2020-02-28T07:05:43.347Z">
 <meta property="article:author" content="vissssa">
 <meta property="article:tag" content="http">
 <meta property="article:tag" content="interview">
@@ -87,9 +61,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
@@ -141,6 +113,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -154,11 +134,9 @@
       
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -206,7 +184,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -244,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/99a22ef9/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/99a22ef9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -274,7 +252,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,9 +260,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/network/" itemprop="url" rel="index">
-                    <span itemprop="name">network</span>
-                  </a>
+                  <a href="/blog/categories/network/" itemprop="url" rel="index"><span itemprop="name">network</span></a>
                 </span>
             </span>
 
@@ -327,11 +303,11 @@
 <li>URL（Uniform Resource Locator，统一资源定位符）</li>
 <li>URN（Uniform Resource Name，统一资源名称）</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/urlnuri.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/urlnuri.jpg" width="600"> </div><br>
 
-<h2 id="请求和响应报文"><a href="#请求和响应报文" class="headerlink" title="请求和响应报文"></a>请求和响应报文</h2><h3 id="1-请求报文"><a href="#1-请求报文" class="headerlink" title="1. 请求报文"></a>1. 请求报文</h3><div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_RequestMessageExample.png"> </div><br>
+<h2 id="请求和响应报文"><a href="#请求和响应报文" class="headerlink" title="请求和响应报文"></a>请求和响应报文</h2><h3 id="1-请求报文"><a href="#1-请求报文" class="headerlink" title="1. 请求报文"></a>1. 请求报文</h3><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_RequestMessageExample.png" width> </div><br>
 
-<h3 id="2-响应报文"><a href="#2-响应报文" class="headerlink" title="2. 响应报文"></a>2. 响应报文</h3><div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_ResponseMessageExample.png"> </div><br>
+<h3 id="2-响应报文"><a href="#2-响应报文" class="headerlink" title="2. 响应报文"></a>2. 响应报文</h3><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP_ResponseMessageExample.png" width> </div><br>
 
 <h1 id="二、HTTP-方法"><a href="#二、HTTP-方法" class="headerlink" title="二、HTTP 方法"></a>二、HTTP 方法</h1><p>客户端发送的  <strong>请求报文</strong>  第一行为请求行，包含了方法字段。</p>
 <h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><blockquote>
@@ -377,7 +353,7 @@
 <p>使用 SSL（Secure Sockets Layer，安全套接层）和 TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONNECT www.example.com:443 HTTP/1.1</span><br></pre></td></tr></table></figure>
 
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" width> </div><br>
 
 <h2 id="TRACE"><a href="#TRACE" class="headerlink" title="TRACE"></a>TRACE</h2><blockquote>
 <p>追踪路径</p>
@@ -781,7 +757,7 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT</span><br></pre></td></tr></table></figure>
 
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP1_x_Connections.png"> </div><br>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/HTTP1_x_Connections.png" width="800"> </div><br>
 
 <h3 id="1-短连接与长连接"><a href="#1-短连接与长连接" class="headerlink" title="1. 短连接与长连接"></a>1. 短连接与长连接</h3><p>当浏览器访问一个包含多张图片的 HTML 页面时，除了请求访问 HTML 页面资源，还会请求图片资源。如果每进行一次 HTTP 通信就要新建一个 TCP 连接，那么开销会很大。</p>
 <p>长连接只需要建立一次 TCP 连接就能进行多次 HTTP 通信。</p>
@@ -842,12 +818,12 @@
 <ul>
 <li>用户察觉得到正向代理的存在。</li>
 </ul>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" width> </div><br>
 
 <ul>
 <li>而反向代理一般位于内部网络中，用户察觉不到。</li>
 </ul>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2d09a847-b854-439c-9198-b29c65810944.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2d09a847-b854-439c-9198-b29c65810944.png" width> </div><br>
 
 <h3 id="2-网关"><a href="#2-网关" class="headerlink" title="2. 网关"></a>2. 网关</h3><p>与代理服务器不同的是，网关服务器会将 HTTP 转化为其它协议进行通信，从而请求其它非 HTTP 服务器的服务。</p>
 <h3 id="3-隧道"><a href="#3-隧道" class="headerlink" title="3. 隧道"></a>3. 隧道</h3><p>使用 SSL 等加密手段，在客户端和服务器之间建立一条安全的通信线路。</p>
@@ -859,14 +835,14 @@
 </ul>
 <p>HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPs 使用了隧道进行通信。</p>
 <p>通过使用 SSL，HTTPs 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。</p>
-<div align="center"> <img width="700" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ssl-offloading.jpg"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/ssl-offloading.jpg" width="700"> </div><br>
 
 <h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><h3 id="1-对称密钥加密"><a href="#1-对称密钥加密" class="headerlink" title="1. 对称密钥加密"></a>1. 对称密钥加密</h3><p>对称密钥加密（Symmetric-Key Encryption），加密和解密使用同一密钥。</p>
 <ul>
 <li>优点：运算速度快；</li>
 <li>缺点：无法安全地将密钥传输给通信方。</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" width="600"> </div><br>
 
 <h3 id="2-非对称密钥加密"><a href="#2-非对称密钥加密" class="headerlink" title="2.非对称密钥加密"></a>2.非对称密钥加密</h3><p>非对称密钥加密，又称公开密钥加密（Public-Key Encryption），加密和解密使用不同的密钥。</p>
 <p>公开密钥所有人都可以获得，通信发送方获得接收方的公开密钥之后，就可以使用公开密钥进行加密，接收方收到通信内容后使用私有密钥解密。</p>
@@ -875,17 +851,17 @@
 <li>优点：可以更安全地将公开密钥传输给通信发送方；</li>
 <li>缺点：运算速度慢。</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" width="600"> </div><br>
 
 <h3 id="3-HTTPs-采用的加密方式"><a href="#3-HTTPs-采用的加密方式" class="headerlink" title="3. HTTPs 采用的加密方式"></a>3. HTTPs 采用的加密方式</h3><p>HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。（下图中的 Session Key 就是对称密钥）</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/How-HTTPS-Works.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/How-HTTPS-Works.png" width="600"> </div><br>
 
 <h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><p>通过使用  <strong>证书</strong>  来对通信方进行认证。</p>
 <p>数字证书认证机构（CA，Certificate Authority）是客户端与服务器双方都可信赖的第三方机构。</p>
 <p>服务器的运营人员向 CA 提出公开密钥的申请，CA 在判明提出申请者的身份之后，会对已申请的公开密钥做数字签名，然后分配这个已签名的公开密钥，并将该公开密钥放入公开密钥证书后绑定在一起。</p>
 <p>进行 HTTPs 通信时，服务器会把证书发送给客户端。客户端取得其中的公开密钥之后，先使用数字签名进行验证，如果验证通过，就可以开始通信了。</p>
 <p>通信开始时，客户端需要使用服务器的公开密钥将自己的私有密钥传输给服务器，之后再进行对称密钥加密。</p>
-<div align="center"> <img width data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2017-06-11-ca.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/2017-06-11-ca.png" width> </div><br>
 
 <h2 id="完整性保护"><a href="#完整性保护" class="headerlink" title="完整性保护"></a>完整性保护</h2><p>SSL 提供报文摘要功能来进行完整性保护。</p>
 <p>HTTP 也提供了 MD5 报文摘要功能，但不是安全的。例如报文内容被篡改之后，同时重新计算 MD5 的值，通信接收方是无法意识到发生了篡改。</p>
@@ -902,7 +878,7 @@
 <li>不支持有效的资源优先级，致使底层 TCP 连接的利用率低下。</li>
 </ul>
 <h2 id="二进制分帧层"><a href="#二进制分帧层" class="headerlink" title="二进制分帧层"></a>二进制分帧层</h2><p>HTTP/2.0 将报文分成 HEADERS 帧和 DATA 帧，它们都是二进制格式的。</p>
-<div align="center"> <img width="400" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" width="400"> </div><br>
 
 <p>在通信过程中，只会有一个 TCP 连接存在，它承载了任意数量的双向数据流（Stream）。</p>
 <ul>
@@ -910,15 +886,15 @@
 <li>消息（Message）是与逻辑请求或响应消息对应的完整的一系列帧。</li>
 <li>帧（Fram）是最小的通信单位，来自不同数据流的帧可以交错发送，然后再根据每个帧头的数据流标识符重新组装。</li>
 </ul>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/af198da1-2480-4043-b07f-a3b91a88b815.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" width="600"> </div><br>
 
 <h2 id="服务端推送"><a href="#服务端推送" class="headerlink" title="服务端推送"></a>服务端推送</h2><p>HTTP/2.0 在客户端请求一个资源时，会把相关的资源一起发送给客户端，客户端就不需要再次发起请求了。例如客户端请求 page.html 页面，服务端就把 script.js 和 style.css 等与之相关的资源一起发给客户端。</p>
-<div align="center"> <img width="800" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" width="800"> </div><br>
 
 <h2 id="首部压缩"><a href="#首部压缩" class="headerlink" title="首部压缩"></a>首部压缩</h2><p>HTTP/1.1 的首部带有大量信息，而且每次都要重复发送。</p>
 <p>HTTP/2.0 要求客户端和服务器同时维护和更新一个包含之前见过的首部字段表，从而避免了重复传输。</p>
 <p>不仅如此，HTTP/2.0 也使用 Huffman 编码对首部字段进行压缩。</p>
-<div align="center"> <img width="600" data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/_u4E0B_u8F7D.png"> </div><br>
+<div align="center"> <img data-src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/pics/_u4E0B_u8F7D.png" width="600"> </div><br>
 
 <h1 id="八、GET-和-POST-比较"><a href="#八、GET-和-POST-比较" class="headerlink" title="八、GET 和 POST 比较"></a>八、GET 和 POST 比较</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>GET 用于获取资源，而 POST 用于传输实体主体。</p>
 <h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>GET 和 POST 的请求都能使用额外的参数，但是 GET 的参数是以查询字符串出现在 URL 中，而 POST 的参数存储在实体主体中。不能因为 POST 参数存储在实体主体中就认为它的安全性更高，因为照样可以通过一些抓包工具（Fiddler）查看。</p>
@@ -1033,7 +1009,7 @@
 
         <div class="reward-container">
   <div>打赏一杯咖啡</div>
-  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     打赏
   </button>
   <div id="qr" style="display: none;">
@@ -1103,6 +1079,28 @@
           
     <div class="comments" id="gitalk-container"></div>
 
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
         </div>
           
   
@@ -1132,9 +1130,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a href="/about/">
     <img class="site-author-image" itemprop="image" alt="vissssa" src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-  </a>
   <p class="site-author-name" itemprop="name">vissssa</p>
   <div class="site-description" itemprop="description">python, flask, linux, 架构, 生活, 科技</div>
 </div>
@@ -1217,28 +1213,8 @@
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
-
-<div>
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("11/06/2019 00:00:00");
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-    }
-setInterval("createtime()",250);
-</script>
-</div>
 
         
 <div class="busuanzi-count">
@@ -1269,7 +1245,6 @@ setInterval("createtime()",250);
 
 
 
-        
       </div>
     </footer>
   </div>
@@ -1330,7 +1305,7 @@ window.addEventListener('pjax:success', () => {
       script.async = false;
     }
     if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
+      script.setAttribute('pjax', '');
     }
     if (code !== '') {
       script.appendChild(document.createTextNode(code));
@@ -1342,6 +1317,7 @@ window.addEventListener('pjax:success', () => {
   if (CONFIG.motion.enable) {
     NexT.motion.integrator
       .init()
+      .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
@@ -1382,7 +1358,6 @@ window.addEventListener('pjax:success', () => {
 
 
     <div id="pjax">
-
   
 
   
@@ -1390,19 +1365,21 @@ window.addEventListener('pjax:success', () => {
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
-      clientID: '1cb5d474d77189d86ba0',
+      clientID    : '1cb5d474d77189d86ba0',
       clientSecret: '568f0c839b99394f56a213db8d26afbb12e3dad1',
-      repo: 'vissssa',
-      owner: 'vissssa',
-      admin: ['vissssa'],
-      id: '07cd05ad274ae4b15d6512e70944aaf0',
+      repo        : 'vissssa',
+      owner       : 'vissssa',
+      admin       : ['vissssa'],
+      id          : '07cd05ad274ae4b15d6512e70944aaf0',
         language: 'zh-CN',
-      distractionFreeMode: 'true'
+      distractionFreeMode: true
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
+});
 </script>
 
     </div>

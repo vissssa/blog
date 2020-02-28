@@ -17,36 +17,10 @@
   <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
   <script src="/blog/lib/pace/pace.min.js"></script>
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://vissssa.github.io/blog').hostname,
-    root: '/blog/',
-    scheme: 'Gemini',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":true,"show_result":true,"style":"mac"},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: true,
-    pangu: true,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    sidebarPadding: 40
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vissssa.github.io","root":"/blog/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="本文讲述的是 Python 中 Mock 的使用。 如何执行单元测试而不用考验你的耐心很多时候，我们编写的软件会直接与那些被标记为 “垃圾” 的服务交互。用外行人的话说：服务对我们的应用程序很重要，但是我们想要的是交互，而不是那些不想要的副作用，这里的 “不想要” 是在自动化测试运行的语境中说的。例如：我们正在写一个社交 app，并且想要测试一下 “发布到 Facebook” 的新功能，但是不想每">
 <meta property="og:type" content="article">
@@ -57,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p0.ssl.qhimg.com/t01a8f8f4eb02c51190.png">
 <meta property="article:published_time" content="2019-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-28T06:24:12.767Z">
+<meta property="article:modified_time" content="2020-02-28T07:05:43.347Z">
 <meta property="article:author" content="vissssa">
 <meta property="article:tag" content="test">
 <meta name="twitter:card" content="summary">
@@ -71,9 +45,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
@@ -125,6 +97,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -138,11 +118,9 @@
       
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -190,7 +168,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -228,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/blog/posts/a667b194/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.github.io/blog/posts/a667b194/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -258,7 +236,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:24:12" itemprop="dateModified" datetime="2020-02-28T14:24:12+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 15:05:43" itemprop="dateModified" datetime="2020-02-28T15:05:43+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,9 +244,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index">
-                    <span itemprop="name">deep</span>
-                  </a>
+                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
                 </span>
             </span>
 
@@ -308,7 +284,7 @@
 <h3 id="如何执行单元测试而不用考验你的耐心"><a href="#如何执行单元测试而不用考验你的耐心" class="headerlink" title="如何执行单元测试而不用考验你的耐心"></a><a href="#如何执行单元测试而不用考验你的耐心"></a>如何执行单元测试而不用考验你的耐心</h3><p>很多时候，我们编写的软件会直接与那些被标记为 “垃圾” 的服务交互。用外行人的话说：服务对我们的应用程序很重要，但是我们想要的是交互，而不是那些不想要的副作用，这里的 “不想要” 是在自动化测试运行的语境中说的。例如：我们正在写一个社交 app，并且想要测试一下 “发布到 Facebook” 的新功能，但是不想每次运行测试集的时候真的发布到 Facebook。</p>
 <a id="more"></a>
 <p>Python 的 <code>unittest</code> 库包含了一个名为 <code>unittest.mock</code> 或者可以称之为依赖的子包，简称为 <code>mock</code> —— 其提供了极其强大和有用的方法，通过它们可以模拟（mock）并去除那些我们不希望的副作用。</p>
-<p><a href="https://camo.githubusercontent.com/facb31f7bfe115c5e687d6c27e996ac0a9ff19b9/68747470733a2f2f6173736574732e746f7074616c2e696f2f75706c6f6164732f626c6f672f696d6167652f3235322f746f7074616c2d626c6f672d696d6167652d313338393039303334363431352e706e67" target="_blank" rel="external nofollow noopener noreferrer"><img alt data-src="https://p0.ssl.qhimg.com/t01a8f8f4eb02c51190.png"></a></p>
+<p><a href="https://camo.githubusercontent.com/facb31f7bfe115c5e687d6c27e996ac0a9ff19b9/68747470733a2f2f6173736574732e746f7074616c2e696f2f75706c6f6164732f626c6f672f696d6167652f3235322f746f7074616c2d626c6f672d696d6167652d313338393039303334363431352e706e67" target="_blank" rel="external nofollow noopener noreferrer"><img data-src="https://p0.ssl.qhimg.com/t01a8f8f4eb02c51190.png" alt></a></p>
 <p><em>注意：<code>mock</code> <a href="http://www.python.org/dev/peps/pep-0417/" target="_blank" rel="external nofollow noopener noreferrer">最近被收录</a>到了 Python 3.3 的标准库中；先前发布的版本必须通过 <a href="https://pypi.python.org/pypi/mock" target="_blank" rel="external nofollow noopener noreferrer">PyPI</a> 下载 Mock 库。</em></p>
 <h3 id="恐惧系统调用"><a href="#恐惧系统调用" class="headerlink" title="恐惧系统调用"></a><a href="#恐惧系统调用"></a>恐惧系统调用</h3><p>再举另一个例子，我们在接下来的部分都会用到它，这是就是<strong>系统调用</strong>。不难发现，这些系统调用都是主要的模拟对象：无论你是正在写一个可以弹出 CD 驱动器的脚本，还是一个用来删除 /tmp 下过期的缓存文件的 Web 服务，或者一个绑定到 TCP 端口的 socket 服务器，这些调用都是在你的单元测试上下文中不希望产生的副作用。</p>
 <p>作为一个开发者，你需要更关心你的库是否成功地调用了一个可以弹出 CD 的系统函数（使用了正确的参数等等），而不是切身经历 CD 托盘每次在测试执行的时候都打开了。（或者更糟糕的是，弹出了很多次，在一个单元测试运行期间多个测试都引用了弹出代码！）</p>
@@ -405,7 +381,7 @@
 
         <div class="reward-container">
   <div>打赏一杯咖啡</div>
-  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     打赏
   </button>
   <div id="qr" style="display: none;">
@@ -471,6 +447,28 @@
           
     <div class="comments" id="gitalk-container"></div>
 
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
         </div>
           
   
@@ -500,9 +498,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a href="/about/">
     <img class="site-author-image" itemprop="image" alt="vissssa" src="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-  </a>
   <p class="site-author-name" itemprop="name">vissssa</p>
   <div class="site-description" itemprop="description">python, flask, linux, 架构, 生活, 科技</div>
 </div>
@@ -585,28 +581,8 @@
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
-
-<div>
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("11/06/2019 00:00:00");
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-    }
-setInterval("createtime()",250);
-</script>
-</div>
 
         
 <div class="busuanzi-count">
@@ -637,7 +613,6 @@ setInterval("createtime()",250);
 
 
 
-        
       </div>
     </footer>
   </div>
@@ -698,7 +673,7 @@ window.addEventListener('pjax:success', () => {
       script.async = false;
     }
     if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
+      script.setAttribute('pjax', '');
     }
     if (code !== '') {
       script.appendChild(document.createTextNode(code));
@@ -710,6 +685,7 @@ window.addEventListener('pjax:success', () => {
   if (CONFIG.motion.enable) {
     NexT.motion.integrator
       .init()
+      .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
@@ -750,7 +726,6 @@ window.addEventListener('pjax:success', () => {
 
 
     <div id="pjax">
-
   
 
   
@@ -758,19 +733,21 @@ window.addEventListener('pjax:success', () => {
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
-      clientID: '1cb5d474d77189d86ba0',
+      clientID    : '1cb5d474d77189d86ba0',
       clientSecret: '568f0c839b99394f56a213db8d26afbb12e3dad1',
-      repo: 'vissssa',
-      owner: 'vissssa',
-      admin: ['vissssa'],
-      id: '8c15fb6c3fddea5a9cfaca5f8606e2c2',
+      repo        : 'vissssa',
+      owner       : 'vissssa',
+      admin       : ['vissssa'],
+      id          : '8c15fb6c3fddea5a9cfaca5f8606e2c2',
         language: 'zh-CN',
-      distractionFreeMode: 'true'
+      distractionFreeMode: true
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
+});
 </script>
 
     </div>
