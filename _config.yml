@@ -120,4 +120,4 @@ symbols_count_time:
 nofollow:
     enable: true
     exclude: # 例外链接
-    - http://vissssa.club
+    - https://vissssa.github.io/blog
