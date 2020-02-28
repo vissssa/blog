@@ -863,7 +863,7 @@ pace:
   # Themes list:
   # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: bounce
+  theme: mac-osx
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
