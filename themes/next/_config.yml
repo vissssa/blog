@@ -112,7 +112,7 @@ creative_commons:
 #scheme: Pisces
 scheme: Gemini
 # Dark Mode
-darkmode: false
+darkmode: true
 
 
 # ---------------------------------------------------------------
@@ -863,7 +863,7 @@ pace:
   # Themes list:
   # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: flash
+  theme: bounce
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
