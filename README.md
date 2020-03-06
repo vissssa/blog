@@ -14,4 +14,5 @@ python, flask, linux, 架构，生活，科技
 
 
 ### 前去一观：[vissssa.club](http://vissssa.club)
+### 前去一观：[vissssa.gitee.io](https://vissssa.gitee.io/blog)
 ### 前去一观：[vissssa.github.io](https://vissssa.github.io/blog)
