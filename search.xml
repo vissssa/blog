@@ -4973,8 +4973,8 @@ def some_another_property(self, *args, **kwargs):
       </tags>
   </entry>
   <entry>
-    <title>字节常考</title>
-    <url>/blog/posts/b8daf32a/</url>
+    <title>芝士披萨</title>
+    <url>/blog/posts/2a049014/</url>
     <content><![CDATA[<h5 id="1-服务降级和限流"><a href="#1-服务降级和限流" class="headerlink" title="1. 服务降级和限流"></a>1. 服务降级和限流</h5><p><a href="https://zhuanlan.zhihu.com/p/61363959" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/61363959</a></p>
 <h5 id="2-redis-string类型的底层实现"><a href="#2-redis-string类型的底层实现" class="headerlink" title="2. redis string类型的底层实现"></a>2. redis string类型的底层实现</h5><p><a href="https://juejin.im/post/5d71d3bee51d453b5f1a04f1" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5d71d3bee51d453b5f1a04f1</a></p>
 <h5 id="3-redis的持久化方式"><a href="#3-redis的持久化方式" class="headerlink" title="3. redis的持久化方式"></a>3. redis的持久化方式</h5><p><a href="https://juejin.im/post/5b70dfcf518825610f1f5c16" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5b70dfcf518825610f1f5c16</a></p>
@@ -5690,5 +5690,12 @@ def some_another_property(self, *args, **kwargs):
 <p>   6.设计一个HTTP服务，如何查询出订单量前十的商品，后台如何做  </p>
 <p>   7.python的并发的问题  </p>
 ]]></content>
+      <categories>
+        <category>deep</category>
+        <category>interview</category>
+      </categories>
+      <tags>
+        <tag>interview</tag>
+      </tags>
   </entry>
 </search>

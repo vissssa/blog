@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/b8daf32a/">
+    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/2a049014/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
@@ -221,7 +221,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/posts/b8daf32a/" class="post-title-link" itemprop="url">字节常考</a>
+            <a href="/blog/posts/2a049014/" class="post-title-link" itemprop="url">芝士披萨</a>
         </h2>
 
         <div class="post-meta">
@@ -230,8 +230,22 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-27 17:41:59" itemprop="dateCreated datePublished" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+              <time title="创建时间：2020-05-27 00:00:00 / 修改时间：17:46:51" itemprop="dateCreated datePublished" datetime="2020-05-27T00:00:00+08:00">2020-05-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/deep/interview/" itemprop="url" rel="index"><span itemprop="name">interview</span></a>
+                </span>
             </span>
 
           <br>
@@ -259,721 +273,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="1-服务降级和限流"><a href="#1-服务降级和限流" class="headerlink" title="1. 服务降级和限流"></a>1. 服务降级和限流</h5><p><a href="https://zhuanlan.zhihu.com/p/61363959" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/61363959</a></p>
-<h5 id="2-redis-string类型的底层实现"><a href="#2-redis-string类型的底层实现" class="headerlink" title="2. redis string类型的底层实现"></a>2. redis string类型的底层实现</h5><p><a href="https://juejin.im/post/5d71d3bee51d453b5f1a04f1" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5d71d3bee51d453b5f1a04f1</a></p>
-<h5 id="3-redis的持久化方式"><a href="#3-redis的持久化方式" class="headerlink" title="3. redis的持久化方式"></a>3. redis的持久化方式</h5><p><a href="https://juejin.im/post/5b70dfcf518825610f1f5c16" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5b70dfcf518825610f1f5c16</a></p>
-<h5 id="4-aqs和cas，死锁检测"><a href="#4-aqs和cas，死锁检测" class="headerlink" title="4. aqs和cas，死锁检测"></a>4. aqs和cas，死锁检测</h5><p><a href="https://www.jianshu.com/p/12192b13990f" target="_blank" rel="external nofollow noopener noreferrer">https://www.jianshu.com/p/12192b13990f</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/61221667" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/61221667</a></p>
-<h5 id="5-设计题，涉及到并发和数据库"><a href="#5-设计题，涉及到并发和数据库" class="headerlink" title="5. 设计题，涉及到并发和数据库"></a>5. 设计题，涉及到并发和数据库</h5><h5 id="6-string类型为什么不可变"><a href="#6-string类型为什么不可变" class="headerlink" title="6. string类型为什么不可变"></a>6. string类型为什么不可变</h5><p>安全、效率（内存地址）</p>
-<h5 id="7-二叉树找出距离最大的两个节点"><a href="#7-二叉树找出距离最大的两个节点" class="headerlink" title="7. 二叉树找出距离最大的两个节点"></a>7. 二叉树找出距离最大的两个节点</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diameterOfBinaryTree</span><span class="params">(self, root: TreeNode)</span> -&gt; int:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        每一个有左右节点的都需要被设为root来计算</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.res = <span class="number">0</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(root)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            left = helper(root.left)</span><br><span class="line">            right = helper(root.right)</span><br><span class="line">            self.res = max(self.res, left + right)</span><br><span class="line">            <span class="keyword">return</span> max(left, right) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        helper(root)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.res</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="8-mvcc的实现"><a href="#8-mvcc的实现" class="headerlink" title="8. mvcc的实现"></a>8. mvcc的实现</h5><p>[file:///D:/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/01-%E4%B8%93%E6%A0%8F%E8%AF%BE/06-MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/02-%E5%9F%BA%E7%A1%80%E7%AF%87%20(8%E8%AE%B2)/08%E4%B8%A8%E4%BA%8B%E5%8A%A1%E5%88%B0%E5%BA%95%E6%98%AF%E9%9A%94%E7%A6%BB%E7%9A%84%E8%BF%98%E6%98%AF%E4%B8%8D%E9%9A%94%E7%A6%BB%E7%9A%84%EF%BC%9F.html](file:///D:/学习资料/01-专栏课/06-MySQL实战45讲/02-基础篇 (8讲)/08丨事务到底是隔离的还是不隔离的？.html)</p>
-<h5 id="9-间隙锁"><a href="#9-间隙锁" class="headerlink" title="9. 间隙锁"></a>9. 间隙锁</h5><h2 id="间隙锁-Gap-Locks-（重点）"><a href="#间隙锁-Gap-Locks-（重点）" class="headerlink" title="间隙锁(Gap Locks)（重点）"></a><strong>间隙锁(Gap Locks)（重点）</strong></h2><p><strong>间隙锁是封锁索引记录中的间隔</strong>，或者第一条索引记录之前的范围，又或者最后一条索引记录之后的范围。</p>
-<p><strong>产生间隙锁的条件（RR事务隔离级别下；）：</strong></p>
-<ol>
-<li>使用普通索引锁定；</li>
-<li>使用多列唯一索引；</li>
-<li>使用唯一索引锁定多行记录。</li>
-</ol>
-<h5 id="10-链表实现加法"><a href="#10-链表实现加法" class="headerlink" title="10. 链表实现加法"></a>10. 链表实现加法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span><span class="params">(self, l1: ListNode, l2: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (l1 <span class="keyword">or</span> l2):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        extra = <span class="number">0</span></span><br><span class="line">        dummy = head = ListNode(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">or</span> l2:</span><br><span class="line">            l1_val = l1.val <span class="keyword">if</span> l1 <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            l2_val = l2.val <span class="keyword">if</span> l2 <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            count = l1_val + l2_val + extra</span><br><span class="line">            <span class="keyword">if</span> count &gt;= <span class="number">10</span>:</span><br><span class="line">                count = count - <span class="number">10</span></span><br><span class="line">                extra = <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                extra = <span class="number">0</span></span><br><span class="line">            head.next = ListNode(count)</span><br><span class="line">            head = head.next</span><br><span class="line">            l1 = l1.next <span class="keyword">if</span> l1 <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">            l2 = l2.next <span class="keyword">if</span> l2 <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> extra:</span><br><span class="line">            head.next = ListNode(extra)</span><br><span class="line">        <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="11-linux命令-查硬盘-端口-AWK"><a href="#11-linux命令-查硬盘-端口-AWK" class="headerlink" title="11. linux命令  查硬盘  端口    AWK"></a>11. linux命令  查硬盘  端口    AWK</h5><p>查硬盘: </p>
-<p>统一磁盘整体情况，包括磁盘大小，已使用，可用<code>df -h</code></p>
-<p>具体查看文件夹的占用情况:<code>du --max-depth=1 -h</code>，计算文件夹大小<code>du -sh /usr/</code></p>
-<p>端口：</p>
-<p>-i后不加端口，展示所有打开的端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># lsof -i:8000</span><br><span class="line">COMMAND   PID USER   FD   TYPE   DEVICE SIZE&#x2F;OFF NODE NAME</span><br><span class="line">nodejs  26993 root   10u  IPv4 37999514      0t0  TCP *:8000 (LISTEN)</span><br></pre></td></tr></table></figure>
-
-<p>或者使用这个</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">netstat -ntlp   &#x2F;&#x2F;查看当前所有tcp端口</span><br><span class="line">netstat -ntulp | grep 80   &#x2F;&#x2F;查看所有80端口使用情况</span><br><span class="line">netstat -ntulp | grep 3306   &#x2F;&#x2F;查看所有3306端口使用情况</span><br><span class="line"></span><br><span class="line"># netstat -tunlp | grep 8000</span><br><span class="line">tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      26993&#x2F;nodejs</span><br></pre></td></tr></table></figure>
-
-<p>AWK是一种处理文本文件的语言，是一个强大的文本分析工具。</p>
-<ul>
-<li>grep 更适合单纯的查找或匹配文本</li>
-<li>sed 更适合编辑匹配到的文本</li>
-<li>awk 更适合格式化文本，对文本进行较复杂格式处理</li>
-</ul>
-<p>面经：</p>
-<p>作者：yayakah<br>链接：<a href="https://www.nowcoder.com/discuss/427290" target="_blank" rel="external nofollow noopener noreferrer">https://www.nowcoder.com/discuss/427290</a><br>来源：牛客网</p>
-<p>1.用python的装饰器写一个单例模式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="comment"># 装饰器不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">record_time_without_param</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        time1 = time.time()</span><br><span class="line">        res = func(*args, **kwargs)</span><br><span class="line">        print(time.time() - time1)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@record_time_without_param</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'foo1'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 装饰器带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">record_time_with_param</span><span class="params">(param)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            time1 = time.time()</span><br><span class="line">            res = func(*args, **kwargs)</span><br><span class="line">            print(time.time() - time1)</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"><span class="meta">@record_time_with_param('param')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'foo2'</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>2.python和C++、Java的区别是什么？python有编译吗？</p>
-<p>有编译，但仍然是解释型语言，编译成pyc文件其实是pycodeobject的持久化文件</p>
-<p>3.python的args和kwargs、<strong>metaclass</strong>、反射。</p>
-<p>先定义metaclass，就可以创建类，最后创建实例，metaclass允许你创建类或者修改类，一般用在ORM框架中</p>
-<p>反射：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">通过字符串映射<span class="keyword">object</span>对象的方法或者属性</span><br><span class="line">hasattr(obj,name_str): 判断objec是否有name_str这个方法或者属性</span><br><span class="line">getattr(obj,name_str): 获取<span class="keyword">object</span>对象中与name_str同名的方法或者函数</span><br><span class="line">setattr(obj,name_str,<span class="keyword">value</span>): 为<span class="keyword">object</span>对象设置一个以name_str为名的<span class="keyword">value</span>方法或者属性</span><br><span class="line">delattr(obj,name_str): 删除<span class="keyword">object</span>对象中的name_str方法或者属性</span><br></pre></td></tr></table></figure>
-
-<p>4.讲一讲go协程和线程。go的并发模型、goroutine。</p>
-<p>5.Go的内存模型、垃圾回收。</p>
-<p>6.get和post有什么区别？put和post呢？幂等性是什么？</p>
-<p><a href="https://app.yinxiang.com/shard/s39/nl/25071110/97dfcfa0-3f45-4017-a89a-c76e8e25e2e2" target="_blank" rel="external nofollow noopener noreferrer">https://app.yinxiang.com/shard/s39/nl/25071110/97dfcfa0-3f45-4017-a89a-c76e8e25e2e2</a></p>
-<p>语义上来说put是幂等的，post不是</p>
-<p>幂等性：一次请求和重复的多次请求对系统资源的影响是一致的</p>
-<p>7.tcp三次握手、流量控制、字节流。</p>
-<p><img data-src="https://camo.githubusercontent.com/a01cdf6f16898459a64d0e4f30099a648e41f234/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f65393264306562632d376434362d343133622d616563312d3334613339363032663738372e706e67" alt></p>
-<p>流量控制是为了控制发送方发送速率，保证接收方来得及接收。</p>
-<p>接收方发送的确认报文中的窗口字段可以用来控制发送方窗口大小，从而影响发送方的发送速率。将窗口字段设置为 0，则发送方不能发送数据。</p>
-<p>tcp面向字节流（把应用层传下来的报文看成字节流，把字节流组织成大小不等的数据块</p>
-<p>8.https的加密过程，详细讲一下。</p>
-<p><img data-src="https://user-gold-cdn.xitu.io/2018/1/5/160c5b10d3f27e00?imageslim" alt></p>
-<p>9.谈下你对nginx和uwsgi的理解、为什么要用wsgi？</p>
-<p>1.使用的代理一共有两个，nginx和uwsgi，先说明一下，如果不用nginx一样可以访问web项目，使用nginx的目的是为了安全和负载均衡。配置了nginx做前端代理，uwsgi作后端代理的服务器(这里所说的前后端都是相对的位置，并无实际含义)，在处理来自Internet的请求时，要先经过nginx的处理，nginx把请求再交给uwsgi，经过uwsgi才能访问到项目本身。</p>
-<p>2.没有nginx而只有uwsgi的服务器，则是Internet请求直接由uwsgi处理，并反馈到web项目中。nginx可以实现安全过滤，防DDOS等保护安全的操作，并且如果配置了多台服务器，nginx可以保证服务器的负载相对均衡。<br> 而uwsgi则是一个web服务器，实现了WSGI协议(Web Server Gateway Interface)，http协议等，它可以接收和处理请求，发出响应等。所以只用uwsgi也是可以的。</p>
-<p> server和application的规范在PEP3333中有具体描述，要实现WSGI协议，必须同时实现web server和web application，当前运行在WSGI协议之上的web框架有,Flask, Django。</p>
-<p><strong>WSGI其实就是一个规范，他规范了Python程序和服务器之间的通信。对于Apache/Nginx等等服务器来说，只要支持WSGI规范，就可以保证所有(兼容WSGI的)Python程序能运行；对于Python程序或者框架来说，只要兼容WSGI，就可以保证能在所有(支持WSGI的)服务器上运行</strong></p>
-<p>10.docker的image、layer、container分别讲下？Linux中namespace是怎么实现的，底层的数据结构是什么？</p>
-<p>多层layer组成一个image，运行中的image就是container</p>
-<p><img data-src="http://dockone.io/uploads/article/20190626/401405294bff9c66a1ec0e842391c856.png" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">struct task_struct &#123;</span><br><span class="line"></span><br><span class="line">&#x2F;* namespaces *&#x2F;</span><br><span class="line"></span><br><span class="line">         struct nsproxy *nsproxy;</span><br><span class="line">&#125;</span><br><span class="line">struct nsproxy &#123;</span><br><span class="line"> </span><br><span class="line">         atomic_t count;</span><br><span class="line"> </span><br><span class="line">         struct uts_namespace *uts_ns;</span><br><span class="line"> </span><br><span class="line">         struct ipc_namespace *ipc_ns;</span><br><span class="line"> </span><br><span class="line">         struct mnt_namespace *mnt_ns;</span><br><span class="line"> </span><br><span class="line">         struct pid_namespace *pid_ns_for_children;</span><br><span class="line"> </span><br><span class="line">         struct net             *net_ns;</span><br><span class="line"> </span><br><span class="line">&#125;;</span><br><span class="line">UTS： 运行内核的名称、版本、底层体系结构类型等信息（UNIX Timesharing System）</span><br><span class="line">IPC： 与进程间通信（IPC）有关</span><br><span class="line">MNT： 已经装载的文件系统的视图</span><br><span class="line">PID：有关进程ID的信息</span><br><span class="line">NET：网络相关的命名空间参数</span><br></pre></td></tr></table></figure>
-
-
-
-<p>11.B和B+树，B+树的搜索次数、为什么不用二叉树。</p>
-<p>B+树相对于B树有一些自己的优势，可以归结为下面几点。</p>
-<ul>
-<li>单一节点存储的元素更多，使得查询的IO次数更少，所以也就使得它更适合做为数据库MySQL的底层数据结构了。</li>
-<li>所有的查询都要查找到叶子节点，查询性能是稳定的，而B树，每个节点都可以查找到数据，所以不稳定。</li>
-<li>所有的叶子节点形成了一个有序链表，更加便于查找。</li>
-</ul>
-<p>所以我们要减少IO次数，对于树来说，IO次数就是树的高度，而“矮胖”就是b树的特征之一，它的每个节点最多包含m个孩子，m称为b树的阶，m的大小取决于磁盘页的大小。</p>
-<p>12.kafka是push还是pull？kafka和nsq的区别，什么场景下该用哪个？partition的数据如何保存到硬盘？</p>
-<p>produce(生产者)push到breaker(调度者),cusomer(消费者)从breaker来pull，没有消息时cusomer阻塞状态，不会频繁轮询，阻塞时间一般100ms</p>
-<p><strong>对比</strong><br><strong>存储</strong><br>NSQ 默认是把消息放到内存中，只有当队列里消息的数量超过–mem-queue-size配置的限制时，才会对消息进行持久化。<br>Kafka 会把写到磁盘中进行持久化，并通过顺序读写磁盘来保障性能。持久化能够让Kafka做更多的事情：消息的重新消费（重置offset）；让数据更加安全，不那么容易丢失。同时Kafka还通过partition的机制，对消息做了备份，进一步增强了消息的安全性。<br><strong>推拉模型</strong><br>NSQ 使用的是推模型，推模型能够使得时延非常小，消息到了马上就能够推送给下游消费，但是下游消费能够无法控制，推送过快可能导致下游过载。<br>Kafka 使用的拉模型，拉模型能够让消费者自己掌握节奏，但是这样轮询会让整个消费的时延增加，不过消息队列本身对时延的要求不是很大，这一点影响不是很大。<br><strong>消息的顺序性</strong><br>NSQ 因为不能够把特性消息和消费者对应起来，所以无法实现消息的有序性。<br>Kafka 因为消息在Partition中写入是有序的，同时一个Partition只能够被一个Consumer消费，这样就可能实现消息在Partition中的有序。自定义写入哪个Partition的规则能够让需要有序消费的相关消息都进入同一个Partition中被消费，这样达到”全局有序“</p>
-<p>13.consul的原理有了解过么？服务发现、健康检查、多数据中心分别说下？</p>
-<p>14.Z字层次遍历二叉树。</p>
-<p>层次遍历加个条件即可</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">zigzagLevelOrder</span><span class="params">(self, root: TreeNode)</span> -&gt; List[List[int]]:</span></span><br><span class="line">        ret = []</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># start with the level 0 with a delimiter</span></span><br><span class="line">        node_queue = deque([root])</span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> node_queue:</span><br><span class="line">            size = len(node_queue)</span><br><span class="line">            level_list = deque()</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(size):</span><br><span class="line">                curr_node = node_queue.popleft()</span><br><span class="line">                <span class="keyword">if</span> flag:</span><br><span class="line">                    level_list.append(curr_node.val)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    level_list.appendleft(curr_node.val)</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> curr_node.left:</span><br><span class="line">                    node_queue.append(curr_node.left)</span><br><span class="line">                <span class="keyword">if</span> curr_node.right:</span><br><span class="line">                    node_queue.append(curr_node.right)</span><br><span class="line"></span><br><span class="line">            ret.append(list(level_list))</span><br><span class="line">            flag = <span class="keyword">not</span> flag</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure>
-
-
-
-<p>15.三数之和</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threeSum</span><span class="params">(self, nums: List[int])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums <span class="keyword">or</span> n &lt; <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        nums.sort()</span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(count, index)</span>:</span></span><br><span class="line">            r = n - <span class="number">1</span></span><br><span class="line">            l = index + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> l &lt; r:</span><br><span class="line">                <span class="keyword">if</span> nums[l] + nums[r] == count:</span><br><span class="line">                    res.append([nums[index], nums[l], nums[r]])</span><br><span class="line">                    <span class="keyword">while</span> l &lt; r <span class="keyword">and</span> nums[l + <span class="number">1</span>] == nums[l]:</span><br><span class="line">                        l += <span class="number">1</span></span><br><span class="line">                    <span class="keyword">while</span> l &lt; r <span class="keyword">and</span> nums[r - <span class="number">1</span>] == nums[r]:</span><br><span class="line">                        r -= <span class="number">1</span></span><br><span class="line">                    l += <span class="number">1</span></span><br><span class="line">                    r -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> nums[l] + nums[r] &gt; count:</span><br><span class="line">                    r -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    l += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> nums[i] == nums[i - <span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> nums[i] &lt;= <span class="number">0</span>:</span><br><span class="line">                helper(-nums[i], i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-
-
-<p>16.合并K个排序链表。</p>
-<p>合并2个排序链表+分治法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeKLists</span><span class="params">(self, lists: List[ListNode])</span> -&gt; ListNode:</span></span><br><span class="line">        n = len(lists)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># basic cases</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>: <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>: <span class="keyword">return</span> lists[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">2</span>: <span class="keyword">return</span> self.mergeTwoLists(lists[<span class="number">0</span>], lists[<span class="number">1</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># divide and conqure if not basic cases</span></span><br><span class="line">        mid = n // <span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> self.mergeTwoLists(self.mergeKLists(lists[:mid]), self.mergeKLists(lists[mid:n]))</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1: ListNode, l2: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        head = ListNode(<span class="number">0</span>)</span><br><span class="line">        dummy = head</span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">or</span> l2:</span><br><span class="line">            <span class="keyword">if</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">                <span class="keyword">if</span> l1.val &lt; l2.val:</span><br><span class="line">                    head.next = ListNode(l1.val)</span><br><span class="line">                    l1 = l1.next</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    head.next = ListNode(l2.val)</span><br><span class="line">                    l2 = l2.next</span><br><span class="line">                head = head.next</span><br><span class="line">            <span class="keyword">elif</span> l1:</span><br><span class="line">                head.next = l1</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                head.next = l2</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure>
-
-
-
-<p>作者：yayakah<br>链接：<a href="https://www.nowcoder.com/discuss/425251" target="_blank" rel="external nofollow noopener noreferrer">https://www.nowcoder.com/discuss/425251</a><br>来源：牛客网</p>
-<p>2.数据库相关：</p>
-<p>a. order by 索引</p>
-<p><a href="https://c.isme.pub/2016/12/21/sql-performance/" target="_blank" rel="external nofollow noopener noreferrer">https://c.isme.pub/2016/12/21/sql-performance/</a></p>
-<p>b. 聚簇&amp;非聚簇索引</p>
-<ol>
-<li><p>聚集索引。表数据按照索引的顺序来存储的，也就是说索引项的顺序与表中记录的物理顺序一致。对于聚集索引，叶子结点即存储了真实的数据行，不再有另外单独的数据页。 在一张表上最多只能创建一个聚集索引，因为真实数据的物理顺序只能有一种。</p>
-</li>
-<li><p>非聚集索引。表数据存储顺序与索引顺序无关。对于非聚集索引，叶结点包含索引字段值及指向数据页数据行的逻辑指针，其行数量与数据表行数据量一致。</p>
-<p>总结一下：聚集索引是一种稀疏索引，数据页上一级的索引页存储的是页指针，而不是行指针。而对于非聚集索引，则是密集索引，在数据页的上一级索引页它为每一个数据行存储一条索引记录。</p>
-</li>
-</ol>
-<p><img data-src="https://user-gold-cdn.xitu.io/2019/5/16/16ac10253b8748df?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt></p>
-<p>c. 最左匹配原则</p>
-<p>其实官方文档已经解释的非常详细了, 总结关于最左匹配的解释, 那其实只有这么 几句话:<br> 1.按照文档, 更准确的说法应该是最左前缀原则, 即如果你创建一个联合索引, 那 这个索引的任何前缀都会用于查询, (col1, col2, col3)这个联合索引的所有前缀 就是(col1), (col1, col2), (col1, col2, col3), 包含这些列的查询都会启用索 引查询.<br> 2.其他所有不在最左前缀里的列都不会启用索引, 即使包含了联合索引里的部分列 也不行. 即上述中的(col2), (col3), (col2, col3) 都不会启用索引去查询.<br> <strong>注意, (col1, col3)会启用(col1)的索引查询</strong></p>
-<p>d.组合索引</p>
-<p>联合索引又叫复合索引。对于复合索引:Mysql从左到右的使用索引中的字段，一个查询可以只使用索引中的一部份，但只能是最左侧部分。例如索引是key index (a,b,c). 可以支持<strong>a</strong> | <strong>a,b</strong>| <strong>a,b,c</strong> 3种组合进行查找，但不支持 b,c进行查找 .当最左侧字段是常量引用时，索引就十分有效。</p>
-<p>e.加索引有什么原则</p>
-<p><a href="https://www.jianshu.com/p/107e5bdf4148" target="_blank" rel="external nofollow noopener noreferrer">https://www.jianshu.com/p/107e5bdf4148</a></p>
-<p>3.redis 缓存：</p>
-<p>redis mysql双写：mysql写完删除redis，不更新因为生成缓存存在复杂查询，不如直接删了，做好防止突然雪崩即可</p>
-<p>a.并发情况下，一个前端请求过来时，redis发生了什么？</p>
-<p>b.缓存的刷新策略</p>
-<p><a href="https://juejin.im/post/5af5b2c36fb9a07ac65318bd" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5af5b2c36fb9a07ac65318bd</a></p>
-<p>4.http有哪些头部？详细介绍一下Cookie。</p>
-<p><a href="https://blog.csdn.net/YLBF_DEV/article/details/50266447" target="_blank" rel="external nofollow noopener noreferrer">https://blog.csdn.net/YLBF_DEV/article/details/50266447</a></p>
-<p><a href="https://www.jianshu.com/p/51fbe0dd8282" target="_blank" rel="external nofollow noopener noreferrer">https://www.jianshu.com/p/51fbe0dd8282</a></p>
-<p>5.为什么要用kafka？kafka中的broker是什么？kafka是如何实现分区的？</p>
-<p><a href="http://www.louisvv.com/archives/2408.html" target="_blank" rel="external nofollow noopener noreferrer">http://www.louisvv.com/archives/2408.html</a></p>
-<p>6.docker镜像和容器有什么区别？为什么要用docker？Linux namespace讲一下？Linux cgroup的层级结构讲一下？docker daemon是啥？发现docker daemon响应突然变慢了，如何排查？</p>
-<p>Linux CGroup全称Linux Control Group， 是Linux内核的一个功能，用来限制，控制与分离一个进程组群的资源（如CPU、内存、磁盘输入输出等）</p>
-<ul>
-<li><strong>Resource limitation</strong>: 限制资源使用，比如内存使用上限以及文件系统的缓存限制。</li>
-<li><strong>Prioritization</strong>: 优先级控制，比如：CPU利用和磁盘IO吞吐。</li>
-<li><strong>Accounting</strong>: 一些审计或一些统计，主要目的是为了计费。</li>
-<li><strong>Control</strong>: 挂起进程，恢复执行进程。</li>
-</ul>
-<p><a href="https://coolshell.cn/articles/17049.html" target="_blank" rel="external nofollow noopener noreferrer">https://coolshell.cn/articles/17049.html</a></p>
-<p><a href="https://www.cnblogs.com/menkeyi/p/10941843.html" target="_blank" rel="external nofollow noopener noreferrer">https://www.cnblogs.com/menkeyi/p/10941843.html</a></p>
-<p>Docker daemon是Docker最核心的后台进程，它负责响应来自Docker client的请求，然后将这些请求翻译成系统调用完成容器管理操作。该进程会在后台启动一个API Server,负责接收由Docker client发送的请求；接收到的请求将通过Docker daemon内部的一个路由分发调度，再由具体的函数来执行请求。</p>
-<p>7.python相关知识，迭代器、生成器、装饰器？metaclass、args、kwargs。Flask与wsgi是如何交互的？Flask源码读过么？Flask的IO多路复用用在了什么地方？</p>
-<p>8.算法题，奇数升序偶数降序，返回升序</p>
-<ol>
-<li>奇偶拆开</li>
-<li>倒序奇数链表</li>
-<li>有序合并</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort_list_node</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (head <span class="keyword">and</span> head.next):</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">        even_head, odd_head = self.slice(head)</span><br><span class="line">        odd_head = self.reverse(odd_head)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.merge(even_head, odd_head)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">slice</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        even_head = even_cur = head</span><br><span class="line">        odd_head = odd_cur = head.next</span><br><span class="line">        <span class="keyword">while</span> even_cur <span class="keyword">and</span> odd_cur:</span><br><span class="line">            even_cur.next = even_cur.next.next</span><br><span class="line">            odd_cur.next = odd_cur.next.next <span class="keyword">if</span> odd_cur.next <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">            even_cur = even_cur.next</span><br><span class="line">            odd_cur = odd_cur.next</span><br><span class="line">        <span class="keyword">return</span> even_head, odd_head</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        pre = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            nxt = head.next</span><br><span class="line">            head.next = pre</span><br><span class="line">            pre = head</span><br><span class="line">            head = nxt</span><br><span class="line">        <span class="keyword">return</span> pre</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, h1, h2)</span>:</span></span><br><span class="line">        <span class="comment"># 可以直接跟在dummy后面，也可以Node(h1.val)赋值</span></span><br><span class="line">        dummy = head = Node(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">while</span> h1 <span class="keyword">and</span> h2:</span><br><span class="line">            <span class="keyword">if</span> h1.val &lt;= h2.val:</span><br><span class="line">                head.next = h1</span><br><span class="line">                h1 = h1.next</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                head.next = h2</span><br><span class="line">                h2 = h2.next</span><br><span class="line">            head = head.next</span><br><span class="line">        head.next = h1 <span class="keyword">or</span> h2</span><br><span class="line">        <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure>
-
-
-
-<p>9.算法题，LRU。</p>
-<ol>
-<li>有序字典</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span><span class="params">(OrderedDict)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity)</span>:</span></span><br><span class="line">        self.capacity = capacity</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">not</span> <span class="keyword">in</span> self:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        self.move_to_end(key)</span><br><span class="line">        <span class="keyword">return</span> self[key]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key, value)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self:</span><br><span class="line">            self.move_to_end(key)</span><br><span class="line">        self[key] = value</span><br><span class="line">        <span class="keyword">if</span> len(self) &gt; self.capacity:</span><br><span class="line">            self.popitem(last = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>双向链表+hash表</li>
-</ol>
-<p>链表存储缓存的内容(key, val)，hash存储{key: d_node}双链表</p>
-<p>删除缓存时，从双链表尾端获取key来hash中删除</p>
-<p>hash保证O(1)，双链表保证有序</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key=<span class="number">0</span>, val=<span class="number">0</span>)</span>:</span></span><br><span class="line">        self.key = key</span><br><span class="line">        self.val = val</span><br><span class="line">        self.prev = <span class="literal">None</span></span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put_head</span><span class="params">(self, d_node)</span>:</span></span><br><span class="line">        d_node.next = self.head.next</span><br><span class="line">        self.head.next.prev = d_node</span><br><span class="line">        self.head.next = d_node</span><br><span class="line">        d_node.prev = self.head</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove_node</span><span class="params">(d_node)</span>:</span></span><br><span class="line">        prev = d_node.prev</span><br><span class="line">        d_next = d_node.next</span><br><span class="line">        prev.next = d_next</span><br><span class="line">        d_next.prev = prev</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop_tail</span><span class="params">(self)</span>:</span></span><br><span class="line">        d_node = self.tail.prev</span><br><span class="line">        self.remove_node(d_node)</span><br><span class="line">        <span class="keyword">return</span> d_node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_to_head</span><span class="params">(self, d_node)</span>:</span></span><br><span class="line">        self.remove_node(d_node)</span><br><span class="line">        self.put_head(d_node)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity: int)</span>:</span></span><br><span class="line">        self.head = DListNode()</span><br><span class="line">        self.tail = DListNode()</span><br><span class="line">        self.head.next = self.tail</span><br><span class="line">        self.tail.prev = self.head</span><br><span class="line"></span><br><span class="line">        self.cache = &#123;&#125;</span><br><span class="line">        self.capacity = capacity</span><br><span class="line">        self.size = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key: int)</span> -&gt; int:</span></span><br><span class="line">        d_node = self.cache.get(key, <span class="literal">None</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> d_node:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">        self.move_to_head(d_node)</span><br><span class="line">        <span class="keyword">return</span> d_node.val</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key: int, value: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        d_node = self.cache.get(key, <span class="literal">None</span>)</span><br><span class="line">        <span class="keyword">if</span> d_node:</span><br><span class="line">            d_node.val = value</span><br><span class="line">            self.move_to_head(d_node)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> self.size == self.capacity:</span><br><span class="line">                tail = self.pop_tail()</span><br><span class="line">                <span class="keyword">del</span> self.cache[tail.key]</span><br><span class="line">                self.size -= <span class="number">1</span></span><br><span class="line">            d_node = DListNode(key, value)</span><br><span class="line">            self.put_head(d_node)</span><br><span class="line">            self.cache[key] = d_node</span><br><span class="line">            self.size += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your LRUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = LRUCache(capacity)</span></span><br><span class="line"><span class="comment"># param_1 = obj.get(key)</span></span><br><span class="line"><span class="comment"># obj.put(key,value)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>10.算法题，最大的岛屿面积。</p>
-<p>等同于岛屿数量，只是求多个岛屿中1最多的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxAreaOfIsland</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> grid:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> grid[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        n = len(grid)</span><br><span class="line">        m = len(grid[<span class="number">0</span>])</span><br><span class="line">        moves = [(<span class="number">0</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">-1</span>, <span class="number">0</span>)]</span><br><span class="line">        marked = [[<span class="literal">False</span>] * m <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(i, j)</span>:</span></span><br><span class="line">            count = <span class="number">1</span></span><br><span class="line">            marked[i][j] = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">for</span> move <span class="keyword">in</span> moves:</span><br><span class="line">                new_j = j + move[<span class="number">0</span>]</span><br><span class="line">                new_i = i + move[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= new_i &lt; n <span class="keyword">and</span> <span class="number">0</span> &lt;= new_j &lt; m <span class="keyword">and</span> <span class="keyword">not</span> marked[new_i][new_j] <span class="keyword">and</span> grid[new_i][new_j] == <span class="number">1</span>:</span><br><span class="line">                    count += helper(new_i, new_j)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">                <span class="keyword">if</span> grid[i][j] == <span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> marked[i][j]:</span><br><span class="line">                    count = helper(i, j)</span><br><span class="line">                    res = max(res, count)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-
-
-<p>作者：Mac🐱<br>链接：<a href="https://www.nowcoder.com/discuss/419718" target="_blank" rel="external nofollow noopener noreferrer">https://www.nowcoder.com/discuss/419718</a><br>来源：牛客网</p>
-<h1 id="一面4-26"><a href="#一面4-26" class="headerlink" title="一面4.26"></a>一面4.26</h1><p>小哥全程微笑，态度很好</p>
-<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p>列表推导式</p>
-<p>sort怎么实现</p>
-<p>TimSort算法是一种起源于归并排序和插入排序的混合排序算法，设计初衷是为了在真实世界中的各种数据中可以有较好的性能。</p>
-<p>基本工作过程是：</p>
-<p>1.扫描数组，确定其中的单调上升段和严格单调下降段，将严格下降段反转；</p>
-<p>2.定义最小基本片段长度，短于此的单调片段通过插入排序集中为长于此的段；</p>
-<p>3.反复归并一些相邻片段，过程中避免归并长度相差很大的片段，直至整个排序完成，所用分段选择策略可以保证O(n log n)时间复杂性，空间复杂度O(n)</p>
-<p>可以看到，原则上TimSort是归并排序，但小片段的合并中用了插入排序。</p>
-<p>sort与sorted区别</p>
-<ol>
-<li><p>sort()是列表自带的函数，通过比较大小来排序，参数是key和是否倒序，</p>
-<p>sorted()是python内建的高级函数，可对一切可迭代对象进行排序</p>
-<p>两者都可以给key传一个函数或者匿名函数来排序</p>
-</li>
-<li><p>sort()原地排序，sorted()返回一个可迭代对象，原对象不变</p>
-</li>
-</ol>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>内存的堆和栈</p>
-<p>栈区（stack）— 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。<br>堆区（heap） — 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收 。</p>
-<p>区别和联系：<br>1.申请方式<br>    堆是由程序员自己申请并指明大小，在c中malloc函数 如p1 = (char *)malloc(10);<br>    栈由系统自动分配，如声明在函数中一个局部变量 int b; 系统自动在栈中为b开辟空间<br>2.申请后系统的响应<br>    栈：只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出。<br>    堆：首先应该知道操作系统有一个记录空闲内存地址的链表，当系统收到程序的申请时，会 遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，另外，对于大多数系统，会在这块内 存空间中的首地址处记录本次分配的大小，这样，代码中的delete语句才能正确的释放本内存空间。另外，由于找到的堆结点的大小不一定正好等于申请的大 小，系统会自动的将多余的那部分重新放入空闲链表中。<br>3.申请大小的限制<br>    栈：在Windows下,栈是向低地址扩展的数据结 构，是一块连续的内存的区域。这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在WINDOWS下，栈的大小是2M（也有的说是1M，总之是 一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示overflow。因此，能从栈获得的空间较小。<br>    堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。<br>4.申请效率的比较：<br>    栈由系统自动分配，速度较快。但程序员是无法控制的。<br>    堆是由new分配的内存，一般速度比较慢，而且容易产生内存碎片,不过用起来最方便.</p>
-<p>体会：<br>使用栈就象我们去饭馆里吃饭，只管点菜（发出申请）、付钱、和吃（使用），吃饱了就走，不必理会切菜、洗菜等准备工作和洗碗、刷锅等扫尾工作，他的好处是快捷，但是自由度小。<br>使用堆就象是自己动手做喜欢吃的菜肴，比较麻烦，但是比较符合自己的口味，而且自由度大。</p>
-<h3 id="中断，怎么实现"><a href="#中断，怎么实现" class="headerlink" title="中断，怎么实现"></a>中断，怎么实现</h3><h4 id="什么是中断"><a href="#什么是中断" class="headerlink" title="什么是中断?"></a>什么是中断?</h4><p>CPU 暂停正在执行的程序转而去执行处理该事件的程序</p>
-<h4 id="为什么需要系统中断、异常、调用-中断不会使效率变低吗"><a href="#为什么需要系统中断、异常、调用-中断不会使效率变低吗" class="headerlink" title="为什么需要系统中断、异常、调用?中断不会使效率变低吗?"></a>为什么需要系统中断、异常、调用?中断不会使效率变低吗?</h4><ul>
-<li>计算机运行时 内核是被信任的第三方</li>
-<li>只有内核才能够执行特权指令</li>
-<li>方便应用程序调用</li>
-</ul>
-<p>中断会不会使效率变低是要取决于看中断的角度 中断虽然打断了当前操作的执行 但是却正是因为中断使得系统能够并发运行<br>系统本质上是一个死循环 但是死循环做不了什么大事 而系统运行的目的是为了等候某些事情的发生 系统是被动的 因此也可以说 操作系统是中断所驱动的</p>
-<h4 id="中断的分类"><a href="#中断的分类" class="headerlink" title="中断的分类"></a>中断的分类</h4><ol>
-<li>外部中断 也称之为硬件中断<ul>
-<li>可屏蔽中断 使用 INTR 信号线通知CPU</li>
-<li>不可屏蔽中断 使用 NMI 信号线通知CPU<br><img data-src="https://yuerer.com/images/interrupttype.png" alt="img"></li>
-</ul>
-</li>
-<li>内部中断 又称软中断和异常<ul>
-<li>int 8位立即数</li>
-<li>int3 调试断点指令</li>
-<li>into 中断溢出指令</li>
-<li>bound 数组索引越界</li>
-<li>ud2 未定义指令</li>
-</ul>
-</li>
-</ol>
-<p>除了 int 8位立即数以外 其它都可以称作是异常</p>
-<h4 id="中断、异常和系统调用区别"><a href="#中断、异常和系统调用区别" class="headerlink" title="中断、异常和系统调用区别"></a>中断、异常和系统调用区别</h4><ul>
-<li>系统调用(system call)：应用程序主动向操作系统发出的服务请求</li>
-<li>异常(exception): 非法指令或其他原因导致当前指令执行失败后的处理请求</li>
-<li>中断(handware interrupt)：来自硬件设备的处理请求</li>
-</ul>
-<p>每个中断或异常与一个中断服务例程(Interrupt Service Routine ISR) 相关联<br>Linux 系统调用并没有使用调用门 而是直接使用int 0x80中断 来完成系统调用</p>
-<h2 id="计网"><a href="#计网" class="headerlink" title="计网"></a>计网</h2><p>TCP与IP区别</p>
-<p>TCP传输层，IP网络层，一般IP处于TCP下方，给TCP字节添加上IP头后传输到对应目的ip地址，TCP会找到对应端口</p>
-<p>TCP怎么保证可靠</p>
-<p>首先是三次握手保证建立正确的一对一连接，超时重传机制，发送报文段后一定时间没有收到确认就重新传送，超时时间由往返时间进行计算得出，滑动窗口保证一次处理一部分有序报文段，直到这些报文段都收到确认(接收端都收到报文段)才会移出滑动窗口</p>
-<p>拥塞控制机制</p>
-<p>TCP 主要通过四个算法来进行拥塞控制：慢开始、拥塞避免、快重传、快恢复。</p>
-<p>发送方需要维护一个叫做拥塞窗口（cwnd）的状态变量</p>
-<h5 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h5><p>发送的最初执行慢开始，令 cwnd = 1，发送方只能发送 1 个报文段；当收到确认后，将 cwnd 加倍，因此之后发送方能够发送的报文段数量为：2、4、8 …</p>
-<p>注意到慢开始每个轮次都将 cwnd 加倍，这样会让 cwnd 增长速度非常快，从而使得发送方发送的速度增长速度过快，网络拥塞的可能性也就更高。设置一个慢开始门限 ssthresh，当 cwnd &gt;= ssthresh 时，进入拥塞避免，每个轮次只将 cwnd 加 1。</p>
-<p>如果出现了超时，则令 ssthresh = cwnd / 2，然后重新执行慢开始。</p>
-<h5 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h5><p><img data-src="https://img-blog.csdn.net/20170415161738770?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcTEwMDc3Mjk5OTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
-<p>连续收到M2的确认ACK，无需等待确认超时，直接重传</p>
-<p>快恢复不同于拥塞避免，一旦出现超时重传，或者收到第三个重复的 ack 时（快重传），TCP 会把慢启动门限 ssthresh 的值设置为 cwnd 值的一半，同时 cwnd = ssthresh，而不是从1开始</p>
-<h2 id="代码题"><a href="#代码题" class="headerlink" title="代码题"></a>代码题</h2><h5 id="逆序输出数组中奇数的平方"><a href="#逆序输出数组中奇数的平方" class="headerlink" title="逆序输出数组中奇数的平方"></a>逆序输出数组中奇数的平方</h5><p>找不到具体描述</p>
-<h5 id="判断链表是否有环"><a href="#判断链表是否有环" class="headerlink" title="判断链表是否有环"></a>判断链表是否有环</h5><p>不仅判断是否有环，还返回环的下标</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detectCycle</span><span class="params">(self, head: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (head <span class="keyword">and</span> head.next):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        slow, fast = head, head</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> (fast.next <span class="keyword">and</span> fast.next.next):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            slow = slow.next</span><br><span class="line">            fast = fast.next.next</span><br><span class="line">            <span class="keyword">if</span> slow == fast:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        slow = head</span><br><span class="line">        <span class="keyword">while</span> slow != fast:</span><br><span class="line">            slow = slow.next</span><br><span class="line">            fast = fast.next</span><br><span class="line">        <span class="keyword">return</span> slow</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="lc海岛，01矩阵那个，算有几个岛"><a href="#lc海岛，01矩阵那个，算有几个岛" class="headerlink" title="lc海岛，01矩阵那个，算有几个岛"></a>lc海岛，01矩阵那个，算有几个岛</h5><p>深度dfs</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numIslands</span><span class="params">(self, grid: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        从找到第一个1开始 总数+1  并将跟他相连的1全部置为已计算过</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> grid:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        moves = [(<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">-1</span>, <span class="number">0</span>)]</span><br><span class="line">        m = len(grid)</span><br><span class="line">        n = len(grid[<span class="number">0</span>])</span><br><span class="line">        count= <span class="number">0</span></span><br><span class="line">        mark = [[<span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(m)]</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(i, j)</span>:</span></span><br><span class="line">            mark[i][j] = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">for</span> move <span class="keyword">in</span> moves:</span><br><span class="line">                new_j = j + move[<span class="number">0</span>]</span><br><span class="line">                new_i = i + move[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= new_i &lt; m <span class="keyword">and</span> <span class="number">0</span> &lt;= new_j &lt; n <span class="keyword">and</span> <span class="keyword">not</span> mark[new_i][new_j] <span class="keyword">and</span> grid[new_i][new_j] == <span class="string">'1'</span>:</span><br><span class="line">                    helper(new_i, new_j)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> mark[i][j] <span class="keyword">and</span> grid[i][j] == <span class="string">'1'</span>:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    <span class="comment"># 标记相连的所有1</span></span><br><span class="line">                    helper(i, j)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="二面4-28"><a href="#二面4-28" class="headerlink" title="二面4.28"></a>二面4.28</h1><p>还是个小哥，我不会的时候很耐心的引导</p>
-<p>HTTP包格式</p>
-<p>Accept: text/html  text/plain  image/jpeg  text/css  application/json</p>
-<p>HTTP1.1，1.0，2区别</p>
-<p>HTTP1.1，1.0:</p>
-<ol>
-<li>缓存方面增加ETag来多种策略控制缓存</li>
-<li>断电续传的功能header中的range，返回码206</li>
-<li>增加HOST头，用于应对nginx反向代理多个服务器</li>
-<li><strong>长连接</strong>：在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟</li>
-<li>增加了多个错误返回码</li>
-<li>HTTP 1.1还允许客户端不用等待上一次请求结果返回，就可以发出下一次请求</li>
-</ol>
-<p>2.0和1.1：</p>
-<ol>
-<li>二进制分帧：HTTP/1.1的头信息是文本（ASCII编码），数据体可以是文本，也可以是二进制；HTTP/2 头信息和数据体都是二进制，统称为“帧”：头信息帧和数据帧；</li>
-<li>多路复用（双工通信）：通过单一的 HTTP/2 连接发起多重的请求-响应消息，即在一个连接里，客户端和浏览器都可以同时发送多个请求和响应，而不用按照顺序一一对应，这样避免了“队头堵塞”。HTTP/2 把 HTTP 协议通信的基本单位缩小为一个一个的帧，这些帧对应着逻辑流中的消息。并行地在同一个 TCP 连接上双向交换消息。</li>
-<li>数据流：因为 HTTP/2 的数据包是不按顺序发送的，同一个连接里面连续的数据包，可能属于不同的回应。因此，必须要对数据包做标记，指出它属于哪个回应。HTTP/2 将每个请求或回应的所有数据包，称为一个数据流（stream）。每个数据流都有一个独一无二的<strong>编号</strong>。数据包发送的时候，都必须标记数据流ID，用来区分它属于哪个数据流。另外还规定，客户端发出的数据流，ID一律为奇数，服务器发出的，ID为偶数。数据流发送到一半的时候，客户端和服务器都可以发送信号（<code>RST_STREAM</code>帧），取消这个数据流。HTTP/1.1取消数据流的唯一方法，就是关闭TCP连接。这就是说，HTTP/2 可以取消某一次请求，同时保证TCP连接还打开着，可以被其他请求使用。客户端还可以指定数据流的优先级。优先级越高，服务器就会越早回应。</li>
-<li>首部压缩，一方面，头信息压缩后再发送（SPDY 使用的是通用的DEFLATE 算法，而 HTTP/2 则使用了专门为首部压缩而设计的 HPACK 算法）。；另一方面，客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就提高速度了。</li>
-<li>服务端推送</li>
-</ol>
-<p>TCP序号机制，是否按序发按序收</p>
-<p><a href="http://xstarcd.github.io/wiki/shell/TCP_ACK.html" target="_blank" rel="external nofollow noopener noreferrer">http://xstarcd.github.io/wiki/shell/TCP_ACK.html</a></p>
-<p>python生成器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>L = [x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g</span><br><span class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x1022ef630</span>&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>自己定义的类要实现len()怎么做</p>
-<p><code>__len__()</code>魔法函数</p>
-<p>协程</p>
-<p><code>async</code>和<code>await</code></p>
-<p>协程: 协程，又称微线程，纤程，英文名Coroutine。协程的作用，是在执行函数A时，可以随时中断，去执行函数B，然后中断继续执行函数A（可以自由切换）。但这一过程并不是函数调用（没有调用语句），这一整个过程看似像多线程，然而协程只有一个线程执行.</p>
-<p>协程由于由程序主动控制切换，没有线程切换的开销，所以执行效率极高。对于IO密集型任务非常适用，如果是cpu密集型，推荐多进程+协程的方式。</p>
-<p>内存的堆与栈</p>
-<p>前有答案</p>
-<p>redis消息队列</p>
-<p>列表实现lpush()，消费者阻塞等待blpop()</p>
-<p>短链接怎么实现</p>
-<p>客户端请求：</p>
-<p>DNS服务获取ip地址，请求到短链接服务，服务获取到短链接后跟的地址(6位)，进行62(A<del>Z+a</del>z+0~9)进制转10进制得到数据库中的id，查询是否相等后，进而301永久重定向到长链接中</p>
-<p>服务端生成：</p>
-<p>首先查询数据库中是否存在该长链接，存在就返回短链接地址，</p>
-<p>不存在就插入一条自增的数据，存入长链接，获取该自增id，进行10进制转62进制，得到6位短地址(不够6位就在前面填几个0对应的62进制)，存入数据库中</p>
-<p>可以存在62^6次方个短地址</p>
-<p>介绍虚拟内存，怎么从磁盘拿需要的部分</p>
-<p><a href="https://zhuanlan.zhihu.com/p/53004596" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/53004596</a></p>
-<p><strong>局部性原理</strong>：</p>
-<p><strong>时间局部性</strong>：如果执行了程序中的某条指令，那么不久后这条指令很有可能再次被执行；如果某个数据被访问过，不就之后该数据很有可能再次被访问。（因为<strong>程序中存在大量的循环</strong>）</p>
-<p><strong>空间局部性</strong>：一旦程序访问了某个存户单元，在不久之后，其附近的存储单元也很有可能被访问。（因为<strong>很多数据在内存中都是连续存放的</strong>）。</p>
-<p><strong>时间局部性和空间局部性统称为局部性原理。</strong></p>
-<p>页面置换方式进入到内存，与最近最久未使用的页面进行替换</p>
-<p>数据库的最左匹配原则，为什么</p>
-<p>辅助索引中的排序是靠第一个索引字段来的</p>
-<p>首先会对复合索引的最左边，也就是索引中的第一个字段进行排序，在第一个字段排序的基础上，在对索引上第二个字段进行排序，其实就像是实现类似order by 字段1，字段2这样的排序规则，那么第一个字段是绝对有序的，而第二个字段就是无序的了，因此一般情况下直接只用第二个字段判断是用不到索引的，这就是为什么mysql要强调联合索引最左匹配原则的原因。</p>
-<p>RPC,微服务（不会，小哥给我解释了一番）</p>
-<h2 id="代码题-1"><a href="#代码题-1" class="headerlink" title="代码题"></a>代码题</h2><p>每次可以走[1,3,5]步，问走到100有多少种方法</p>
-<p>leetcode <a href="https://leetcode-cn.com/problems/combination-sum-iv/" target="_blank" rel="external nofollow noopener noreferrer">377. 组合总和 Ⅳ</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_count</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        steps = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line">        dp = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>  <span class="comment"># target=0的时候且step=0,所以也是一种情况</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> step <span class="keyword">in</span> steps:</span><br><span class="line">                <span class="keyword">if</span> i &gt;= step:</span><br><span class="line">                    dp[i] += dp[i - step]</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    s = Solution()</span><br><span class="line">    print(s.get_count(<span class="number">100</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="三面-5-7-许愿HR面"><a href="#三面-5-7-许愿HR面" class="headerlink" title="三面 5.7 许愿HR面"></a>三面 5.7 许愿HR面</h1><p>操作系统文件描述符</p>
-<p>fd(io复用中使用的)</p>
-<p>维基百科:文件描述符在形式上是一个非负整数。实际上，它是一个索引值，指向内核为每一个进程所维护的该进程打开文件的记录表。当程序打开一个现有文件或者创建一个新文件时，内核向进程返回一个文件描述符。在程序设计中，一些涉及底层的程序编写往往会围绕着文件描述符展开。</p>
-<p>对称加密非对称加密</p>
-<p>公钥|公钥+私钥</p>
-<p>http|https</p>
-<p>AES|RSA</p>
-<p>进程和线程</p>
-<p><strong>最近整理了自己的笔记, 发一下自己的理解, 还请大方之家赐教</strong></p>
-<blockquote>
-<p><strong>PS 不涉及多核情况下的讨论</strong></p>
-</blockquote>
-<p><strong>本质上都是对 Task 的执行规划</strong></p>
-<ol>
-<li>你CPU快过IO设备, 人类作为统治阶级要压榨你, 不让你闲着, 于是<strong>一个任务(程序) 对应一个进程就出来了</strong>. 你CPU要<strong>雨露均沾</strong>的执行这些程序</li>
-<li>然后呢? 人们发现 程序 还有很多可以<strong>细分的任务</strong>, 于是 <strong>多线程</strong>的设计方式出来了.  多线程的实现方案实在是太成熟了, 以至于大部分操作系统的实现是<strong>一个进程至少有一个执行线程, 于是各种桌面软件服务器软件冒出来了</strong></li>
-<li>接着呢? 人们发现 像 Web Server 这种东西, 完全是靠IO嘛, <strong>Thread Per Message 完全可以一波流, 但创建和销毁 Thread 成本依旧很高</strong>, 于是协程这种东西也就又开始流行了. </li>
-</ol>
-<p>下面是比较详细的对比, 因为知乎不支持表格, 就贴 OneNote 的截图了</p>
-<p><img data-src="https://pic2.zhimg.com/v2-0286f1c2a82b32a8aad5bf42fb04f1f2_r.jpg" alt="img">)<img data-src="https://pic4.zhimg.com/v2-f1380c8d9bd70517a8390c707cadbb80_r.jpg" alt="img"></p>
-<p><img data-src="https://pic3.zhimg.com/v2-71da6e6200b101f7cca936f72ff4ffcc_r.jpg" alt="img"></p>
-<p>进程间通信方法，哪个最快</p>
-<p>共享内存</p>
-<p>常见进程间通信方式的比较： </p>
-<p> 管道：速度慢，容量有限<br> 消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题。<br> 信号量：不能传递复杂消息，只能用来同步<br> <strong>共享内存区</strong>：能够很容易控制容量，<strong>速度快</strong> ，但要保持同步，比如一个进程在写的时候，另一个进程要注意读写的问题，相当于线程中的线程安全，当然，共享内存区同样可以用作线程间通讯，不过没这个必要，线程间本来就已经共享了一块内存的。</p>
-<p>HTTP状态码</p>
-<p><a href="https://www.runoob.com/http/http-status-codes.html" target="_blank" rel="external nofollow noopener noreferrer">https://www.runoob.com/http/http-status-codes.html</a></p>
-<p>redis与memcached区别，为什么redis用的多</p>
-<p>Memcache</p>
-<p>Memcache可以利用多核优势，单实例吞吐量极高，可以达到几十万QPS,适用于最大程度扛量</p>
-<p>只支持简单的key/value数据结构，不像Redis可以支持丰富的数据类型。</p>
-<p>无法进行持久化，数据不能备份，只能用于缓存使用，且重启后数据全部丢失</p>
-<p>Redis</p>
-<p>支持多种数据结构，如string,list,dict,set,zset,hyperloglog</p>
-<p>单线程请求，所有命令串行执行，并发情况下不需要考虑数据一致性问题。</p>
-<p>支持持久化操作，可以进行aof及rdb数据持久化到磁盘，从而进行数据备份或数据恢复等操作，较好的防止数据丢失的手段。</p>
-<p>支持通过Replication进行数据复制，通过master-slave机制，可以实时进行数据的同步复制，支持多级复制和增量复制.</p>
-<p>首先支持多种数据结构、可备份、高可用、易扩展</p>
-<p>微服务 RPC 为什么不用HTTP</p>
-<p>一般会觉得HTTP协议携带大量无用的header，导致请求字节会比较大，所以一般使用自定义的rpc框架，基于tcp传输。良好的rpc调用是面向服务的封装，针对服务的可用性和效率等都做了优化。单纯使用http调用则缺少了这些特性。成熟的rpc库相对http容器，更多的是封装了“服务发现”，”负载均衡”，“熔断降级”一类面向服务的高级特性。</p>
-<p>多线程fork之后进程是否是多线程</p>
-<p>不是，除了发起fork()的线程外，其它都不会有</p>
-<p>会存在死锁问题：之前多线程对一个资源（所有资源、栈、内存空间、fd等复制）上锁，上锁的线程没了，也就不能释放锁，所以会死锁。解决方法是fork()前获取所有锁，新进程中释放</p>
-<p>rand4()求rand6()</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rand6</span><span class="params">()</span>:</span></span><br><span class="line">    num = rand4() + (rand4() - <span class="number">1</span>) * <span class="number">4</span></span><br><span class="line">    <span class="keyword">while</span> num &lt;= <span class="number">10</span>:</span><br><span class="line">        num = rand4() + (rand4() - <span class="number">1</span>) * <span class="number">4</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>不均匀硬币模拟均匀概率</p>
-<ol>
-<li>两次均为正面：p * p</li>
-<li>第一次正面，第二次反面：p * (1 - p)</li>
-<li>第一次反面，第二次正面：(1 - p) * p</li>
-<li>两次均为反面：(1 - p) * (1 - p)</li>
-</ol>
-<p>所以只要第二次和第一次不同即可</p>
-<p>代码：包含最多k个不同字符的最长子串</p>
-<p>Given a string, find the length of the longest substring T that contains at most k distinct characters.</p>
-<p>For example,</p>
-<p>Given s = “eceba” and k = 2,</p>
-<p>T is “ece” which its length is 3.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstringKDistinct</span><span class="params">(self, s, k)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :type s: str</span></span><br><span class="line"><span class="string">    :type k: int</span></span><br><span class="line"><span class="string">    :rtype: int</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    ans = <span class="number">0</span></span><br><span class="line">    dict = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">      dict[s[i]] = dict.get(s[i], <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">      <span class="keyword">while</span> j &lt;= i <span class="keyword">and</span> len(dict) &gt; k:</span><br><span class="line">        dict[s[j]] -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> dict[s[j]] == <span class="number">0</span>:</span><br><span class="line">          <span class="keyword">del</span> dict[s[j]]</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">      ans = max(ans, i - j + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>作者：Japs0n<br>链接：<a href="https://www.nowcoder.com/discuss/236551?type=2&amp;order=0&amp;pos=12&amp;page=1&amp;channel=-1&amp;source_id=1_2" target="_blank" rel="external nofollow noopener noreferrer">https://www.nowcoder.com/discuss/236551?type=2&amp;order=0&amp;pos=12&amp;page=1&amp;channel=-1&amp;source_id=1_2</a><br>来源：牛客网</p>
-<h2 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h2><h3 id="一面："><a href="#一面：" class="headerlink" title="一面："></a>一面：</h3><ol>
-<li><p>lc里最长上升子序列的变形题。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        size = len(nums)</span><br><span class="line">        dp = [<span class="number">1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(size)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, size):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">                <span class="keyword">if</span> nums[j] &lt; nums[i]:</span><br><span class="line">                    dp[i] = max(dp[i], dp[j] + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> max(dp)</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="2">
-<li><p>实现输入英文单词联想的功能</p>
-<p>前缀树</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.trie = &#123;&#125;</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, word: str)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Inserts a word into the trie.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        tree = self.trie</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">            <span class="keyword">if</span> w <span class="keyword">not</span> <span class="keyword">in</span> tree:</span><br><span class="line">                tree[w] = &#123;&#125;</span><br><span class="line">            tree = tree[w]</span><br><span class="line">        tree[<span class="string">'#'</span>] = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, word: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Returns if the word is in the trie.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        tree = self.trie</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">            <span class="keyword">if</span> w <span class="keyword">not</span> <span class="keyword">in</span> tree:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            tree = tree[w]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'#'</span> <span class="keyword">in</span> tree:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">startsWith</span><span class="params">(self, prefix: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Returns if there is any word in the trie that starts with the given prefix.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        tree = self.trie</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> prefix:</span><br><span class="line">            <span class="keyword">if</span> w <span class="keyword">not</span> <span class="keyword">in</span> tree:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            tree = tree[w]</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your Trie object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = Trie()</span></span><br><span class="line"><span class="comment"># obj.insert(word)</span></span><br><span class="line"><span class="comment"># param_2 = obj.search(word)</span></span><br><span class="line"><span class="comment"># param_3 = obj.startsWith(prefix)</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<h3 id="二面："><a href="#二面：" class="headerlink" title="二面："></a>二面：</h3><ol>
-<li><p>矩阵旋转，要求空间复杂度O(1)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, matrix: List[List[int]])</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(matrix)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len(matrix[<span class="number">0</span>])):</span><br><span class="line">                <span class="keyword">if</span> j &lt; i:</span><br><span class="line">                    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(matrix)):</span><br><span class="line">            matrix[i].reverse()</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="2">
-<li><p>无序的数组的中位数。要求时间复杂度尽可能的小</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_mid</span><span class="params">(nums)</span>:</span></span><br><span class="line">    min_heap = []</span><br><span class="line">    max_heap = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">        <span class="keyword">if</span> len(min_heap) == len(max_heap):</span><br><span class="line">            heapq.heappush(max_heap, -heapq.heappushpop(min_heap, -num))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            heapq.heappush(min_heap, -heapq.heappushpop(max_heap, num))</span><br><span class="line">    <span class="keyword">if</span> len(min_heap) == len(max_heap):</span><br><span class="line">        <span class="keyword">return</span> (max_heap[<span class="number">0</span>] - min_heap[<span class="number">0</span>]) // <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> max_heap[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">x = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">-1</span>, <span class="number">-3</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">print(get_mid(x))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-</li>
-</ol>
-<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p>tcp 怎么保证数据包有序</p>
-<p><a href="http://xstarcd.github.io/wiki/shell/TCP_ACK.html" target="_blank" rel="external nofollow noopener noreferrer">http://xstarcd.github.io/wiki/shell/TCP_ACK.html</a></p>
-<p>发送和接收缓冲区，发送端字节流序号以及接收端的确认号(=序号(100)+长度(100)+1=201)</p>
-<p>tcp 和 udp 的异同</p>
-<h4 id="1-对比"><a href="#1-对比" class="headerlink" title="1. 对比"></a>1. 对比</h4><table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left">UDP</th>
-<th align="left">TCP</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">是否连接</td>
-<td align="left">无连接</td>
-<td align="left">面向连接</td>
-</tr>
-<tr>
-<td align="left">是否可靠</td>
-<td align="left">不可靠传输，不使用流量控制和拥塞控制</td>
-<td align="left">可靠传输，使用流量控制和拥塞控制</td>
-</tr>
-<tr>
-<td align="left">连接对象个数</td>
-<td align="left">支持一对一，一对多，多对一和多对多交互通信</td>
-<td align="left">只能是一对一通信</td>
-</tr>
-<tr>
-<td align="left">传输方式</td>
-<td align="left">面向报文</td>
-<td align="left">面向字节流</td>
-</tr>
-<tr>
-<td align="left">首部开销</td>
-<td align="left">首部开销小，仅8字节</td>
-<td align="left">首部最小20字节，最大60字节</td>
-</tr>
-<tr>
-<td align="left">适用场景</td>
-<td align="left">适用于实时应用（IP电话、视频会议、直播等）</td>
-<td align="left">适用于要求可靠传输的应用，例如文件传输</td>
-</tr>
-</tbody></table>
-<p>tcp 怎么保证可靠性</p>
-<p>等同<code>tcp 怎么保证数据包有序</code></p>
-<p>tcp 中 拥塞避免 和 流量控制 机制</p>
-<p>[<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20-%20%E4%BC%A0%E8%BE%93%E5%B1%82.md#tcp-%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93]" target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20-%20%E4%BC%A0%E8%BE%93%E5%B1%82.md#tcp-%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93]</a>(<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机网络" target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机网络</a> - 传输层.md#tcp-可靠传输)</p>
-<p><strong>流量控制</strong>主要是修改接收端的滑动窗口(在tcp头的窗口字段设置)，从而影响发送端的发送效率</p>
-<p><strong>拥塞避免</strong>就是慢开始会有一个上限(一次发送报文段的阈值)，当慢开始(从1开始每次发送报文翻倍)到达这个阈值后，不是翻倍，而是+1，如果出现超时，则使这个阈值设为当前发送数的一半，并且重新开始慢开始</p>
-<p><strong>PS</strong>：快重传和快恢复都是针对丢失报文段而不是网络堵塞，因此执行快恢复，令 ssthresh = cwnd / 2 ，cwnd = ssthresh，注意到此时直接进入拥塞避免。</p>
-<p>tcp 四次挥手的详细解释</p>
-<ul>
-<li>A 发送连接释放报文，FIN=1。</li>
-<li>B 收到之后发出确认，此时 TCP 属于半关闭状态，B 能向 A 发送数据但是 A 不能向 B 发送数据。</li>
-<li>当 B 不再需要连接时，发送连接释放报文，FIN=1。</li>
-<li>A 收到后发出确认，进入 TIME-WAIT 状态，等待 2 MSL（最大报文存活时间）后释放连接。</li>
-<li>B 收到 A 的确认后释放连接。</li>
-</ul>
-<p>四次挥手之后为什么还要等待2msl</p>
-<p><strong>2 MSL（最大报文存活时间）</strong></p>
-<p>客户端接收到服务器端的 FIN 报文后进入此状态，此时并不是直接进入 CLOSED 状态，还需要等待一个时间计时器设置的时间 2MSL。这么做有两个理由：</p>
-<ul>
-<li>确保最后一个确认报文能够到达。如果 B 没收到 A 发送来的确认报文，那么就会重新发送连接释放请求报文，A 等待一段时间就是为了处理这种情况的发生。</li>
-<li>等待一段时间是为了让本连接持续时间内所产生的所有报文都从网络中消失，使得下一个新的连接不会出现旧的连接请求报文。</li>
-</ul>
-<p>浏览器从输入网址到显示出网页的全过程</p>
-<p><a href="https://segmentfault.com/a/1190000017184701" target="_blank" rel="external nofollow noopener noreferrer">https://segmentfault.com/a/1190000017184701</a></p>
-<p>滑动窗口机制的原理和理解</p>
-<p><a href="https://blog.csdn.net/wdscq1234/article/details/52444277" target="_blank" rel="external nofollow noopener noreferrer">https://blog.csdn.net/wdscq1234/article/details/52444277</a></p>
-<p>Https 原理和实现</p>
-<p>SSL是由网景公司发明的，后来由于应用广发，IETF就把SSL进行标准化，并把标准化后的SSL改名为TLS。所以，TLS可以说是SSL的加强版，两者是同一个东西的不同阶段。</p>
-<p><a href="https://netsecurity.51cto.com/art/201912/607179.htm#topx" target="_blank" rel="external nofollow noopener noreferrer">https://netsecurity.51cto.com/art/201912/607179.htm#topx</a></p>
-<p>cookie和session的区别是什么</p>
-<p>Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；<br>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式。</p>
-<h2 id="操作系统-1"><a href="#操作系统-1" class="headerlink" title="操作系统"></a>操作系统</h2><p>进程和线程的区别 </p>
-<p>见上<code>进程和线程</code></p>
-<p>进程切换与线程切换</p>
-<p>进程切换分两步</p>
-<p>1.切换页目录以使用新的地址空间<br>2.切换内核栈和硬件上下文。</p>
-<p>对于linux来说，线程和进程的最大区别就在于地址空间。<br>对于线程切换，第1步是不需要做的，第2是进程和线程切换都要做的。所以明显是进程切换代价大</p>
-<p>Linux中五种IO模型</p>
-<p><a href="https://juejin.im/post/5c725dbe51882575e37ef9ed#heading-8" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5c725dbe51882575e37ef9ed#heading-8</a></p>
-<p>阻塞和非阻塞主要针对调用者是否等待结果，同步和异步主要是针对被调用者是否立刻返回结果</p>
-<p>如何实现一个同步非阻塞的请求</p>
-<p>就是阶段1的时候用户进程可选择做其他事情，通过轮询的方式看看内核缓冲区是否就绪。如果数据就绪，再去执行阶段2。</p>
-<p>也就是说非阻塞的recvform系统调用调用之后，进程并没有被阻塞，内核马上返回给进程，如果数据还没准备好， 此时会返回一个error。进程在返回之后，可以干点别的事情，然后再发起recvform系统调用。重复上面的过程， 循环往复的进行recvform系统调用。这个过程通常被称之为轮询。轮询检查内核数据，直到数据准备好， 再拷贝数据到进程，进行数据处理。需要注意，第2阶段的拷贝数据整个过程，进程仍然是属于阻塞的状态。</p>
-<p>实现进程同步的机制有什么</p>
-<ul>
-<li><p>[1. 临界区](<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统" target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统</a> - 进程管理.md#1-临界区)</p>
-</li>
-<li><p>[2. 同步与互斥](<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统" target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统</a> - 进程管理.md#2-同步与互斥)</p>
-</li>
-<li><p>[3. 信号量](<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统" target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统</a> - 进程管理.md#3-信号量)</p>
-</li>
-<li><p>[4. 管程](<a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统" target="_blank" rel="external nofollow noopener noreferrer">https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统</a> - 进程管理.md#4-管程)</p>
-</li>
-</ul>
-<p>信号量的实现机制</p>
-<p>信号量（Semaphore）是一个整型变量，可以对其执行 down 和 up 操作，也就是常见的 P 和 V 操作。</p>
-<ul>
-<li><strong>down</strong> : 如果信号量大于 0 ，执行 -1 操作；如果信号量等于 0，进程睡眠，等待信号量大于 0；</li>
-<li><strong>up</strong> ：对信号量执行 +1 操作，唤醒睡眠的进程让其完成 down 操作。</li>
-</ul>
-<p>如果信号量的取值只能为 0 或者 1，那么就成为了 <strong>互斥量（Mutex）</strong> ，0 表示临界区已经加锁，1 表示临界区解锁。</p>
-<p>共享锁和排他锁</p>
-<p>共享锁【S锁】<br>又称读锁，若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</p>
-<p>排他锁【X锁】<br>又称写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。这保证了其他事务在T释放A上的锁之前不能再读取和修改A。</p>
-<p>实现一个读写锁</p>
-<p><a href="http://xiaorui.cc/archives/2384" target="_blank" rel="external nofollow noopener noreferrer">http://xiaorui.cc/archives/2384</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReadWriteLock</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__monitor = threading.Lock()</span><br><span class="line">        self.__exclude = threading.Lock()</span><br><span class="line">        self.readers = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">acquire_read</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> self.__monitor:</span><br><span class="line">            self.readers += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> self.readers == <span class="number">1</span>:</span><br><span class="line">                self.__exclude.acquire()</span><br><span class="line">                </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">release_read</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> self.__monitor:</span><br><span class="line">            self.readers -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> self.readers == <span class="number">0</span>:</span><br><span class="line">                self.__exclude.release()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">acquire_write</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__exclude.acquire()</span><br><span class="line">                </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">release_write</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__exclude.release()</span><br></pre></td></tr></table></figure>
-
-
-
-<p>设计一个无锁队列</p>
-<p><a href="http://xiaorui.cc/archives/4626" target="_blank" rel="external nofollow noopener noreferrer">http://xiaorui.cc/archives/4626</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># xiaorui.cc</span></span><br><span class="line"></span><br><span class="line">product_ptr = <span class="number">0</span></span><br><span class="line">consumer_ptr = <span class="number">0</span></span><br><span class="line">queue_count = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">ringbuffer = (<span class="literal">None</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(queue_count))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">product</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> 生index - 消index &gt; <span class="number">500</span>:</span><br><span class="line">            sleep(xx)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            product_ptr ++</span><br><span class="line">            ringbuffer[product_ptr] = <span class="string">"data"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consumer</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> 消 &lt;= 生:</span><br><span class="line">            ptr = consumer_ptr ++</span><br><span class="line">            <span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">                d = ringbuffer[ptr]</span><br><span class="line">                <span class="keyword">if</span> d <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>协程的原理</p>
-<p><code>async</code>和<code>await</code></p>
-<p>协程: 协程，又称微线程，纤程，英文名Coroutine。协程的作用，是在执行函数A时，可以随时中断，去执行函数B，然后中断继续执行函数A（可以自由切换）。但这一过程并不是函数调用（没有调用语句），这一整个过程看似像多线程，然而协程只有一个线程执行.</p>
-<p>协程由于由程序主动控制切换，没有线程切换的开销，所以执行效率极高。对于IO密集型任务非常适用，如果是cpu密集型，推荐多进程+协程的方式。</p>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p>索引是什么</p>
-<p>索引是一种单独的、物理的对数据库表中一列或多列的值进行排序的一种存储结构，它是某个表中一列或若干列值的集合和相应的指向表中物理标识这些值的数据页的逻辑<a href="https://baike.baidu.com/item/指针/2878304" target="_blank" rel="external nofollow noopener noreferrer">指针</a>清单。索引的作用相当于图书的目录，可以根据目录中的<a href="https://baike.baidu.com/item/页码/7716178" target="_blank" rel="external nofollow noopener noreferrer">页码</a>快速找到所需的内容。</p>
-<p>为什么要用B+树（B+树的优缺点）</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a><strong>优点</strong></h3><ol>
-<li>单次请求涉及的磁盘IO次数少（出度d大，且非叶子节点不包含表数据，树的高度小）；</li>
-<li>查询效率稳定（任何关键字的查询必须走从根结点到叶子结点，查询路径长度相同）；</li>
-<li>遍历效率高（从符合条件的某个叶子节点开始遍历即可）；</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a><strong>缺点</strong></h3><p>B+树最大的性能问题在于会产生大量的随机IO，主要存在以下两种情况：</p>
-<ol>
-<li>主键不是有序递增的，导致每次插入数据产生大量的数据迁移和空间碎片；</li>
-<li>即使主键是有序递增的，大量写请求的分布仍是随机的；</li>
-</ol>
-<p>B+树中叶子节点间的指针有什么用</p>
-<p>方便区域查询，不需要中序遍历</p>
-<p>聚簇和非聚簇索引的区别</p>
-<p>见上<code>b. 聚簇&amp;非聚簇索引</code></p>
-<p>非聚簇索引的查询都要回表吗？</p>
-<p><strong>?</strong> 应该是辅助索引查询都需要回表吗：不是  覆盖索引不需要</p>
-<p>B+树 和 AVL树 B树 二叉搜索树有什么区别</p>
-<p>AVL和二叉搜索树都是二叉的，高度会很高，且不利于磁盘查找</p>
-<p>B+树相对于B树来说只有叶子节点存储数据，且叶子结点间有指针相连(链表)</p>
-<p>where 中 or 和 and 对于索引的使用有什么区别</p>
-<p><strong>用or分割开的条件，如果or前的条件中的列有索引，而后面的列中没有索引，那么涉及的索引都不会被用到</strong>。</p>
-<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><blockquote>
-<p>这一部分和项目比较相关。基本上项目中有什么或者面试官想到什么问什么问了很多但是不通用。就只写一点。</p>
-</blockquote>
-<h3 id="GIL"><a href="#GIL" class="headerlink" title="GIL"></a>GIL</h3><p>是什么</p>
-<p>全局解释器锁，每个CPU在同一时间只能执行一个线程</p>
-<p>为什么会有</p>
-<p>CPython 内存管理不是线程安全的，因此需要 GIL 来保证多个原生线程不会并发执行 Python 字节码。</p>
-<ul>
-<li>单线程情况下更快。</li>
-<li>瓶颈在于 I/O 的多线程环境下更快。</li>
-<li>CPU 耗时操作发生在 C 库调用上时更快。</li>
-<li>编写 C 扩展会更容易：除非你手动指定，否则不会发生 Python 线程切换的问题。</li>
-<li>封装 C 库变得更容易，因为不需要考虑线程安全问题。如果该库不是线程安全的，你只需要保证调用时 GIL 是锁定的。</li>
-</ul>
-<p>有什么作用</p>
-<p><a href="https://zhuanlan.zhihu.com/p/20953544" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/20953544</a></p>
-<p>怎么规避它对于并行的影响</p>
-<p>多进程+协程</p>
-<h3 id="语言相关"><a href="#语言相关" class="headerlink" title="语言相关"></a>语言相关</h3><p>Python 的 内存 管理 机制</p>
-<p>讲一下Python GC的原理和 详细解释（分代，标记回收，内存划分）</p>
-<p>Python中static_method 、 class_mathod 、和普通method有什么区别</p>
-<p>迭代器和生成器有什么区别</p>
-<p>如何构造一个生成器</p>
-<p>作者：GithubOverFlow<br>链接：<a href="https://www.nowcoder.com/discuss/259363?type=2&amp;order=0&amp;pos=13&amp;page=1&amp;channel=-1&amp;source_id=1_2" target="_blank" rel="external nofollow noopener noreferrer">https://www.nowcoder.com/discuss/259363?type=2&amp;order=0&amp;pos=13&amp;page=1&amp;channel=-1&amp;source_id=1_2</a><br>来源：牛客网</p>
-<p>一面</p>
-<ol>
-<li><p>聊项目(30分钟)</p>
-</li>
-<li><p>手撕代码，python协程实现一个生产者消费者模型。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consumer</span><span class="params">()</span>:</span></span><br><span class="line">    r = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n = <span class="keyword">yield</span> r</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> n:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        print(<span class="string">'[CONSUMER] Consuming %s...'</span> % n)</span><br><span class="line">        r = <span class="string">'200 OK'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">produce</span><span class="params">(c)</span>:</span></span><br><span class="line">    c.send(<span class="literal">None</span>)</span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; <span class="number">5</span>:</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">        print(<span class="string">'[PRODUCER] Producing %s...'</span> % n)</span><br><span class="line">        r = c.send(n)</span><br><span class="line">        print(<span class="string">'[PRODUCER] Consumer return: %s'</span> % r)</span><br><span class="line">    c.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">c = consumer()</span><br><span class="line">produce(c)</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="3">
-<li><p>对称加密非对称加密。</p>
-<p>公钥|公钥+私钥</p>
-</li>
-<li><p>ORM。</p>
-<p>sqlachemy</p>
-</li>
-<li><p>SQL 注入。</p>
-<p>构造一个sql语句，后面加一个or 1=1等</p>
-</li>
-<li><p>短链接的原理。如t.cn如何映射到一个真正的域名。</p>
-<p>见上</p>
-</li>
-<li><p>数据库ACID。</p>
-<p>原子性、一致性、隔离性、持久性</p>
-</li>
-<li><p>Python 装饰器。</p>
-<p>见上</p>
-</li>
-</ol>
-<p>剩下还有一些我不记得了，一面感觉更像一个简历面。</p>
-<p>二面</p>
-<ol>
-<li><p>重写与重载。</p>
-</li>
-<li><p>C++虚函数表，只有虚函数表的对象占据多少内存。</p>
-</li>
-<li><p>SSO原理。</p>
-<p><a href="https://www.cnblogs.com/ywlaker/p/6113927.html" target="_blank" rel="external nofollow noopener noreferrer">https://www.cnblogs.com/ywlaker/p/6113927.html</a></p>
-</li>
-<li><p>对称加密非对称加密。</p>
-</li>
-<li><p>SSL原理。</p>
-</li>
-<li><p>TCP慢启动，客户端服务端滑动窗口大小如何协商。</p>
-</li>
-<li><p>HTTP keep-alive，管线化。</p>
-</li>
-<li><p>手撕代码，二叉树最近公共祖先。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.public = <span class="literal">None</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lowestCommonAncestor</span><span class="params">(self, root: <span class="string">'TreeNode'</span>, p: <span class="string">'TreeNode'</span>, q: <span class="string">'TreeNode'</span>)</span> -&gt; 'TreeNode':</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(node)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            mid = node == p <span class="keyword">or</span> node == q  <span class="comment"># True or False</span></span><br><span class="line"></span><br><span class="line">            left = helper(node.left)</span><br><span class="line">            right = helper(node.right)</span><br><span class="line"></span><br><span class="line">           </span><br><span class="line">            <span class="keyword">if</span> mid + left + right == <span class="number">2</span>:</span><br><span class="line">                self.public = node</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> mid <span class="keyword">or</span> left <span class="keyword">or</span> right</span><br><span class="line"></span><br><span class="line">        helper(root)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.public</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="9">
-<li><p>Redis 数据结构。</p>
-</li>
-<li><p>什么样的列不适合建立索引。</p>
-<ol>
-<li>很少被查询使用的字段</li>
-<li>text一类大容量的字段</li>
-<li>值很少或者大量重复的字段(性别)</li>
-<li>修改远大于读的字段</li>
-</ol>
-</li>
-<li><p>访问一个网页，响应很慢，从哪些方面排查问题？如何优化？</p>
-</li>
-<li><p>I/O多路复用与其他网络I/O模型的区别。</p>
-</li>
-<li><p>select、poll、epoll</p>
-</li>
-<li><p>进程与线程。</p>
-</li>
-<li><p>线程与协程。</p>
-</li>
-<li><p>爬虫适合用多进程还是多线程。</p>
-<p>多线程：python GIL不会影响io密集处理，而且爬虫需要一个集中处理重复url问题等，新建进程会创建新的虚拟内存</p>
-</li>
-<li><p>不同线程的堆栈相同吗。</p>
-<p>共享进程的局部堆，各自有栈</p>
-<p><strong>堆：</strong>　是大家共有的空间，分全局堆和局部堆。全局堆就是所有没有分配的空间，局部堆就是用户分配的空间。堆在操作系统对进程初始化的时候分配，运行过程中也可以向系统要额外的堆，但是记得用完了要还给操作系统，要不然就是内存泄漏。</p>
-<p><strong><em>\</em>栈：**</strong>是个线程独有的，保存其运行状态和局部自动变量的。栈在线程开始的时候初始化，每个线程的栈互相独立，因此，栈是　thread safe的。每个Ｃ　＋＋对象的数据成员也存在在栈中，每个函数都有自己的栈，栈被用来在函数之间传递参数。操作系统在切换线程的时候会自动的切换栈，就是切换　ＳＳ／ＥＳＰ寄存器。栈空间不需要在高级语言里面显式的分配和释放。</p>
-</li>
-</ol>
-<ol start="18">
-<li><p>C++内存分布。</p>
-</li>
-<li><p>Define与const。</p>
-</li>
-<li><p>情景题：某脚本同时处理一大堆文件，若脚本突然挂掉，如何判断处理到了哪些文件的哪些部分。</p>
-<p>批量处理的时候记录处理到的行数</p>
-</li>
-<li><p>有许多八位数的电话号码，设计一个存储方案，用尽可能少的内存，达到比较高效的检索。</p>
-<p>类似于布隆过滤器，位图二进制，一个0/1代表一个值是否存在</p>
-</li>
-</ol>
-<ol start="22">
-<li><p>按Control-C，发生了什么。</p>
-<p>中断信号</p>
-</li>
-<li><p>Tornado 为什么那么快。</p>
-</li>
-<li><p>Python items 和 iter-items的区别。</p>
-</li>
-<li><p>聊项目(20分钟)</p>
-</li>
-</ol>
-<p>作者：花落忆流年╮<br>链接：<a href="https://www.nowcoder.com/discuss/206371?type=2&amp;order=0&amp;pos=14&amp;page=1&amp;channel=-1&amp;source_id=1_2" target="_blank" rel="external nofollow noopener noreferrer">https://www.nowcoder.com/discuss/206371?type=2&amp;order=0&amp;pos=14&amp;page=1&amp;channel=-1&amp;source_id=1_2</a><br>来源：牛客网</p>
-<p>1.HTTP和RPC的区别</p>
-<p>​    见上<code>微服务 RPC 为什么不用HTTP</code></p>
-<p>2.HTTP的常见方法，post与get差别，常见的请求头key-val对儿 </p>
-<p>3.后台报504错误，分析原因如何解决 </p>
-<p>504是网关获取后面服务信息超时，502是获取到无效的响应</p>
-<p>4.数据库的索引问题，针对场景如何建立索引，为什么这么建立索引，怎样优化 </p>
-<p>   mysql 。订单 order 实体有几个属性：产品(product_id)、下单日期（date）等，请设计 索引 实现下列需求并优化索引：<br> -—–<br> 查询某个产品的所有订单。<br> 查询某一天的所有订单。<br> 查询有个产品最近一个月的所有订单。<br> -—-  </p>
-<p>   5.编程题  </p>
-<p>   对两个二进制字符串求十进制的和</p>
-<p>   6.设计一个HTTP服务，如何查询出订单量前十的商品，后台如何做  </p>
-<p>   7.python的并发的问题  </p>
-
+          <p>芝士就是芝士，披萨就是披萨</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/posts/2a049014/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1023,7 +331,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1118,7 +426,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1214,7 +522,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1313,7 +621,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1408,7 +716,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1503,7 +811,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1598,7 +906,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1693,7 +1001,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1788,7 +1096,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 17:46:51" itemprop="dateModified" datetime="2020-05-27T17:46:51+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1926,7 +1234,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
