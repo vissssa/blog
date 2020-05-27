@@ -22,13 +22,24 @@
     var CONFIG = {"hostname":"vissssa.gitee.io","root":"/blog/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="python, flask, linux, 架构, 生活, 科技">
-<meta property="og:type" content="website">
-<meta property="og:title" content="vissssa">
-<meta property="og:url" content="https://vissssa.gitee.io/blog/index.html">
+  <meta name="description" content="1. 服务降级和限流https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;61363959 2. redis string类型的底层实现https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5d71d3bee51d453b5f1a04f1 3. redis的持久化方式https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5b70dfcf518825610f1f5c16 4. aqs和cas，死锁检测https">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字节常考">
+<meta property="og:url" content="https://vissssa.gitee.io/blog/posts/b8daf32a/index.html">
 <meta property="og:site_name" content="vissssa">
-<meta property="og:description" content="python, flask, linux, 架构, 生活, 科技">
+<meta property="og:description" content="1. 服务降级和限流https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;61363959 2. redis string类型的底层实现https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5d71d3bee51d453b5f1a04f1 3. redis的持久化方式https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5b70dfcf518825610f1f5c16 4. aqs和cas，死锁检测https">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://camo.githubusercontent.com/a01cdf6f16898459a64d0e4f30099a648e41f234/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f65393264306562632d376434362d343133622d616563312d3334613339363032663738372e706e67">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/5/160c5b10d3f27e00?imageslim">
+<meta property="og:image" content="http://dockone.io/uploads/article/20190626/401405294bff9c66a1ec0e842391c856.png">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/5/16/16ac10253b8748df?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://yuerer.com/images/interrupttype.png">
+<meta property="og:image" content="https://img-blog.csdn.net/20170415161738770?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcTEwMDc3Mjk5OTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-0286f1c2a82b32a8aad5bf42fb04f1f2_r.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f1380c8d9bd70517a8390c707cadbb80_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-71da6e6200b101f7cca936f72ff4ffcc_r.jpg">
+<meta property="article:published_time" content="2020-05-27T09:41:59.120Z">
+<meta property="article:modified_time" content="2020-05-27T09:41:59.120Z">
 <meta property="article:author" content="vissssa">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content=" flask">
@@ -37,20 +48,21 @@
 <meta property="article:tag" content=" 生活">
 <meta property="article:tag" content=" 科技">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/a01cdf6f16898459a64d0e4f30099a648e41f234/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f65393264306562632d376434362d343133622d616563312d3334613339363032663738372e706e67">
 
-<link rel="canonical" href="https://vissssa.gitee.io/blog/">
+<link rel="canonical" href="https://vissssa.gitee.io/blog/posts/b8daf32a/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>vissssa</title>
+  <title>字节常考 | vissssa</title>
   
 
 
@@ -203,10 +215,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/b8daf32a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -220,8 +232,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/b8daf32a/" class="post-title-link" itemprop="url">字节常考</a>
+          字节常考
         </h2>
 
         <div class="post-meta">
@@ -259,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="1-服务降级和限流"><a href="#1-服务降级和限流" class="headerlink" title="1. 服务降级和限流"></a>1. 服务降级和限流</h5><p><a href="https://zhuanlan.zhihu.com/p/61363959" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/61363959</a></p>
+        <h5 id="1-服务降级和限流"><a href="#1-服务降级和限流" class="headerlink" title="1. 服务降级和限流"></a>1. 服务降级和限流</h5><p><a href="https://zhuanlan.zhihu.com/p/61363959" target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/61363959</a></p>
 <h5 id="2-redis-string类型的底层实现"><a href="#2-redis-string类型的底层实现" class="headerlink" title="2. redis string类型的底层实现"></a>2. redis string类型的底层实现</h5><p><a href="https://juejin.im/post/5d71d3bee51d453b5f1a04f1" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5d71d3bee51d453b5f1a04f1</a></p>
 <h5 id="3-redis的持久化方式"><a href="#3-redis的持久化方式" class="headerlink" title="3. redis的持久化方式"></a>3. redis的持久化方式</h5><p><a href="https://juejin.im/post/5b70dfcf518825610f1f5c16" target="_blank" rel="external nofollow noopener noreferrer">https://juejin.im/post/5b70dfcf518825610f1f5c16</a></p>
 <h5 id="4-aqs和cas，死锁检测"><a href="#4-aqs和cas，死锁检测" class="headerlink" title="4. aqs和cas，死锁检测"></a>4. aqs和cas，死锁检测</h5><p><a href="https://www.jianshu.com/p/12192b13990f" target="_blank" rel="external nofollow noopener noreferrer">https://www.jianshu.com/p/12192b13990f</a></p>
@@ -974,875 +985,66 @@
 <p>   6.设计一个HTTP服务，如何查询出订单量前十的商品，后台如何做  </p>
 <p>   7.python的并发的问题  </p>
 
-      
     </div>
 
     
     
     
+      
+
+        <div class="reward-container">
+  <div>打赏一杯咖啡</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/wechatpay.jpg" alt="vissssa 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/alipay.jpg" alt="vissssa 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>vissssa
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://vissssa.gitee.io/blog/posts/b8daf32a/" title="字节常考">https://vissssa.gitee.io/blog/posts/b8daf32a/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/efbabf5a/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/efbabf5a/" class="post-title-link" itemprop="url">30道经典算法面试题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-06T00:00:00+08:00">2020-03-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>19k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>32 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>30道经典算法面试题，题目来自于极客时间算法面试通关40讲</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/efbabf5a/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/posts/efbabf5a/" rel="prev" title="30道经典算法面试题">
+      <i class="fa fa-chevron-left"></i> 30道经典算法面试题
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/a667b194/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/a667b194/" class="post-title-link" itemprop="url">mock与单元测试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-23 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-23T00:00:00+08:00">2019-12-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>9.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>16 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文讲述的是 Python 中 Mock 的使用。</p>
-<h3 id="如何执行单元测试而不用考验你的耐心"><a href="#如何执行单元测试而不用考验你的耐心" class="headerlink" title="如何执行单元测试而不用考验你的耐心"></a><a href="#如何执行单元测试而不用考验你的耐心"></a>如何执行单元测试而不用考验你的耐心</h3><p>很多时候，我们编写的软件会直接与那些被标记为 “垃圾” 的服务交互。用外行人的话说：服务对我们的应用程序很重要，但是我们想要的是交互，而不是那些不想要的副作用，这里的 “不想要” 是在自动化测试运行的语境中说的。例如：我们正在写一个社交 app，并且想要测试一下 “发布到 Facebook” 的新功能，但是不想每次运行测试集的时候真的发布到 Facebook。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/a667b194/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/ce9335e0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/ce9335e0/" class="post-title-link" itemprop="url">google和github的搜索技巧</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-02 15:03:00" itemprop="dateCreated datePublished" datetime="2019-12-02T15:03:00+08:00">2019-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">搜索技巧</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>比较简单且直接的搜索方式就是敲上几个关键词，然后回车，等待搜索引擎的反馈</p>
-<p>但是这样的搜索是比较低效且浪费搜索引擎的强大功能的，为了不辜负google和github的好意，</p>
-<p>我们需要了解并使用高阶点的搜索技巧。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/ce9335e0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/a287ede/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/a287ede/" class="post-title-link" itemprop="url">Flask浅析-信号和Hook</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-28 11:06:00" itemprop="dateCreated datePublished" datetime="2019-11-28T11:06:00+08:00">2019-11-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Flask/" itemprop="url" rel="index"><span itemprop="name">Flask</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Flask浅析系列</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/a287ede/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/b8ccf74b/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/b8ccf74b/" class="post-title-link" itemprop="url">python复习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-24 12:30:00" itemprop="dateCreated datePublished" datetime="2019-11-24T12:30:00+08:00">2019-11-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/interview/" itemprop="url" rel="index"><span itemprop="name">interview</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>python复习笔记(来自于一个repo)</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/b8ccf74b/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/8212f7ec/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/8212f7ec/" class="post-title-link" itemprop="url">《SQL必知必会》笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 13:44:00" itemprop="dateCreated datePublished" datetime="2019-06-18T13:44:00+08:00">2019-06-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>717</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>极客时间课程《SQL必知必会》的一些记录</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/8212f7ec/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/bd50b816/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/bd50b816/" class="post-title-link" itemprop="url">内网穿透</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 13:44:00" itemprop="dateCreated datePublished" datetime="2019-06-18T13:44:00+08:00">2019-06-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>435</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>frp的使用，为了内网穿透</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/bd50b816/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/5c16325f/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/5c16325f/" class="post-title-link" itemprop="url">知识片段收录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-03T00:00:00+08:00">2019-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/deep/" itemprop="url" rel="index"><span itemprop="name">deep</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一些零散的知识收集，等待扩展可以归档到各自分区</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/5c16325f/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vissssa.gitee.io/blog/posts/e11f968c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://vissssa-imgs-1252712312.cos.ap-shanghai.myqcloud.com/hexo/%E5%A4%B4%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%89%88.jpg">
-      <meta itemprop="name" content="vissssa">
-      <meta itemprop="description" content="python, flask, linux, 架构, 生活, 科技">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vissssa">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/posts/e11f968c/" class="post-title-link" itemprop="url">python面试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-05-24 12:30:00" itemprop="dateCreated datePublished" datetime="2019-05-24T12:30:00+08:00">2019-05-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:41:59" itemprop="dateModified" datetime="2020-05-27T17:41:59+08:00">2020-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/interview/" itemprop="url" rel="index"><span itemprop="name">interview</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>44k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1:13</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>python面试题及答案</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/posts/e11f968c/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
@@ -1850,15 +1052,10 @@
 
   </div>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1905,6 +1102,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-服务降级和限流"><span class="nav-number">1.</span> <span class="nav-text">1. 服务降级和限流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-redis-string类型的底层实现"><span class="nav-number">2.</span> <span class="nav-text">2. redis string类型的底层实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-redis的持久化方式"><span class="nav-number">3.</span> <span class="nav-text">3. redis的持久化方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-aqs和cas，死锁检测"><span class="nav-number">4.</span> <span class="nav-text">4. aqs和cas，死锁检测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-设计题，涉及到并发和数据库"><span class="nav-number">5.</span> <span class="nav-text">5. 设计题，涉及到并发和数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-string类型为什么不可变"><span class="nav-number">6.</span> <span class="nav-text">6. string类型为什么不可变</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-二叉树找出距离最大的两个节点"><span class="nav-number">7.</span> <span class="nav-text">7. 二叉树找出距离最大的两个节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-mvcc的实现"><span class="nav-number">8.</span> <span class="nav-text">8. mvcc的实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-间隙锁"><span class="nav-number">9.</span> <span class="nav-text">9. 间隙锁</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#间隙锁-Gap-Locks-（重点）"><span class="nav-number"></span> <span class="nav-text">间隙锁(Gap Locks)（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#10-链表实现加法"><span class="nav-number">1.</span> <span class="nav-text">10. 链表实现加法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-linux命令-查硬盘-端口-AWK"><span class="nav-number">2.</span> <span class="nav-text">11. linux命令  查硬盘  端口    AWK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一面4-26"><span class="nav-number"></span> <span class="nav-text">一面4.26</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python"><span class="nav-number"></span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统"><span class="nav-number"></span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中断，怎么实现"><span class="nav-number"></span> <span class="nav-text">中断，怎么实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是中断"><span class="nav-number"></span> <span class="nav-text">什么是中断?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么需要系统中断、异常、调用-中断不会使效率变低吗"><span class="nav-number"></span> <span class="nav-text">为什么需要系统中断、异常、调用?中断不会使效率变低吗?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中断的分类"><span class="nav-number"></span> <span class="nav-text">中断的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中断、异常和系统调用区别"><span class="nav-number"></span> <span class="nav-text">中断、异常和系统调用区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计网"><span class="nav-number"></span> <span class="nav-text">计网</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#慢开始和拥塞避免"><span class="nav-number">1.</span> <span class="nav-text">慢开始和拥塞避免</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快重传和快恢复"><span class="nav-number">2.</span> <span class="nav-text">快重传和快恢复</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码题"><span class="nav-number"></span> <span class="nav-text">代码题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#逆序输出数组中奇数的平方"><span class="nav-number">1.</span> <span class="nav-text">逆序输出数组中奇数的平方</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断链表是否有环"><span class="nav-number">2.</span> <span class="nav-text">判断链表是否有环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lc海岛，01矩阵那个，算有几个岛"><span class="nav-number">3.</span> <span class="nav-text">lc海岛，01矩阵那个，算有几个岛</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二面4-28"><span class="nav-number"></span> <span class="nav-text">二面4.28</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码题-1"><span class="nav-number"></span> <span class="nav-text">代码题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三面-5-7-许愿HR面"><span class="nav-number"></span> <span class="nav-text">三面 5.7 许愿HR面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法题"><span class="nav-number"></span> <span class="nav-text">算法题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一面："><span class="nav-number"></span> <span class="nav-text">一面：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二面："><span class="nav-number"></span> <span class="nav-text">二面：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络"><span class="nav-number"></span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-对比"><span class="nav-number"></span> <span class="nav-text">1. 对比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统-1"><span class="nav-number"></span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number"></span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number"></span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number"></span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杂项"><span class="nav-number"></span> <span class="nav-text">杂项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GIL"><span class="nav-number"></span> <span class="nav-text">GIL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语言相关"><span class="nav-number"></span> <span class="nav-text">语言相关</span></a></li></ol></li></div>
       </div>
       <!--/noindex-->
 
@@ -2142,6 +1340,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'c1fac73c19ac8f8c6e87',
+      clientSecret: '2191820fd1c7bbd5c3dc9b6a1de97ace50a87e6c',
+      repo        : 'blog',
+      owner       : 'vissssa',
+      admin       : ['vissssa'],
+      id          : 'b164c624ff151e1555f3ca027cc8816a',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
