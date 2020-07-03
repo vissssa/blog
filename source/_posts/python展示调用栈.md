@@ -2,13 +2,14 @@
 title: python展示调用栈
 tags:
   - python
-  - deep
 categories:
   - python
+  - deep
 date: 2020-7-3
 description: 图形化展示函数调用链
 ---
 如下一个简单的flask项目，在view函数中加入这个展示栈的函数，就可以自动打开一个图形化的对于栈的展示
+<!-- more -->
 ```python
 from flask import Flask
 
