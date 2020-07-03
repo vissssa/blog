@@ -7,7 +7,6 @@ tags:
   - cicd
 keywords: gitlab-runner
 description: gitlab-runner的executor为ssh时在的一些补充
-abbrlink: c250a948
 date: 2019-05-20 10:38:00
 ---
 需求是利用gitlabci的流程在编译打包成功后直接在开发机上部署，所以直接在ubuntu18.04上安装gitlab-runner，而不是docker运行，此处选择ssh的方式部署到远程服务器，**注意**：此处待验证是否可以同时ssh到多个机器部署。

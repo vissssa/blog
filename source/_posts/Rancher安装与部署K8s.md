@@ -8,7 +8,6 @@ categories:
   - cloud
 date: 2019-5-15
 description: 使用rancher来安装和部署k8s，官方一直在维护，也很好用
-abbrlink: 36f1f294
 ---
 
 > Rancher Kubernetes Engine(RKE), an extremely simple, lightning fast Kubernetes installer that works everywhere.

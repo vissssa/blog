@@ -7,7 +7,6 @@ tags:
   - python
 keywords: python
 description: python复习笔记(来自于一个repo)
-abbrlink: b8ccf74b
 date: 2019-11-24 12:30:00
 ---
 ### 函数的参数传递

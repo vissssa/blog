@@ -7,7 +7,6 @@ categories:
   - cloud
 date: 2019-5-15
 description: 运维方面经验
-abbrlink: '819760e9'
 ---
 # 安装Docker
 

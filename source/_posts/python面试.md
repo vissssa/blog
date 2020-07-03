@@ -7,7 +7,6 @@ tags:
   - python
 keywords: python
 description: python面试题及答案
-abbrlink: e11f968c
 date: 2019-05-24 12:30:00
 ---
 ## python面试题及答案

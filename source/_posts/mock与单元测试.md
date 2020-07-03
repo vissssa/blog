@@ -4,7 +4,6 @@ tags:
   - test
 categories:
   - deep
-abbrlink: a667b194
 date: 2019-12-23 00:00:00
 ---
 本文讲述的是 Python 中 Mock 的使用。
