@@ -331,8 +331,8 @@
   <entry>
     <title>Flask浅析-request上下文</title>
     <url>/blog/posts/2662e6b2/</url>
-    <content><![CDATA[<h5 id="Flask浅析系列"><a href="#Flask浅析系列" class="headerlink" title="Flask浅析系列"></a>Flask浅析系列</h5><a href="/blog/posts/2662e6b2/" title="Flask浅析-request上下文">Flask浅析-request上下文</a><br>
-<a href="/blog/posts/a287ede/" title="Flask浅析-信号和Hook">Flask浅析-信号和Hook</a><br>
+    <content><![CDATA[<h5 id="Flask浅析系列"><a href="#Flask浅析系列" class="headerlink" title="Flask浅析系列"></a>Flask浅析系列</h5><a href="/blog/posts/undefined/" title="Flask浅析-request上下文">Flask浅析-request上下文</a><br>
+<a href="/blog/posts/undefined/" title="Flask浅析-信号和Hook">Flask浅析-信号和Hook</a><br>
 <hr>
 <h1 id="理解Flask的request上下文"><a href="#理解Flask的request上下文" class="headerlink" title="理解Flask的request上下文"></a>理解Flask的request上下文</h1><p>request是全局变量，但request的属性总是对应当前请求的值，这是如何做到的呢？同样的还有current_app。</p>
 <p>request/app context是保存到栈里的，我们什么时候需要栈？很多人都有这样的疑问，有人在stackoverflow提了个很好的问题：<a href="https://stackoverflow.com/questions/20036520/what-is-the-purpose-of-flasks-context-stacks" target="_blank" rel="external nofollow noopener noreferrer">What is the purpose of Flask’s context stacks?</a></p>
@@ -411,8 +411,8 @@
   <entry>
     <title>Flask浅析-信号和Hook</title>
     <url>/blog/posts/a287ede/</url>
-    <content><![CDATA[<h5 id="Flask浅析系列"><a href="#Flask浅析系列" class="headerlink" title="Flask浅析系列"></a>Flask浅析系列</h5><a href="/blog/posts/2662e6b2/" title="Flask浅析-request上下文">Flask浅析-request上下文</a><br>
-<a href="/blog/posts/a287ede/" title="Flask浅析-信号和Hook">Flask浅析-信号和Hook</a><br>
+    <content><![CDATA[<h5 id="Flask浅析系列"><a href="#Flask浅析系列" class="headerlink" title="Flask浅析系列"></a>Flask浅析系列</h5><a href="/blog/posts/undefined/" title="Flask浅析-request上下文">Flask浅析-request上下文</a><br>
+<a href="/blog/posts/undefined/" title="Flask浅析-信号和Hook">Flask浅析-信号和Hook</a><br>
 <hr>
 <p>由于翻看源码时看到flask根目录下有个<code>signals.py</code>文件，且部分代码如下</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> blinker <span class="keyword">import</span> Namespace</span><br><span class="line"></span><br><span class="line"><span class="comment"># The namespace for code signals.  If you are not Flask code, do</span></span><br><span class="line"><span class="comment"># not put signals in here.  Create your own namespace instead.</span></span><br><span class="line">_signals = Namespace()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Core signals.  For usage examples grep the source code or consult</span></span><br><span class="line"><span class="comment"># the API documentation in docs/api.rst as well as docs/signals.rst</span></span><br><span class="line">request_started = _signals.signal(<span class="string">"request-started"</span>)</span><br><span class="line">request_finished = _signals.signal(<span class="string">"request-finished"</span>)</span><br><span class="line">request_tearing_down = _signals.signal(<span class="string">"request-tearing-down"</span>)</span><br></pre></td></tr></table></figure>
