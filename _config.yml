@@ -18,11 +18,17 @@ timezone: 'Asia/Shanghai'
 url: https://vissssa.gitee.io/blog
 root: /blog/
 # permalink: :year/:month/:day/:title/
-permalink: :year/:title/
-# permalink: posts/:abbrlink/
-# abbrlink:
-#   alg: crc32  # 算法：crc16(default) and crc32
-#   rep: hex    # 进制：dec(default) and hex
+# permalink: :year/:title/
+permalink: posts/:abbrlink/
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
+  drafts: false #(true)Process draft,(false)Do not process draft
+  # Generate categories from directory-tree
+  # depth: the max_depth of directory-tree you want to generate, should > 0
+  auto_category:
+     enable: true
+     depth: 
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing index.html from permalinks
