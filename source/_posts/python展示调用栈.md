@@ -33,4 +33,4 @@ if __name__ == '__main__':
 浏览器输入[http://127.0.0.1:5000](http://127.0.0.1:5000)就可以看到效果。
 ![stack.png](https://i.loli.net/2020/07/03/K1zqjI87bFOlTUi.png)
 
-`analysis`文件的代码在我的[github](https://github.com/vissssa/awesome-pythonlib/blob/master/analysis.py#L13)中
+`analysis`文件的代码在我的[github](https://github.com/vissssa/awesome-pythonlib/blob/master/analysis.py#L13)仓库中
