@@ -18,11 +18,11 @@ timezone: 'Asia/Shanghai'
 url: https://vissssa.gitee.io/blog
 root: /blog/
 # permalink: :year/:month/:day/:title/
-# permalink: :year/:title/
-permalink: posts/:abbrlink/
-abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: hex    # 进制：dec(default) and hex
+permalink: :year/:title/
+# permalink: posts/:abbrlink/
+# abbrlink:
+#   alg: crc32  # 算法：crc16(default) and crc32
+#   rep: hex    # 进制：dec(default) and hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing index.html from permalinks
